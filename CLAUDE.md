@@ -35,9 +35,10 @@ plugins/<plugin-name>/
    ```
 3. **Description = triggers/symptoms only.** Do NOT summarize what the skill does or its workflow. See `superpowers:writing-skills` for the full guidance.
 4. `references/*.md` is for genuinely optional depth a reader would deliberately seek out (an API reference table, a heavy spec) — not a length-management escape valve. Agents skim/skip reference files, so load-bearing technique content stays inline in SKILL.md even if that makes it long. A skill teaching several real, distinct scenarios can run well past ~1800 words — that's fine; length alone isn't a quality problem if every part earns its place.
-5. Bump `version` in marketplace.json (and plugin.json if present).
-6. Test locally: see "Test locally" below.
-7. Commit and push.
+5. Put shareable image references in the skill's `README.md`, immediately after its H1. Do not embed images in `SKILL.md`.
+6. Bump `version` in marketplace.json (and plugin.json if present).
+7. Test locally: see "Test locally" below.
+8. Commit and push.
 
 ## Adding a new plugin
 

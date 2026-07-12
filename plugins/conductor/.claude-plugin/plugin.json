@@ -1,7 +1,7 @@
 {
   "name": "conductor",
   "description": "Coordinate a fleet of subagents — delegate owned units, review with a dual-model critic, trace the seams, integrate. Includes the atomic fan / critic primitives and the autonomous long-build family.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": {
     "name": "Thomas Neyland",
     "email": "tcneyland@gmail.com"

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
   <title id="title">Turn a skill manual into a self-contained visual method.</title>
-  <desc id="desc">Start with a target SKILL.md and every required reference. Read the complete source, choose the correct infographic surface, write a solution trace with the input, ordered operations, decisions, output, and success check, build an editable SVG and 1600 by 2000 PNG, then inspect it at full size and 400 by 500. The output is a brief, SVG, PNG, and Markdown image reference. Complete when raster checks pass and a cold reader can repeat the workflow without a caption.</desc>
+  <desc id="desc">Start with a target SKILL.md and every required reference. Read the complete source, choose the correct infographic surface, write a solution trace with the input, ordered operations, decisions, output, and success check, build an editable SVG and 1600 by 2000 PNG, then inspect it at full size and 400 by 500. The output is a brief, SVG, PNG, and README image reference. Complete when raster checks pass and a cold reader can repeat the workflow without a caption.</desc>
 
   <defs>
     <style>
@@ -72,7 +72,7 @@
   <circle cx="148" cy="1148" r="27" fill="#42647a"/>
   <text x="148" y="1157" text-anchor="middle" class="step-num" fill="#f7f6f2">4</text>
   <text x="205" y="1141" class="step-title primary">BUILD THE ASSET</text>
-  <text x="205" y="1182" class="step-body secondary">Editable SVG → 1600 × 2000 PNG → Markdown image immediately after the H1.</text>
+  <text x="205" y="1182" class="step-body secondary">Editable SVG → 1600 × 2000 PNG → README image immediately after the H1.</text>
   <line x1="148" y1="1184" x2="148" y2="1232" class="flow" marker-end="url(#arrow)"/>
 
   <circle cx="148" cy="1274" r="27" fill="#42647a"/>
@@ -89,7 +89,7 @@
   <text x="475" y="1525" class="output-body secondary">editable source</text>
   <text x="780" y="1485" class="output-title primary">PNG</text>
   <text x="780" y="1525" class="output-body secondary">1600 × 2000 · sRGB</text>
-  <text x="1110" y="1485" class="output-title primary">MARKDOWN</text>
+  <text x="1110" y="1485" class="output-title primary">README</text>
   <text x="1110" y="1525" class="output-body secondary">image + useful alt text</text>
 
   <line x1="120" y1="1580" x2="1480" y2="1580" class="rule"/>

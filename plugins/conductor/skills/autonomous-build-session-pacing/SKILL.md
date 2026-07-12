@@ -5,8 +5,6 @@ description: Use when the user grants an autonomous multi-hour budget ("4 hours"
 
 # Autonomous Build — Session Pacing
 
-![Given a multi-hour AI-agent build, start and restart a background keep-alive, run build, checks, commit, and push for each coherent feature, and rerank and announce the remaining shortlist whenever the clock changes; each completed feature is checked and pushed, and the active plan fits the time left.](assets/autonomous-build-session-pacing.png)
-
 ## Overview
 
 Operating cleanly in a long autonomous session is mostly mechanical: keep a heartbeat so the harness doesn't stall; commit often with real messages; push often; typecheck is the truth, not screenshots; triage when the user declares a remaining budget. Getting the mechanics right frees all your attention for product decisions.

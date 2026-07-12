@@ -5,8 +5,6 @@ description: Use when ranking a feature backlog under a "next level / take it fu
 
 # Autonomous Build — Jealousy Ranking
 
-![Given a feature backlog, name the audience, classify each idea by durable product value or demo appeal, challenge it against real inputs, competitor parity, and a skeptic, then drop and replace weak candidates; the roadmap is ready when every filed survivor has a named audience and a defensible reason to build it.](assets/autonomous-build-jealousy-ranking.png)
-
 ## Overview
 
 Rank features by **who'd be mad jealous**, not by effort. Every candidate gets red-teamed and tagged as either a `tool` (the "wait, you can do THAT?" reaction an investor or academic gives — differentiation / productization / methodological depth) or a `toy` (the "screenshot-worthy demo / fun to explore" reaction). Weak candidates get killed and replaced with stronger ones before filing.

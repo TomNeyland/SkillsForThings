@@ -5,8 +5,6 @@ description: Use when refreshing or auditing a skill's content for stale claims,
 
 # Refresh Skill
 
-![After an external release, audit a reusable AI instruction file by inventorying volatile claims, checking current sources, assigning statuses, editing, and versioning by impact; output an updated cited guide and change log, complete when every claim is statused and local reinstall passes.](assets/refresh-skill.png)
-
 Systematically refresh a skill's content and references against current evidence.
 
 ## When to use

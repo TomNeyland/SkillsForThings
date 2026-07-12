@@ -5,8 +5,6 @@ description: Use when creating or revising a shareable infographic for a skill i
 
 # Framing Skill Infographics
 
-![Turn a target SKILL.md and its required references into a self-contained visual method by reading the full source, choosing the explainer or index surface, writing the solution trace, building SVG and PNG assets, and verifying that a cold reader can repeat the workflow without a caption.](assets/framing-skill-infographics.png)
-
 ## Overview
 
 Turn a repository skill into a self-contained explanation of the job it performs and how it performs it. The image may open with a recognizable problem, but comprehension of the working method is the primary job; persuasion is secondary.
@@ -189,13 +187,9 @@ plugins/<plugin>/skills/<skill>/assets/<skill>.svg
 plugins/<plugin>/skills/<skill>/assets/<skill>.png
 ```
 
-Add the PNG immediately after the skill's H1:
+Add the PNG with useful alt text immediately after the skill `README.md` H1. Do not embed the image in `SKILL.md`; that file remains instruction-only.
 
-```markdown
-![Alt text stating the takeaway and essential visual relationship](assets/<skill>.png)
-```
-
-The SVG remains the editable source; the Markdown references the PNG for reliable rendering. Update the plugin and marketplace versions when publishing the asset.
+The SVG remains the editable source; the README references the PNG for reliable rendering. Update the plugin and marketplace versions when publishing the asset.
 
 ## Review gate
 
@@ -211,6 +205,7 @@ The SVG remains the editable source; the Markdown references the PNG for reliabl
 - No unsupported number, fabricated output, or apologetic limitation copy appears.
 - The name arrives after the value.
 - Asset paths and Markdown reference are exact.
+- The README references the PNG immediately after its H1; SKILL.md contains no image embed.
 - The rendered artifact passes `creating-technical-infographics` verification.
 - A directory card is an index, includes every live direct child, and gives each row a distinct choose-if cue.
 - A package or repository index was checked against the current filesystem and manifests after the final edit.

@@ -29,6 +29,7 @@ INTERNAL_ARTIFACT_RE = re.compile(
     r"\b(HANDOVER|worktree|scratchpad|session_[a-f0-9]{6,})\b", re.IGNORECASE
 )
 ISSUE_REF_RE = re.compile(r"#\d{2,}")
+IMAGE_EMBED_RE = re.compile(r"!\[[^\]]*\]\([^)]+\)")
 
 
 def find_skills(root: pathlib.Path):
@@ -75,6 +76,9 @@ def lint_one(path: pathlib.Path, known_skills: set[str]) -> list[tuple[str, str]
 
     for m in INTERNAL_ARTIFACT_RE.finditer(text):
         findings.append(("WARN", f"internal-artifact-shaped token `{m.group(0)}` — verify it's not a session/build artifact"))
+
+    for _ in IMAGE_EMBED_RE.finditer(body):
+        findings.append(("FAIL", "SKILL.md embeds an image — put image references in README.md only"))
 
     word_count = len(body.split())
     if word_count > WORD_BUDGET_HARD:

@@ -5,8 +5,6 @@ description: Use when designing or auditing OpenAI API prompts for cache hit rat
 
 # OpenAI Prompt Cache Optimization
 
-![Why repeated prompts can still cost full price: one changed byte ends the cache match; stabilize the shared prefix, move variables to the tail, and measure cached tokens](assets/openai-prompt-cache.png)
-
 ## Overview
 
 OpenAI's prompt cache discounts repeated input tokens **50–90%** (varies by model family) and cuts first-token latency **up to 80%** on long prompts. The cache is a **prefix cache** — it matches the longest exact byte-prefix of your request against an inference engine's KV state. Anything that perturbs those bytes causes a full miss.

@@ -5,8 +5,6 @@ description: Use when writing commit messages during greenfield product-building
 
 # Autonomous Build — Commit Essays
 
-![Given a non-trivial feature commit, write the subject and short body while the reasoning is fresh, naming who needs the change, what it enables, and which behavior or tradeoff future work must preserve; the message is complete when a future developer can recover product intent without reconstructing the diff.](assets/autonomous-build-commit-essays.png)
-
 ## Overview
 
 Every commit message is a short essay explaining **why this feature matters** and **what product semantics it adds** — not just what code changed. Strung together, these messages become the product's design narrative. Someone scrolling `git log` learns WHY the product is the way it is, not just WHAT changed.

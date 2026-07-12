@@ -5,8 +5,6 @@ description: Use when turning technical explanations, workflows, failure modes, 
 
 # Creating Technical Infographics
 
-![Turn a technical explanation into an editable SVG and faithful PNG by defining the reader task, choosing a visual form from the relationship, exposing the working method, building within feed-safe geometry, inspecting full and phone-size rasters, and passing a caption-free reader gate.](assets/creating-technical-infographics.png)
-
 ## Overview
 
 Create a useful technical-document page that happens to be shareable. The visual should feel like excellent documentation someone screenshotted: plain, direct, editable, and legible at feed size.
@@ -16,6 +14,7 @@ Create a useful technical-document page that happens to be shareable. The visual
 ## Output contract
 
 - Produce an editable SVG and a rendered PNG.
+- Reference the PNG from `README.md` immediately after its H1. Do not embed it in `SKILL.md`.
 - Use a 1600×2000 canvas (4:5).
 - Keep every essential element inside the centered 1600×1600 safe area: `y=200..1800`.
 - Keep 120 px left/right margins. Metadata and attribution may use the outer top/bottom bands.

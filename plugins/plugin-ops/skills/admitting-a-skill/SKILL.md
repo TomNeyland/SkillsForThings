@@ -5,8 +5,6 @@ description: Use before a new or edited skill enters a public marketplace — es
 
 # Admitting a Skill
 
-![A clean grep can still miss a private project leak. Run deterministic machine checks, give the complete reusable AI instruction package to two independent readers, keep every concrete issue either reader finds, and repeat after substantive fixes until all three checks are clean.](assets/admitting-a-skill.png)
-
 A skill written inside a private project absorbs that project's vocabulary, catchphrases, and
 examples without anyone deciding to put them there — the author is fluent in the origin and doesn't
 notice it leaking through. Publishing is the one-way door: once a leak ships, it's public forever.

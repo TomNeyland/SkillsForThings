@@ -5,8 +5,6 @@ description: Use when someone wants a high-fidelity mood visualization of their 
 
 # Memory Mood (OpenAI edition)
 
-![From dated AI-assistant memory notes and an API key, build cumulative snapshots, take k standalone readings per snapshot, compute mean and ±1σ, select the closest-to-average reaction, and render index.html; without a key or with k=1 use memory-mood, and finish when all readings exist and the page opens.](assets/memory-mood-openai.png)
-
 Same idea as the `memory-mood` skill — replay your assistant's memory files in formation order and ask *how do you feel?* after each — but judged by the **OpenAI API with k independent samples per timepoint, averaged**. A single reading wobbles by ~±0.1; averaging k of them (default 8) collapses the noise and lets the page draw **±1σ confidence bands**. Use this when you want the smooth, defensible version and have an API key. Otherwise use the dependency-free `memory-mood` (Sonnet subagent) skill.
 
 ## Why averaging

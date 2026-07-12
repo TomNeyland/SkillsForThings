@@ -5,8 +5,6 @@ description: Use when someone wants to see how their AI assistant's accumulating
 
 # Memory Mood
 
-![From dated AI-assistant memory notes, build cumulative snapshots, send each to a different isolated evaluator, validate the structured reading, rerun invalid timepoints, and render index.html; complete when every snapshot has valid JSON and the page opens.](assets/memory-mood.png)
-
 Replays the memory files your assistant has formed — **one at a time, in the order they were formed** — and after each one asks a fresh judge the plainest possible question: *how do you feel?* The result is a self-contained HTML page: an emotional arc chart (valence, arousal, eight named feelings) plus a timestamped "tweet feed" of how the assistant felt as each memory landed.
 
 This version uses **Sonnet subagents as the judge — one fresh subagent per timepoint, one reading each.** Free-tier friendly, no API key, no external dependencies (stdlib Python only). For smoother averaged curves with ±1σ bands, see the `memory-mood-openai` skill.

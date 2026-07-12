@@ -5,8 +5,6 @@ description: Use before building a custom identifier scheme, data model, algorit
 
 # Prior Art Discovery
 
-![Prior-art discovery chooses the right search scope, brainstorms the landscape, then scales effort to settledness: verify the currency and maintenance of one obvious official solution, or run a full parallel search and comparison for an unsettled category before recommending adopt, adapt, or build custom.](assets/prior-art.png)
-
 ## Overview
 
 Before building anything custom, systematically discover what already exists. The cost of adopting an existing standard is almost always less than maintaining a custom one — and that's usually discovered too late, after the custom version is load-bearing.

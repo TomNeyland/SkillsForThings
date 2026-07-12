@@ -5,8 +5,6 @@ description: Use when reviewing or designing schema field names, model names, or
 
 # Align Terminology
 
-![Audit schema fields, models, and enums by locating the highest applicable authority, applying the expert-recognition test, classifying every name, and recording an action; finish when every name has an authority, status, and action.](assets/align-terminology.png)
-
 For every field, model, and enum value: **would someone who works with this data daily recognize the name without explanation?**
 
 ## The Expert Test

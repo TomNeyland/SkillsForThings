@@ -5,8 +5,6 @@ description: Use ONLY when the user explicitly invokes this skill by name — e.
 
 # Autonomous Build — Entrypoint
 
-![Given an explicitly invoked long AI coding session and a loose brief, ask two or three questions about audience, at least three ordered user questions, budget, and success; turn the answers into a product arc, scaffold only if needed, and announce the first layer, delivery cadence, and budget-shift plan before coding.](assets/autonomous-build.png)
-
 ## Overview
 
 This is the **front door** to long autonomous product-building sessions. Before writing code, it forces a short engagement on **what we're actually building, for whom, and toward what arc of purpose**. If greenfield, it scaffolds a private repo. Then it activates the rest of the `autonomous-build-*` family for the build phase.

@@ -5,8 +5,6 @@ description: Use when building or extending a product in an autonomous multi-hou
 
 # Autonomous Build — Purpose Layers
 
-![Given a working product and a candidate next feature, name the ordered user questions, finish a broken first layer, require the feature to answer a new question or axis, read the schema when current data is sparse, and build one feature per commit; reject the candidate when its new user question cannot be named.](assets/autonomous-build-purpose-layers.png)
-
 ## Overview
 
 Each commit renders another **semantic layer** of the product's purpose — not another polish pass on the last one. The product's meaning deepens. After N commits, you have N distinct reasons the product exists, not N things that do the same thing slightly better.
