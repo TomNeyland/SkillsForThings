@@ -1,110 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="svg-title svg-desc">
-  <title id="svg-title">AI agents change, but the product direction should not</title>
-  <desc id="svg-desc">For a long multi-agent software build, the lead agent records product decisions in repository documents. A second agent tests those documents before code begins. Implementation agents and reviewers then build and verify against the same documents, so new agents inherit the product direction from files instead of lost chat context.</desc>
-
-  <defs>
-    <style>
-      .sans { font-family: Helvetica, Arial, sans-serif; }
-      .primary { fill: #181816; }
-      .secondary { fill: #51514d; }
-      .accent { fill: #42647a; }
-      .rule { stroke: #d1d0ca; stroke-width: 3; }
-      .flow { fill: none; stroke: #42647a; stroke-width: 4; }
-    </style>
-    <marker id="arrow-blue" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
-      <path d="M1,1 L13,7 L1,13 Z" fill="#42647a"/>
-    </marker>
-  </defs>
-
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Prototype ancestor of Coordinate Agents: orchestrating a long multi-agent greenfield build</title>
+  <desc id="desc">This historical prototype preceded the current coordinate-agents skill. The lead agent preserves product intent through four stages: orient the build with user pins, prior art, and predecessor triage; author the ethos, specification, subsystem designs, and frozen interfaces; test those documents with author and independent playthroughs; then run one builder per subsystem through review, fixes, mechanical gates, instrumented feedback, and human judgment.</desc>
   <rect width="1600" height="2000" fill="#f7f6f2"/>
+  <style>
+    .sans { font-family: Helvetica, Arial, sans-serif; fill: #181816; }
+    .mono { font-family: Menlo, Consolas, monospace; fill: #181816; }
+    .meta { font-size: 23px; font-weight: 700; letter-spacing: 2.3px; fill: #42647a; }
+    .headline { font-size: 68px; font-weight: 700; }
+    .subhead { font-size: 29px; fill: #51514d; }
+    .stage { font-size: 25px; font-weight: 700; letter-spacing: 1.5px; fill: #42647a; }
+    .step { font-size: 30px; font-weight: 700; }
+    .body { font-size: 28px; fill: #51514d; }
+    .small { font-size: 23px; fill: #51514d; }
+    .token { font-size: 24px; font-weight: 700; }
+    .num { font-size: 25px; font-weight: 700; fill: #ffffff; text-anchor: middle; }
+    .rule { stroke: #d1d0ca; stroke-width: 3; }
+    .accent-rule { stroke: #42647a; stroke-width: 4; }
+  </style>
 
-  <!-- Situation and stakes -->
-  <g id="headline" class="sans">
-    <text x="120" y="300" class="primary" font-size="96" font-weight="700">
-      <tspan x="120" dy="0">AI agents change.</tspan>
-      <tspan x="120" dy="108">The product direction shouldn’t.</tspan>
-    </text>
-    <text x="120" y="500" class="secondary" font-size="33">
-      <tspan x="120" dy="0">In a long multi-agent software build, record product decisions in repository</tspan>
-      <tspan x="120" dy="42">documents before code begins.</tspan>
-    </text>
-    <line x1="120" y1="594" x2="1480" y2="594" class="rule"/>
-  </g>
+  <text x="120" y="100" class="sans meta">ORCHESTRATING GREENFIELD BUILDS</text>
+  <text x="1480" y="100" class="sans meta" text-anchor="end">PROTOTYPE ANCESTOR</text>
+  <line x1="120" y1="140" x2="1480" y2="140" class="rule"/>
 
-  <!-- Three-stage method -->
-  <g id="method" class="sans">
-    <text x="120" y="655" class="secondary" font-size="24" font-weight="700" letter-spacing="1.4">WHO DOES WHAT</text>
+  <text x="120" y="235" class="sans headline">
+    <tspan x="120" dy="0">Preserve product intent while</tspan>
+    <tspan x="120" dy="78">agents, sessions, and systems change.</tspan>
+  </text>
+  <text x="120" y="430" class="sans subhead">Input: a product idea, user decisions, quality bar, and optional predecessor.</text>
+  <text x="120" y="474" class="sans subhead">The lead delegates research and execution, but keeps judgment and authorship.</text>
 
-    <!-- Step 1 -->
-    <circle cx="156" cy="735" r="36" fill="#42647a"/>
-    <text x="156" y="746" text-anchor="middle" fill="#f7f6f2" font-size="28" font-weight="700">1</text>
-    <text x="220" y="727" class="primary" font-size="35" font-weight="700">LEAD AGENT RECORDS THE DECISIONS</text>
-    <text x="220" y="772" class="secondary" font-size="29">The user’s audience, platform, tone, scope, and quality bar become files.</text>
+  <line x1="120" y1="525" x2="1480" y2="525" class="rule"/>
 
-    <!-- Document columns: [220,570], [650,1030], [1110,1480] -->
-    <line x1="220" y1="822" x2="538" y2="822" class="rule"/>
-    <text x="220" y="862" class="accent" font-size="24" font-weight="700">PRODUCT PRINCIPLES</text>
-    <text x="220" y="903" class="secondary" font-size="28">tone + quality bar</text>
+  <!-- Stage 1 -->
+  <text x="120" y="575" class="sans stage">1 · ORIENT BEFORE CHOOSING A STACK</text>
+  <circle cx="145" cy="630" r="25" fill="#42647a"/><text x="145" y="639" class="sans num">1</text>
+  <text x="190" y="625" class="sans step">Capture pins</text>
+  <text x="190" y="661" class="sans body">Record audience, platform, tone, scope, and quality decisions as they arrive.</text>
 
-    <line x1="650" y1="822" x2="998" y2="822" class="rule"/>
-    <text x="650" y="862" class="accent" font-size="24" font-weight="700">PRODUCT SPECIFICATION</text>
-    <text x="650" y="903" class="secondary" font-size="28">systems + architecture</text>
+  <circle cx="145" cy="715" r="25" fill="#42647a"/><text x="145" y="724" class="sans num">2</text>
+  <text x="190" y="710" class="sans step">Research prior art</text>
+  <text x="190" y="746" class="sans body">Parallel agents compare the landscape; the lead rules: adopt, adapt, or build.</text>
 
-    <line x1="1110" y1="822" x2="1448" y2="822" class="rule"/>
-    <text x="1110" y="862" class="accent" font-size="24" font-weight="700">SUBSYSTEM DESIGN DOCS</text>
-    <text x="1110" y="903" class="secondary" font-size="28">one per subsystem</text>
+  <circle cx="145" cy="800" r="25" fill="#42647a"/><text x="145" y="809" class="sans num">3</text>
+  <text x="190" y="795" class="sans step">If a predecessor exists, mine it as evidence</text>
+  <text x="190" y="831" class="sans body">Verify platform facts · re-test observations · keep wrong-approach patches as symptoms.</text>
 
-    <line x1="156" y1="771" x2="156" y2="965" class="flow" marker-end="url(#arrow-blue)"/>
+  <line x1="120" y1="875" x2="1480" y2="875" class="rule"/>
 
-    <!-- Step 2 -->
-    <circle cx="156" cy="1015" r="36" fill="#42647a"/>
-    <text x="156" y="1026" text-anchor="middle" fill="#f7f6f2" font-size="28" font-weight="700">2</text>
-    <text x="220" y="1007" class="primary" font-size="35" font-weight="700">TWO AGENTS TEST THE DOCUMENTS</text>
-    <text x="220" y="1052" class="secondary" font-size="29">Both simulate a complete user session before implementation starts.</text>
+  <!-- Stage 2 -->
+  <text x="120" y="925" class="sans stage">2 · MAKE THE DIRECTION DURABLE</text>
+  <circle cx="145" cy="980" r="25" fill="#42647a"/><text x="145" y="989" class="sans num">4</text>
+  <text x="190" y="975" class="sans step">The lead authors the document stack</text>
+  <text x="190" y="1011" class="sans body">ETHOS (how to think) → SPEC (what to build) → DESIGN DOC (one per system)</text>
 
-    <!-- Reader columns: [220,760], [840,1480] -->
-    <text x="220" y="1110" class="accent" font-size="24" font-weight="700">LEAD AGENT</text>
-    <text x="220" y="1150" class="secondary" font-size="28">
-      <tspan x="220" dy="0">Walks through the product using</tspan>
-      <tspan x="220" dy="36">the documents it authored.</tspan>
-    </text>
+  <circle cx="145" cy="1065" r="25" fill="#42647a"/><text x="145" y="1074" class="sans num">5</text>
+  <text x="190" y="1060" class="sans step">Use rival panels only for make-or-break systems</text>
+  <text x="190" y="1096" class="sans body">Designers pitch; judges score; the lead records rulings, grafts, and rejections.</text>
 
-    <text x="840" y="1110" class="accent" font-size="24" font-weight="700">INDEPENDENT AGENT</text>
-    <text x="840" y="1150" class="secondary" font-size="28">
-      <tspan x="840" dy="0">Reads only the documents, then finds</tspan>
-      <tspan x="840" dy="36">contradictions and missing details.</tspan>
-    </text>
+  <circle cx="145" cy="1150" r="25" fill="#42647a"/><text x="145" y="1159" class="sans num">6</text>
+  <text x="190" y="1145" class="sans step">Freeze interfaces before consumers exist</text>
+  <text x="190" y="1181" class="sans body">Version event vocabularies, publish consumer contracts, and make constants data.</text>
 
-    <path d="M500 1198 L500 1208 L800 1208 M1120 1198 L1120 1208 L800 1208 L800 1214" class="flow" marker-end="url(#arrow-blue)"/>
-    <rect x="600" y="1220" width="400" height="76" rx="8" fill="#42647a"/>
-    <text x="800" y="1251" text-anchor="middle" fill="#f7f6f2" font-size="24" font-weight="700">AMEND THE DOCS</text>
-    <text x="800" y="1280" text-anchor="middle" fill="#f7f6f2" font-size="22">before code begins</text>
+  <line x1="120" y1="1225" x2="1480" y2="1225" class="rule"/>
 
-    <line x1="156" y1="1051" x2="156" y2="1280" class="flow" marker-end="url(#arrow-blue)"/>
+  <!-- Stage 3 -->
+  <text x="120" y="1275" class="sans stage">3 · TEST THE DOCUMENTS BEFORE CODE</text>
+  <circle cx="145" cy="1330" r="25" fill="#42647a"/><text x="145" y="1339" class="sans num">7</text>
+  <text x="190" y="1325" class="sans step">Run two complete mental playthroughs</text>
+  <text x="190" y="1361" class="sans body">Author trace + firewalled cold reader → moments, seams, inventions, exploits.</text>
+  <text x="190" y="1397" class="sans body">Diff the traces and amend the binding documents before implementation.</text>
 
-    <!-- Step 3 -->
-    <circle cx="156" cy="1360" r="36" fill="#42647a"/>
-    <text x="156" y="1371" text-anchor="middle" fill="#f7f6f2" font-size="28" font-weight="700">3</text>
-    <text x="220" y="1352" class="primary" font-size="35" font-weight="700">BUILD AND REVIEW AGAINST THE DOCS</text>
-    <text x="220" y="1402" class="secondary" font-size="29">One implementation agent owns each subsystem.</text>
-    <text x="220" y="1446" class="secondary" font-size="29">Separate reviewers compare behavior with the design and code with repository rules.</text>
-    <text x="220" y="1490" class="secondary" font-size="29">Then run typecheck, lint, and build.</text>
-  </g>
+  <line x1="120" y1="1440" x2="1480" y2="1440" class="rule"/>
 
-  <!-- Observable change -->
-  <g id="result" class="sans">
-    <line x1="120" y1="1545" x2="1480" y2="1545" class="rule"/>
-    <text x="120" y="1610" class="accent" font-size="24" font-weight="700" letter-spacing="1.4">WHAT CHANGES</text>
-    <text x="120" y="1670" class="primary" font-size="48" font-weight="700">
-      <tspan x="120" dy="0">New agents inherit direction from files,</tspan>
-      <tspan x="120" dy="58">not from vanished chat context.</tspan>
-    </text>
-    <line x1="120" y1="1765" x2="1480" y2="1765" class="rule"/>
-    <text x="120" y="1800" class="primary" font-size="34" font-weight="700">Write the docs. Test the docs. Then build.</text>
-  </g>
+  <!-- Stage 4 -->
+  <text x="120" y="1478" class="sans stage">4 · EXECUTE EACH SYSTEM AGAINST ITS DESIGN</text>
+  <circle cx="145" cy="1515" r="25" fill="#42647a"/><text x="145" y="1524" class="sans num">8</text>
+  <text x="190" y="1510" class="sans step">Deep builder → two reviewers → fix → mechanical gates</text>
+  <text x="190" y="1544" class="sans body">Review design fidelity and code law in parallel; then typecheck, lint, and build.</text>
 
-  <!-- Identity -->
-  <g id="identity" class="sans">
-    <text x="120" y="1918" class="secondary" font-size="23" letter-spacing="1.1">orchestrating-greenfield-builds</text>
-  </g>
+  <circle cx="145" cy="1580" r="25" fill="#42647a"/><text x="145" y="1589" class="sans num">9</text>
+  <text x="190" y="1575" class="sans step">Turn subjective feedback into replayable evidence</text>
+  <text x="190" y="1609" class="sans body">Deterministic core + input recorder + marker key + headless replay.</text>
+
+  <circle cx="145" cy="1645" r="25" fill="#42647a"/><text x="145" y="1654" class="sans num">10</text>
+  <text x="190" y="1640" class="sans step">Keep the cadence legible</text>
+  <text x="190" y="1674" class="sans body">Humans judge feel; agents verify facts; commit essays preserve the design narrative.</text>
+
+  <line x1="120" y1="1705" x2="1480" y2="1705" class="accent-rule"/>
+  <text x="120" y="1738" class="sans stage">OUTPUT + COMPLETION</text>
+  <text x="120" y="1770" class="sans token">Durable decisions · binding designs · verified systems · replayable feedback</text>
+  <text x="120" y="1798" class="sans small">Complete when each system meets its design, mechanical gates pass, and the human quality gate passes.</text>
+
+  <text x="120" y="1970" class="sans small">orchestrating-greenfield-builds</text>
+  <text x="1480" y="1970" class="sans small" text-anchor="end">current coordination skill → coordinate-agents</text>
 </svg>

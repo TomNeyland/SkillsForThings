@@ -1,7 +1,7 @@
 {
   "name": "misc",
-  "description": "Process skills for research, terminology, copy, long-build orchestration, and technical communication",
-  "version": "0.5.0",
+  "description": "Process skills for prior-art research, terminology, copy, and technical communication; includes the specialized greenfield prototype ancestor of coordinate-agents",
+  "version": "0.6.0",
   "author": {
     "name": "Thomas Neyland",
     "email": "tcneyland@gmail.com"

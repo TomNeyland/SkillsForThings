@@ -1,3 +1,3 @@
 # Framing Skill Infographics
 
-![Turn a target SKILL.md and its required references into a self-contained visual method by reading the full source, choosing the explainer or index surface, writing the solution trace, building SVG and PNG assets, and verifying that a cold reader can repeat the workflow without a caption.](assets/framing-skill-infographics.png)
+![Choose the infographic surface before writing its brief: an individual skill needs an input-to-completion method explainer, a plugin needs every live skill as a routable row, and a repository needs every package with scope and child count; then build SVG, PNG, and README assets and apply the matching cold-reader or routing test.](assets/framing-skill-infographics.png)

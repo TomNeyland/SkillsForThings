@@ -1,133 +1,122 @@
 # OpenAI Prompt Cache: Footgun Catalog
 
-Reference for the `openai-prompt-cache` skill. Each entry: cause, symptom, fix.
+Current source of truth: OpenAI's [Prompt caching guide](https://developers.openai.com/api/docs/guides/prompt-caching). Each entry names the cause, visible symptom, and direct fix.
 
-## High-impact (silent cache annihilators)
+## Prefix-shape failures
 
-### Timestamps in the system prompt
-- **Cause:** `f"You are a helpful assistant. Today is {datetime.now()}."` at prefix head.
-- **Symptom:** `cached_tokens: 0` on every call despite a massive shared prefix.
-- **Fix:** Move time to `metadata` (out-of-band, doesn't enter prefix). If the model genuinely needs the date, put it in the user message (post-prefix).
+### Changing data before the stable boundary
 
-### Regenerating Pydantic schemas per call
-- **Cause:** `client.beta.chat.completions.parse(response_format=Model)` re-serializes the schema each call. Field-definition order, `$defs` ordering, V1↔V2 Optional representation, auto-generated `title` from field names — all sources of byte drift.
-- **Symptom:** Cache hits randomly; correlates with code changes that "shouldn't matter."
-- **Fix:** Snapshot the serialized schema to disk at build time. Load the cached bytes per call. Add a CI test:
-  ```python
-  assert json.dumps(to_strict_json_schema(Model)) == open("schema.json").read()
-  ```
+- **Cause:** timestamps, request IDs, tenant values, retrieved chunks, or user state appear before reusable instructions and examples.
+- **Symptom:** `cached_tokens` is zero or far below the expected stable prefix.
+- **Fix:** move changing content to the tail. On GPT-5.6+, place an explicit breakpoint immediately after the reusable stable region.
 
-### Dynamic `description=` in Pydantic Field
-- **Cause:** `Field(description=f"As of {today}, ...")` — daily byte drift.
-- **Symptom:** Cache hits work for one day, fail the next.
-- **Fix:** Strip dynamic content from descriptions. Move runtime context to user messages.
+### Prefix below 1,024 tokens
 
-### RAG chunk reshuffling
-- **Cause:** Vector DB returns same chunks in different order each call.
-- **Symptom:** Hit rate ~30–50% instead of ~90%.
-- **Fix:** Sort retrieved chunks by stable doc id before splicing. OR put RAG content AFTER the cached system block (in user-message position).
+- **Cause:** the rendered prefix ending at the implicit or explicit breakpoint is too short.
+- **Symptom:** `cached_tokens: 0` even though every byte matches.
+- **Fix:** combine genuinely reusable content before the breakpoint or accept that the request is not cacheable. Do not add meaningless padding.
 
-### Tool JSON serialization order drift
-- **Cause:** `json.dumps(tools)` with default `sort_keys=False` against a Python dict whose order isn't pinned (set→list conversions, dict comprehensions, conditional inclusion).
-- **Symptom:** Same logical tools array; different bytes per call.
-- **Fix:** `json.dumps(tools, sort_keys=True)` once at startup; cache the bytes; reuse forever.
+### Tool or schema byte drift
 
-### Mutating `tools` to gate availability
-- **Cause:** Removing a tool per-call to restrict what the model can call.
-- **Symptom:** Cache misses every time you change which tools are available.
-- **Fix:** Keep `tools[]` constant. Use `tool_choice={"type":"allowed_tools","mode":"auto","tools":[...]}` to restrict per call without mutating the array.
+- **Cause:** per-call regeneration changes key order, field order, descriptions, or the tool list.
+- **Symptom:** logically identical requests miss after a deploy or dependency update.
+- **Fix:** serialize deterministically, snapshot the result, and fail CI when stable tool or schema bytes drift.
 
-### Few-shot examples shuffled "for diversity"
-- **Cause:** Prompt template that randomizes example order.
-- **Symptom:** Cache hit rate inversely correlates with shuffle frequency.
-- **Fix:** Pin the order. If you need diversity, pin per-cohort and shard `prompt_cache_key` accordingly.
+### RAG chunks arrive in a different order
 
-### Sharding `prompt_cache_key` by model name in multi-model workloads
-- **Cause:** `prompt_cache_key=f"{model}:{workload}"` — fragments the cache pool per sibling model.
-- **Symptom:** Cache miss when alternating sibling models on a shared prefix (draft/polish, model bake-off, tiered routing).
-- **Fix (tentative):** Try the SAME `prompt_cache_key` across sibling models. The "prefix cache is shared across siblings" claim rests on a **single unverified HN self-report** (46070749, Nov 2025, 0 comments) — not corroborated. Measure `cached_tokens` before relying on it; if it doesn't help, this footgun doesn't apply to your setup.
+- **Cause:** retrieval returns the same shared documents in nondeterministic order.
+- **Symptom:** the reusable prefix ends at the first reordered chunk.
+- **Fix:** sort genuinely shared chunks by a stable identifier before the breakpoint. Keep request-specific retrieval after the stable boundary.
 
-## Medium-impact
+### Image settings change
 
-### Model alias (`gpt-5.1`) in production
-- **Cause:** Alias resolves to different dated snapshots over time; each snapshot has its own KV cache.
-- **Symptom:** Cache hit rate craters on a date you didn't deploy anything.
-- **Fix:** Pin dated snapshot in production: `gpt-5.1-2026-XX-XX`. Plan an explicit migration when bumping.
+- **Cause:** image data, URL, ordering, or `detail` changes.
+- **Symptom:** otherwise identical multimodal requests miss.
+- **Fix:** keep all image inputs before the breakpoint identical, including `detail`; put changing images after the reusable boundary.
 
-### `instructions` parameter on Responses API
-- **Cause:** Putting your system prompt in the `instructions` top-level parameter on Responses.
-- **Symptom:** No cache hit despite >1,024 tokens of stable content.
-- **Fix:** Put system prompt as a `developer` role item at head of `input` instead.
-- **Status:** Reported since Aug 2025 ([thread 1346849](https://community.openai.com/t/problem-caching-system-prompt/1346849)); no OpenAI acknowledgment or fix found, so apparently still current. (Earlier drafts gave precise "Feb 2026 / May 2026" datestamps that aren't sourced — the verifiable evidence is Aug 2025.)
+## GPT-5.6+ control failures
 
-### Image `detail` parameter changes
-- **Cause:** Flipping image `detail` between `low`/`high`/`auto` retokenizes the image.
-- **Symptom:** Cache misses on otherwise-identical prompts containing images.
-- **Fix:** Pin `detail` per workload.
+### Omitting `prompt_cache_key`
 
-### Reasoning effort changes between calls
-- **Cause:** `reasoning.effort` is part of the request signature.
-- **Symptom:** Cache miss when toggling effort.
-- **Fix:** Pin effort per workload chain. If you need both low and high effort, treat them as separate cache pools.
+- **Cause:** relying on automatic routing without a workload key.
+- **Symptom:** occasional automatic hits but inconsistent matching across repeated requests.
+- **Fix:** set and consistently reuse `prompt_cache_key`. GPT-5.6+ requires it for the more reliable matching path.
 
-### Service tier switching
-- **Cause:** `service_tier="standard"` vs `"flex"` vs `"priority"` *may* route to different pools — **unverified**, no doc or thread ties `service_tier` to cache-pool routing.
-- **Symptom:** Reported anecdotally; not confirmed.
-- **Fix:** Pin tier per workload as a cheap precaution, but don't assume switching busts cache as established fact.
+### One key receives too much traffic
 
-### Forgetting `prompt_cache_retention="24h"` on slow workloads
-- **Cause:** `in_memory` retention's 5–10 min TTL evicts before the next call in a low-cadence batch.
-- **Symptom:** Cache hits within a burst; miss between bursts.
-- **Fix:** Mostly already handled — GPT-5-series non-ZDR orgs **default to `24h` since 2026-05-29**, and gpt-5.5+ only allows `24h`. You only need to set it explicitly on `in_memory`-default paths (pre-GPT-5, or ZDR orgs, where `24h` is still permitted).
+- **Cause:** total traffic for a key substantially exceeds approximately 15 requests per minute.
+- **Symptom:** requests spill to other machines and some miss.
+- **Fix:** partition into more stable keys. Requests that should share a prefix must continue to map to the same key.
 
-### Exceeding 15 RPM per (prefix, key) bucket
-- **Cause:** One workload generates >15 requests/min sharing the same prefix and key.
-- **Symptom:** Hit rate plateaus around 60–70% even with stable prefix.
-- **Fix:** Shard the key: `prompt_cache_key=f"workflow-v3-shard-{i%N}"` for N workers/buckets.
+### Explicit mode without a breakpoint
 
-## Low-impact / subtle
+- **Cause:** `prompt_cache_options.mode="explicit"` but no content block has `prompt_cache_breakpoint`.
+- **Symptom:** no cache read, no cache write, and both usage fields remain zero.
+- **Fix:** add a marker after the stable content, or use implicit mode intentionally.
 
-### Lark grammar with interpolated values
-- **Cause:** Grammar terminal like `ID: "12345" | "67890"` with per-call values.
-- **Symptom:** Cache miss every call on the entire tools array.
-- **Fix:** Don't interpolate. Define a generic terminal (`ID: /\d+/`) and validate post-hoc.
+### Marker on the wrong block
 
-### Lark grammar regenerated by `lark.Lark(...).source`
-- **Cause:** Lark library output not byte-stable across versions.
-- **Symptom:** Cache hits work locally but break in CI / new env.
-- **Fix:** Snapshot the grammar string to disk; ship the snapshot, not the regenerated value.
+- **Cause:** applying a breakpoint to an unsupported content type or using a mode other than `explicit` on the marker.
+- **Symptom:** `400 invalid_request_error`.
+- **Fix:** use only documented blocks: Responses `input_text`/`input_image`/`input_file`; Chat Completions `text`/`image_url`/`input_audio`/`file`/`refusal`.
 
-### Planner→executor with grammar interpolation
-- **Cause:** Planner emits a value that gets interpolated into executor's grammar definition.
-- **Symptom:** Executor cache hit rate ~0%.
-- **Fix:** Pre-define a fixed executor grammar that admits all valid planner outputs, OR pass planner output as text in the user message and validate post-hoc.
+### Too many new write candidates
 
-### Comments / whitespace drift in grammars
-- **Cause:** Auto-formatter re-flows whitespace; revision header `# rev: 2026-05-02` updates per deploy.
-- **Symptom:** Cache miss after innocuous "cleanup" PR.
-- **Fix:** Strip comments and normalize whitespace before snapshotting.
+- **Cause:** expecting every marker in a long conversation to be written again.
+- **Symptom:** only the latest eligible breakpoints become new cache writes.
+- **Fix:** design around the four-new-writes-per-request limit. Implicit mode reserves one slot for the latest message; explicit mode can use four explicit writes. Earlier-turn breakpoints are read-only.
 
-### Conversation compaction breaking multi-turn cache
-- **Cause:** Summarizing earlier turns mid-conversation changes the prefix.
-- **Symptom:** Cache hits within compaction boundaries; miss at boundaries.
-- **Fix:** Append-only between compactions. If compaction is necessary, do it on a stable cadence (every N turns) so the new compressed prefix amortizes for the next N.
+### Treating `ttl` as a maximum or storage policy
 
-### `previous_response_id` cost trap (Responses)
-- **Cause:** Assuming `previous_response_id` is server-side compression. It's not — every prior token is re-billed as input on every call.
-- **Symptom:** Token usage grows linearly with conversation length even with `previous_response_id`.
-- **Fix:** Cache hits are what make `previous_response_id` economical. If your hit rate isn't high, manual resend is no worse.
+- **Cause:** reading `prompt_cache_options.ttl="30m"` as “delete at 30 minutes” or as the replacement name for `in_memory`/`24h`.
+- **Symptom:** incorrect eviction and compliance assumptions.
+- **Fix:** treat `30m` as the minimum eligible lifetime for GPT-5.6+ breakpoints. It is the only supported value and the default; OpenAI may retain the prefix longer.
 
-### Pydantic / OpenAI SDK version bumps
-- **Cause:** `pydantic` or `openai` minor bump changes the strict-transform pipeline output bytes.
-- **Symptom:** Cache misses after `pip install --upgrade`.
-- **Fix:** Pin both library versions. Treat upgrades as schema migrations: regenerate snapshot, commit, deploy.
+### Ignoring cache-write billing
 
-### Fine-tuned model has its own compile cache
-- **Cause:** Schema-compilation cache is per-FT-deployment.
-- **Symptom:** First call to each FT model has full compile-latency penalty.
-- **Fix:** Warmup call per FT deployment at process start.
+- **Cause:** optimizing only for `cached_tokens` as if writes were free.
+- **Symptom:** a workload repeatedly pays cache writes at 1.25× uncached input cost without enough later reads to recover the charge.
+- **Fix:** log `cache_write_tokens` and `cached_tokens`; move or remove breakpoints whose writes are not amortized.
 
-### `user` field used for cache routing (deprecated)
-- **Cause:** Old guidance recommended `user` for cache bucketing.
-- **Symptom:** Routing-stickiness benefits no longer come from `user`.
-- **Fix:** Use `prompt_cache_key` for routing and `safety_identifier` for abuse signals — these split off the `user` field's old roles (the split is documented; the often-cited "July 31, 2025" date is community-sourced, not an official changelog entry).
+## Earlier-model control failures
+
+### Sending GPT-5.6 fields to an earlier model
+
+- **Cause:** using `prompt_cache_options` or `prompt_cache_breakpoint` on a pre-GPT-5.6 model.
+- **Symptom:** the request is rejected.
+- **Fix:** use that model's automatic prompt caching and `prompt_cache_retention` where supported.
+
+### Reusing obsolete retention guidance
+
+- **Cause:** assuming every GPT-5-era model has the same default or supports the same policies.
+- **Symptom:** invalid parameters or a cache lifetime different from the workload design.
+- **Fix:** check the official support list and set `prompt_cache_retention` explicitly when available. `gpt-5.5` and `gpt-5.5-pro` accept only `24h`; GPT-5.6+ uses `prompt_cache_options.ttl` instead.
+
+## Measurement failures
+
+### Reading the wrong usage path
+
+- **Cause:** using the Chat Completions path on a Responses object or vice versa.
+- **Symptom:** dashboards report zero even when the API returned cache activity.
+- **Fix:** read `usage.prompt_tokens_details` on Chat Completions and `usage.input_tokens_details` on Responses. Log both `cached_tokens` and, on GPT-5.6+, `cache_write_tokens`.
+
+### Testing with one request
+
+- **Cause:** treating a cold call as proof of broken caching.
+- **Symptom:** false diagnosis before any reusable prefix has been written and routed.
+- **Fix:** test a representative sequence with the same key and exact prefix; compare writes and later reads.
+
+### Forecasting from discounts without measuring writes
+
+- **Cause:** multiplying input tokens by a cached-input price while assuming every eligible token is read from cache.
+- **Symptom:** real cost exceeds the forecast.
+- **Fix:** calculate from observed uncached input, `cache_write_tokens`, and `cached_tokens` separately.
+
+## Community-reported compatibility checks
+
+These are useful diagnostics, not official contracts:
+
+- **Responses `instructions`:** users reported weaker reuse than placing the same text in a leading `developer` input item ([thread 1346849](https://community.openai.com/t/problem-caching-system-prompt/1346849)). If a workload misses, compare both shapes and inspect `cached_tokens`.
+- **Some pre-GPT-5.6 model paths:** user measurements reported inconsistent caching on mini, nano, GPT-5.4, and GPT-5.5 variants ([thread 1368208](https://community.openai.com/t/possible-cache-issue-on-gpt-5-mini-and-gpt-5-nano/1368208), [thread 1384129](https://community.openai.com/t/prompt-cache-documented-byte-prefix-matching-does-not-occur-on-gpt-5-4-gpt-5-5-when-trailing-user-content-exceeds-500-tokens/1384129)). Instrument the selected model rather than applying those reports as universal rates.
+
+Do not carry those older-model anecdotes forward as claims about GPT-5.6+. The official guide documents a different matching and breakpoint system for GPT-5.6 and later families.

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
   <title id="title">Conductor skill index: seven composable skills</title>
-  <desc id="desc">A literal directory index with Skill, Use When, and Output columns. Autonomous Build is the long-session entrypoint; Coordinate Agents manages parallel owned work and integration inside that session or independently; Fan and Critic supplies independent review to either.</desc>
+  <desc id="desc">A literal directory index with Skill, Use When, and Output columns. Autonomous Build is the long-session entrypoint; Coordinate Agents manages parallel owned work and integration; Fan and Critic adds two standing opposed reviewers, an enthusiast and a harsh critic, to repeated changes.</desc>
 
   <rect width="1600" height="2000" fill="#f7f6f2"/>
 
@@ -18,7 +18,7 @@
   <text x="520" y="470" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">manages parallel owned work and integration inside it—or independently.</text>
 
   <text x="120" y="516" font-family="Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#181816">fan-and-critic</text>
-  <text x="520" y="516" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">supplies independent attempts and review to either workflow.</text>
+  <text x="520" y="516" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">adds opposed standing review: what lands versus what is weak.</text>
 
   <line x1="120" y1="558" x2="1480" y2="558" stroke="#d1d0ca" stroke-width="3"/>
   <text x="120" y="600" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="1.6" fill="#51514d">SKILL</text>
@@ -51,12 +51,12 @@
 
   <text x="120" y="904" font-family="Menlo, Consolas, monospace" font-size="25" font-weight="700" fill="#181816">fan-and-critic</text>
   <text x="520" y="892" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#181816">
-    <tspan x="520" dy="0">One AI pass is not enough</tspan>
-    <tspan x="520" dy="36">to trust an artifact.</tspan>
+    <tspan x="520" dy="0">A long build needs outside eyes</tspan>
+    <tspan x="520" dy="36">without constant user review.</tspan>
   </text>
   <text x="1080" y="892" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">
-    <tspan x="1080" dy="0">Independent attempts +</tspan>
-    <tspan x="1080" dy="36">ranked fault findings</tspan>
+    <tspan x="1080" dy="0">Convergences + decisions</tspan>
+    <tspan x="1080" dy="36">on what to fix or protect</tspan>
   </text>
   <line x1="120" y1="964" x2="1480" y2="964" stroke="#d1d0ca" stroke-width="2"/>
 

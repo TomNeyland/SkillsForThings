@@ -83,13 +83,14 @@ Launch subagents simultaneously, each investigating a different angle:
 4. **Precedent agent** — Search for how established projects solved this. Query: "how does [well-known open-source project] handle [problem]", GitHub repos with >1K stars
 5. **Data sources agent** — Search for freely available datasets, APIs, registries. Query: "[domain] API", "[domain] registry", "[domain] database free"
 
-Each agent reports: name, coverage, ID format, API/data access, license, adoption level.
+Each agent reports: name, which declared requirements it satisfies, ID format, API/data access,
+license, and adoption level.
 
 ### Step 3: Compile Comparison Table
 
 Present findings as:
 
-| Option | Coverage | ID Format | Access | License | Adoption | Fits Our Needs? |
+| Option | Weighted Must-Have Fit | ID Format | Access | License | Adoption | Fits Our Needs? |
 |--------|----------|-----------|--------|---------|----------|-----------------|
 | Standard A | ... | ... | ... | ... | ... | ... |
 | Library B | ... | ... | ... | ... | ... | ... |
@@ -97,11 +98,15 @@ Present findings as:
 
 ### Step 4: Recommend
 
+If a numeric comparison helps, define it before scoring: list must-have requirements, assign weights
+that total 100%, and score every option against cited evidence. The thresholds below are a **default
+decision heuristic**, not empirical cutoffs. A single disqualifying gap overrides the aggregate score.
+
 One of three outcomes:
 
-- **ADOPT** — An existing standard, library, or technique covers >80% of needs. Use it directly (call the library, map to their IDs, apply the pattern). Worth the upfront cost.
-- **ADAPT** — Existing coverage is 50-80%. Use it as the base, extend with a thin custom layer for the gaps. Document what's off-the-shelf vs custom.
-- **BUILD CUSTOM** — Nothing covers >50%, or the domain is genuinely novel. But document WHY existing options were rejected, so future work doesn't re-discover them from scratch.
+- **ADOPT** — Weighted must-have fit is at least 80% with no disqualifying gap. Use the option directly (call the library, map to its IDs, apply the pattern). Worth the upfront cost.
+- **ADAPT** — Weighted fit is at least 50% but below 80%, with bounded gaps. Use it as the base, extend with a thin custom layer, and document what's off-the-shelf versus custom.
+- **BUILD CUSTOM** — Weighted fit is below 50%, a must-have gap is disqualifying, or the domain is genuinely novel. Document WHY existing options were rejected so future work does not repeat the search.
 
 ## What to Search For (by problem type)
 

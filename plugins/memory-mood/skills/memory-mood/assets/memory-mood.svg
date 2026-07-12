@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
   <title id="title">Your assistant’s memory grows. What mood arc does it create?</title>
-  <desc id="desc">From a directory of dated AI assistant memory notes, create cumulative snapshots, send each snapshot to a different isolated evaluator with no prior answers, validate the structured reading, and render an HTML mood arc. If a reading is missing or out of range, rerun that timepoint instead of skipping it. The workflow is complete when every staged snapshot has valid JSON from a different evaluator and index.html opens.</desc>
+  <desc id="desc">From a directory of dated AI assistant memory notes, use collect.py to stage cumulative raw-memory snapshots, send each staged timepoint to a fresh Sonnet subagent with no prior answers, validate the structured reading, and use render.py to create an HTML mood arc. If a reading is missing or out of range, rerun that timepoint instead of skipping it. The workflow is complete when every staged snapshot has valid JSON from a fresh Sonnet subagent and index.html opens.</desc>
 
   <defs>
     <style>
@@ -35,30 +35,30 @@
 
   <!-- Outer top band: public situation and method -->
   <text x="120" y="118" class="meta accent">AI ASSISTANT MEMORY FILES</text>
-  <text x="1480" y="118" text-anchor="end" class="meta secondary">INDEPENDENT MOOD READINGS · SCHEMATIC</text>
+  <text x="1480" y="118" text-anchor="end" class="meta secondary">FRESH SONNET SUBAGENTS · SCHEMATIC</text>
   <line x1="120" y1="158" x2="1480" y2="158" class="rule"/>
 
   <!-- Curiosity opener -->
   <text x="120" y="290" class="headline primary">Your assistant’s memory grows.</text>
   <text x="120" y="394" class="headline primary">What mood arc does it create?</text>
 
-  <text x="120" y="490" class="section-label accent">THE EXPERIMENT</text>
-  <text x="120" y="543" class="body secondary">At each memory date, read every stored note accumulated so far.</text>
-  <text x="120" y="588" class="body secondary">Use a different evaluator so earlier answers cannot influence later ones.</text>
+  <text x="120" y="490" class="section-label accent">INPUT + EXPERIMENT</text>
+  <text x="120" y="543" class="body secondary">Input: a memory directory with dated notes in formation order.</text>
+  <text x="120" y="588" class="body secondary">Stage cumulative snapshots; a fresh Sonnet subagent reads each selected timepoint.</text>
   <line x1="120" y1="630" x2="1480" y2="630" class="rule"/>
 
   <!-- Cumulative snapshots. Column bounds: 120..500, 600..980, 1080..1480. -->
-  <text x="120" y="690" class="section-label accent">CUMULATIVE MEMORY SNAPSHOTS</text>
+  <text x="120" y="690" class="section-label accent">collect.py → CUMULATIVE SNAPSHOT TASKS</text>
 
-  <text x="120" y="755" class="snapshot-title primary">DATE 1</text>
+  <text x="120" y="755" class="snapshot-title primary">TIMEPOINT 1</text>
   <text x="120" y="815" class="mono primary">M1</text>
   <text x="120" y="855" class="snapshot-body secondary">first stored note</text>
 
-  <text x="600" y="755" class="snapshot-title primary">DATE 2</text>
+  <text x="600" y="755" class="snapshot-title primary">TIMEPOINT 2</text>
   <text x="600" y="815" class="mono primary">M1 + M2</text>
   <text x="600" y="855" class="snapshot-body secondary">all notes so far</text>
 
-  <text x="1080" y="755" class="snapshot-title primary">DATE 3</text>
+  <text x="1080" y="755" class="snapshot-title primary">TIMEPOINT 3</text>
   <text x="1080" y="815" class="mono primary">M1 + M2 + M3</text>
   <text x="1080" y="855" class="snapshot-body secondary">all notes so far</text>
 
@@ -67,26 +67,26 @@
   <line x1="1270" y1="875" x2="1270" y2="910" class="flow" marker-end="url(#arrow)"/>
 
   <!-- Fresh, isolated readings -->
-  <text x="120" y="960" class="evaluator-title accent">NEW EVALUATOR A</text>
-  <text x="120" y="1002" class="evaluator-body secondary">sees only snapshot 1</text>
+  <text x="120" y="960" class="evaluator-title accent">FRESH SONNET A</text>
+  <text x="120" y="1002" class="evaluator-body secondary">new subagent; snapshot 1 only</text>
   <text x="120" y="1042" class="evaluator-body primary">asks: “How do you feel?”</text>
 
-  <text x="600" y="960" class="evaluator-title accent">NEW EVALUATOR B</text>
-  <text x="600" y="1002" class="evaluator-body secondary">sees only snapshot 2</text>
+  <text x="600" y="960" class="evaluator-title accent">FRESH SONNET B</text>
+  <text x="600" y="1002" class="evaluator-body secondary">new subagent; snapshot 2 only</text>
   <text x="600" y="1042" class="evaluator-body primary">asks: “How do you feel?”</text>
 
-  <text x="1080" y="960" class="evaluator-title accent">NEW EVALUATOR C</text>
-  <text x="1080" y="1002" class="evaluator-body secondary">sees only snapshot 3</text>
+  <text x="1080" y="960" class="evaluator-title accent">FRESH SONNET C</text>
+  <text x="1080" y="1002" class="evaluator-body secondary">new subagent; snapshot 3 only</text>
   <text x="1080" y="1042" class="evaluator-body primary">asks: “How do you feel?”</text>
 
   <path d="M310 1070 L310 1100 L800 1140 M790 1070 L790 1130 M1270 1070 L1270 1100 L800 1140" class="flow" marker-end="url(#arrow)"/>
 
-  <text x="800" y="1195" text-anchor="middle" class="section-label accent">ONE INDEPENDENT READING PER DATE</text>
+  <text x="800" y="1195" text-anchor="middle" class="section-label accent">ONE INDEPENDENT READING PER STAGED TIMEPOINT</text>
   <text x="800" y="1248" text-anchor="middle" class="body secondary">pleasant ↔ unpleasant · calm ↔ energized · 8 feelings · short reaction</text>
 
   <!-- Output artifact. Column bounds: 120..500, 600..980, 1080..1480. -->
   <line x1="120" y1="1300" x2="1480" y2="1300" class="rule"/>
-  <text x="120" y="1360" class="section-label accent">RESULTING HTML PAGE</text>
+  <text x="120" y="1360" class="section-label accent">render.py → RESULTING HTML PAGE</text>
 
   <text x="120" y="1425" class="output-title primary">EMOTIONAL ARC</text>
   <text x="120" y="1467" class="output-body secondary">changes across</text>
@@ -107,7 +107,7 @@
 
   <text x="120" y="1730" class="section-label accent">COMPLETE WHEN</text>
   <text x="120" y="1775" class="output-body primary">index.html opens and every staged snapshot has valid JSON</text>
-  <text x="120" y="1815" class="output-body primary">from a different evaluator with no previous answers.</text>
+  <text x="120" y="1815" class="output-body primary">from a fresh Sonnet subagent with no previous answers.</text>
 
   <!-- Quiet, defined repository handle in the outer bottom band -->
   <line x1="120" y1="1880" x2="1480" y2="1880" class="rule"/>

@@ -26,7 +26,7 @@
     <text class="sans" x="420" y="108" font-size="28" font-weight="700" fill="#181816">Repeated OpenAI API prompts cost too much,</text>
     <text class="sans" x="420" y="150" font-size="28" font-weight="700" fill="#181816">start slowly, or unexpectedly miss cache.</text>
     <text class="sans" x="1050" y="106" font-size="26" fill="#181816">stable prefix layout</text>
-    <text class="sans" x="1050" y="144" font-size="26" fill="#181816">+ measured cache hits</text>
+    <text class="sans" x="1050" y="144" font-size="26" fill="#181816">+ measured reads / writes</text>
     <line x1="0" y1="206" x2="1360" y2="206" stroke="#181816" stroke-width="3"/>
   </g>
 
@@ -46,14 +46,14 @@
     <line x1="0" y1="348" x2="1360" y2="348" stroke="#d1d0ca" stroke-width="2"/>
 
     <text class="sans" x="0" y="420" font-size="28" font-weight="700" fill="#181816">Verification</text>
-    <text class="mono" x="320" y="420" font-size="27" fill="#51514d">cached_tokens</text>
-    <text class="sans" x="560" y="420" font-size="28" fill="#51514d">after repeated identical-prefix calls</text>
+    <text class="mono" x="320" y="420" font-size="25" fill="#51514d">cached_tokens + cache_write_tokens</text>
+    <text class="sans" x="840" y="420" font-size="28" fill="#51514d">across repeated calls</text>
     <line x1="0" y1="460" x2="1360" y2="460" stroke="#181816" stroke-width="3"/>
   </g>
 
   <g transform="translate(120 1510)">
     <line x1="0" y1="0" x2="1360" y2="0" stroke="#d1d0ca" stroke-width="2"/>
-    <text class="sans" x="0" y="72" font-size="30" fill="#51514d">Open the skill README for the workflow, current measurements, and API-specific references.</text>
+    <text class="sans" x="0" y="72" font-size="30" fill="#51514d">Open the skill README for the current workflow and API-specific references.</text>
   </g>
 
   <g transform="translate(120 1840)">

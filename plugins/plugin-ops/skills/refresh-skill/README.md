@@ -1,3 +1,3 @@
 # Refresh Skill
 
-![After an external release, audit a reusable AI instruction file by inventorying volatile claims, checking current sources, assigning statuses, editing, and versioning by impact; output an updated cited guide and change log, complete when every claim is statused and local reinstall passes.](assets/refresh-skill.png)
+![After an SDK, model, or API release, read a skill and all references, inventory and cluster volatile claims, send one focused research agent per cluster, synthesize statuses and contradictions before editing, choose PATCH, MINOR, or MAJOR by guidance impact, commit a cited change log, and reinstall locally; complete when every claim is resolved and the refreshed skill passes.](assets/refresh-skill.png)

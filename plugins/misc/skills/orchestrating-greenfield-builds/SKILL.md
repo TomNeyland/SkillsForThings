@@ -1,11 +1,14 @@
 ---
 name: orchestrating-greenfield-builds
-description: Use when a user brings a product idea for a long autonomous multi-agent build session — greenfield or rebuilding a mediocre predecessor — and expects showcase-grade quality ("this will be public", "make it excellent", "unbounded time"). Also when a build will span many sessions/context windows and future agents must inherit intent, or when a predecessor codebase exists and you're tempted to inherit its stack, fixes, or roadmap.
+description: Use when a showcase-grade greenfield or rebuild session needs the specialized multi-stage orchestration workflow for preserving intent across agents and sessions. This is the prototype ancestor of `coordinate-agents`; use `coordinate-agents` for general coordination.
 ---
 
-# Orchestrating Greenfield Builds
+# Orchestrating Greenfield Builds (Prototype)
 
 ## Overview
+
+**Status: prototype ancestor of `coordinate-agents`.** This remains the active, specialized
+greenfield workflow. Use `coordinate-agents` for general multi-agent coordination.
 
 You are the product's **continuity of intent**. Delegate everything except
 judgment: capturing decisions, making rulings, and authoring design docs.

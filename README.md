@@ -24,12 +24,12 @@ claude plugin install conductor@SkillsForThings
 
 ### `conductor`
 
-Coordinate a fleet of subagents to do what one context can't — delegate owned units, review with a dual-model critic, trace the seams, integrate. Ships five ready-to-delegate subagents (`implementer`, `correctness-reviewer`, `integration-gap-auditor`, `scout`, `design-steward`).
+Coordinate a fleet of subagents to do what one context can't — delegate owned units, review by blast radius, trace the seams, and integrate. Includes a standing enthusiast/critic pair and five ready-to-delegate subagents (`implementer`, `correctness-reviewer`, `integration-gap-auditor`, `scout`, `design-steward`).
 
 | Skill | Use when |
 |---|---|
 | `coordinate-agents` | A task is large enough to split across multiple subagents you coordinate as the lead, rather than doing it all in one context |
-| `fan-and-critic` | One pass isn't enough to trust a result — you need parallel breadth (options, perspectives, coverage), an adversarial check of an artifact before you act, or both |
+| `fan-and-critic` | A long autonomous build needs two standing outside perspectives on repeated artifacts: an enthusiast identifying what genuinely lands and a harsh critic identifying what is weak |
 | `autonomous-build` | Explicitly kicking off a long, autonomous product-building session by name |
 | `autonomous-build-purpose-layers` | Deciding what to build next in a long session — advancing the product's arc of purpose, not polishing the last view |
 | `autonomous-build-jealousy-ranking` | Ranking a backlog or filing issues — tool-vs-toy, red-team, kill-and-replace |
@@ -58,12 +58,12 @@ Skills for maintaining the marketplace itself — refreshing stale claims, valid
 
 ### `memory-mood`
 
-Replays the memory files your assistant has formed — one at a time, in formation order — and after each asks the plainest question, *how do you feel?* Renders a self-contained HTML page: an emotional-arc chart (valence, arousal, eight named feelings) plus a timestamped "tweet feed" of how it felt as each memory landed.
+Replays staged cumulative snapshots of your assistant's memory files in formation order and asks a fresh judge at each selected timepoint, *how do you feel?* Renders a self-contained HTML page with an emotional-arc chart and timestamped reaction feed.
 
 | Skill | Use when |
 |---|---|
 | `memory-mood` | Visualizing the mood/emotional arc of your assistant's accumulating memories; free-tier (Sonnet subagents, one reading per timepoint, no API key, stdlib only) |
-| `memory-mood-openai` | Same, but high-fidelity via the OpenAI API — k samples per timepoint averaged with ±1σ confidence bands (requires `OPENAI_API_KEY`) |
+| `memory-mood-openai` | Same, but via the OpenAI API — k independent readings per selected snapshot, averaged with visible ±1σ call-to-call spread (requires `OPENAI_API_KEY`) |
 
 ### `misc`
 
@@ -71,10 +71,10 @@ Assorted process skills that don't fit an existing plugin family.
 
 | Skill | Use when |
 |---|---|
-| `prior-art` | Before building a custom identifier scheme, data model, algorithm, file format, or taxonomy; noticing you're about to hand-roll something that feels like a solved problem; starting work in an unfamiliar domain |
+| `prior-art` | Before hand-rolling a capability, choosing a library, technique, or data source, or designing a custom identifier, schema, algorithm, file format, or taxonomy |
 | `align-terminology` | Reviewing or designing schema field / model / enum names, or auditing names against authoritative terminology |
 | `cutting-internal-leaks-from-copy` | Reviewing or writing customer-facing prose an LLM produced, to catch material that leaks the machine's internals, the build process, the author's hedging, or copy narrating its own device |
-| `orchestrating-greenfield-builds` | A user brings a product idea for a long autonomous multi-agent build session (greenfield or rebuilding a mediocre predecessor) with a showcase-grade quality bar; a build spans many sessions and future agents must inherit intent; a predecessor codebase tempts you to inherit its stack, fixes, or roadmap |
+| `orchestrating-greenfield-builds` | Prototype ancestor of `coordinate-agents`; use its specialized ten-stage workflow for showcase-grade greenfield or rebuild sessions that must preserve intent across agents and contexts |
 | `creating-technical-infographics` | Turning technical explanations, workflows, failures, comparisons, or instructions into plain, editable 4:5 SVG and PNG infographics for mobile feeds |
 
 See `CLAUDE.md` for contribution conventions.

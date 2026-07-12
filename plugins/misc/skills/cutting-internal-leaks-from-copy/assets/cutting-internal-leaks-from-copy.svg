@@ -1,83 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
-  <title id="title">Accurate copy can still sound machine-written.</title>
-  <desc id="desc">LLM-drafted customer copy often sounds artificial when it describes the writer, production process, or implementation instead of the reader’s result. Edit each sentence by choosing one treatment: cut information the reader does not need, rewrite useful facts in reader language, or relocate useful facts to where the question occurs.</desc>
-
-  <defs>
-    <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
-      <path d="M1,1 L13,7 L1,13 Z" fill="#42647a"/>
-    </marker>
-  </defs>
-
+  <title id="title">Cutting internal leaks from customer-facing copy</title>
+  <desc id="desc">Audit every reader-visible string for eight kinds of backstage leakage, ask whether each sentence serves the reader's next action in this place, then cut unneeded material, rewrite internal language, or relocate useful facts. High-stakes surfaces receive two independent reviews.</desc>
   <rect width="1600" height="2000" fill="#f7f6f2"/>
+  <style>
+    .sans { font-family: Helvetica, Arial, sans-serif; fill: #181816; }
+    .meta { font-size: 23px; font-weight: 700; letter-spacing: 2.3px; fill: #42647a; }
+    .headline { font-size: 72px; font-weight: 700; }
+    .subhead { font-size: 29px; fill: #51514d; }
+    .stage { font-size: 25px; font-weight: 700; letter-spacing: 1.5px; fill: #42647a; }
+    .class-name { font-size: 27px; font-weight: 700; }
+    .body { font-size: 28px; fill: #51514d; }
+    .small { font-size: 22px; fill: #51514d; }
+    .action { font-size: 31px; font-weight: 700; fill: #42647a; }
+    .rule { stroke: #d1d0ca; stroke-width: 3; }
+    .accent-rule { stroke: #42647a; stroke-width: 4; }
+  </style>
 
-  <g font-family="Helvetica, Arial, sans-serif" fill="#181816">
-    <text x="120" y="130" font-size="24" font-weight="700" letter-spacing="3" fill="#42647a">LLM-DRAFTED CUSTOMER COPY / EDITING TEST</text>
+  <text x="120" y="100" class="sans meta">CUSTOMER-FACING COPY AUDIT</text>
+  <text x="1480" y="100" class="sans meta" text-anchor="end">LLM-DRAFTED PROSE</text>
+  <line x1="120" y1="140" x2="1480" y2="140" class="rule"/>
 
-    <text x="120" y="305" font-size="92" font-weight="700" letter-spacing="-3">Accurate copy can still</text>
-    <text x="120" y="410" font-size="92" font-weight="700" letter-spacing="-3">sound machine-written.</text>
-    <text x="120" y="500" font-size="34" fill="#51514d">LLM drafts often explain how they were made instead of what the reader gets.</text>
+  <text x="120" y="235" class="sans headline">
+    <tspan x="120" dy="0">Remove backstage material</tspan>
+    <tspan x="120" dy="82">before the reader sees it.</tspan>
+  </text>
+  <text x="120" y="425" class="sans subhead">Input: every reader-visible string, including UI labels, tooltips, alt text,</text>
+  <text x="120" y="466" class="sans subhead">errors, empty states, charts, metadata, documentation, and marketing copy.</text>
 
-    <line x1="120" y1="570" x2="1480" y2="570" stroke="#d1d0ca" stroke-width="2"/>
+  <line x1="120" y1="515" x2="1480" y2="515" class="rule"/>
 
-    <text x="120" y="630" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">ONE CUSTOMER-FACING SENTENCE, EDITED</text>
+  <text x="120" y="565" class="sans stage">1 · SWEEP TWICE</text>
+  <text x="120" y="610" class="sans class-name">Grep the visible strings</text>
+  <text x="120" y="647" class="sans body">Find machinery tokens, “real/really,” TL;DR, failure words, raw fields, and repeated em dashes.</text>
+  <text x="120" y="701" class="sans class-name">Then read every string end to end</text>
+  <text x="120" y="738" class="sans body">The worst leaks describe intent, condescend, or manipulate. They have no reliable keyword.</text>
 
-    <text x="120" y="700" font-size="22" font-weight="700" letter-spacing="2" fill="#a14332">BEFORE</text>
-    <g font-size="50" font-weight="700">
-      <text x="120" y="775">“A</text>
-      <text x="190" y="775" fill="#a14332">real</text>
-      <line x1="190" y1="788" x2="282" y2="788" stroke="#a14332" stroke-width="4"/>
-      <text x="298" y="775">analysis of two datasets.”</text>
-    </g>
-    <text x="120" y="835" font-size="30" fill="#51514d">“Real” reassures the writer. It does not tell the reader what they get.</text>
+  <line x1="120" y1="785" x2="1480" y2="785" class="rule"/>
 
-    <line x1="170" y1="875" x2="170" y2="945" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
-    <text x="220" y="920" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">DELETE WHAT THE READER DOES NOT NEED</text>
+  <text x="120" y="825" class="sans stage">2 · CLASSIFY THE LEAK</text>
 
-    <text x="120" y="990" font-size="22" font-weight="700" letter-spacing="2" fill="#42647a">AFTER</text>
-    <text x="120" y="1065" font-size="54" font-weight="700">“Two datasets, compared.”</text>
-    <text x="120" y="1120" font-size="30" fill="#51514d">The sentence now states the result directly.</text>
+  <!-- two-column class inventory -->
+  <text x="120" y="865" class="sans class-name">MACHINERY</text>
+  <text x="120" y="898" class="sans body">Implementation vocabulary reaches the reader.</text>
+  <text x="120" y="945" class="sans class-name">FOURTH WALL / MAKING-OF</text>
+  <text x="120" y="978" class="sans body">The copy references its author or construction.</text>
+  <text x="120" y="1025" class="sans class-name">DEVICE NARRATION</text>
+  <text x="120" y="1058" class="sans body">The copy announces its own structure or intent.</text>
+  <text x="120" y="1105" class="sans class-name">FAILURE-FORWARD</text>
+  <text x="120" y="1138" class="sans body">Reassurance creates a doubt before it exists.</text>
 
-    <line x1="120" y1="1170" x2="1480" y2="1170" stroke="#d1d0ca" stroke-width="2"/>
+  <line x1="800" y1="842" x2="800" y2="1160" class="rule"/>
 
-    <text x="120" y="1230" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">FOR EVERY CUSTOMER-FACING SENTENCE, ASK</text>
-    <text x="120" y="1300" font-size="44" font-weight="700">Does the reader need this information here, in these words?</text>
+  <text x="850" y="865" class="sans class-name">CONDESCENSION</text>
+  <text x="850" y="898" class="sans body">The reader's own tools are explained back to them.</text>
+  <text x="850" y="945" class="sans class-name">CORRECTION SCAR</text>
+  <text x="850" y="978" class="sans body">The clean artifact records the flaw it just fixed.</text>
+  <text x="850" y="1025" class="sans class-name">QUIET PART OUT LOUD</text>
+  <text x="850" y="1058" class="sans body">The copy narrates the persuasion it is performing.</text>
+  <text x="850" y="1105" class="sans class-name">STYLE SIGNATURE</text>
+  <text x="850" y="1138" class="sans body">Mechanical rhythm exposes the model's default voice.</text>
 
-    <text x="120" y="1365" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">CHOOSE ONE TREATMENT</text>
+  <line x1="120" y1="1175" x2="1480" y2="1175" class="rule"/>
 
-    <!-- Column bounds: CUT [120,500], REWRITE [590,980], RELOCATE [1070,1480]. -->
-    <g>
-      <text x="120" y="1430" font-size="36" font-weight="700">CUT</text>
-      <text x="120" y="1475" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">NOT NEEDED</text>
-      <text x="120" y="1525" font-size="28" fill="#51514d">Delete self-explanation</text>
-      <text x="120" y="1565" font-size="28" fill="#51514d">or unprompted reassurance.</text>
-    </g>
+  <text x="120" y="1218" class="sans stage">3 · APPLY ONE TEST TO EVERY SENTENCE</text>
+  <text x="120" y="1263" class="sans class-name">Does this serve the reader's next action, here and in these words?</text>
 
-    <line x1="545" y1="1405" x2="545" y2="1580" stroke="#d1d0ca" stroke-width="2"/>
+  <text x="120" y="1325" class="sans action">CUT</text>
+  <text x="120" y="1360" class="sans body">Not needed: delete self-explanation, reassurance, or persuasion narration.</text>
 
-    <g>
-      <text x="590" y="1430" font-size="36" font-weight="700">REWRITE</text>
-      <text x="590" y="1475" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">RIGHT FACT · WRONG WORDS</text>
-      <text x="590" y="1525" font-size="28" fill="#51514d">Replace implementation terms</text>
-      <text x="590" y="1565" font-size="28" fill="#51514d">with reader language.</text>
-    </g>
+  <text x="120" y="1418" class="sans action">REWRITE</text>
+  <text x="120" y="1453" class="sans body">Right fact, wrong words: replace internal vocabulary with reader language.</text>
 
-    <line x1="1025" y1="1405" x2="1025" y2="1580" stroke="#d1d0ca" stroke-width="2"/>
+  <text x="120" y="1511" class="sans action">RELOCATE</text>
+  <text x="120" y="1546" class="sans body">Right fact, wrong place: move it to the surface where the question occurs.</text>
 
-    <g>
-      <text x="1070" y="1430" font-size="36" font-weight="700">RELOCATE</text>
-      <text x="1070" y="1475" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">RIGHT FACT · WRONG PLACE</text>
-      <text x="1070" y="1525" font-size="28" fill="#51514d">Put the fact where the</text>
-      <text x="1070" y="1565" font-size="28" fill="#51514d">question actually occurs.</text>
-    </g>
+  <text x="120" y="1580" class="sans small">Failure-forward: remove or relocate; a positive reframe still plants the doubt.</text>
+  <text x="120" y="1612" class="sans small">Correction scar: the finished artifact keeps no memory of the old flaw.</text>
+  <text x="120" y="1644" class="sans small">High-stakes surface: run two independent hunters, then adjudicate their disagreement.</text>
 
-    <line x1="120" y1="1625" x2="1480" y2="1625" stroke="#d1d0ca" stroke-width="2"/>
+  <line x1="120" y1="1675" x2="1480" y2="1675" class="accent-rule"/>
+  <text x="120" y="1715" class="sans stage">OUTPUT + COMPLETION</text>
+  <text x="120" y="1753" class="sans class-name">Clean copy that speaks from the reader's side of the screen.</text>
+  <text x="120" y="1790" class="sans small">Complete when every visible surface was read and each sentence serves the reader where it appears.</text>
 
-    <text x="120" y="1685" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">THE EDITING RULE</text>
-    <text x="120" y="1750" font-size="44" font-weight="700">State the result the reader needs.</text>
-    <text x="120" y="1795" font-size="30" fill="#51514d">Leave out the writer, process, and implementation unless they help here.</text>
-
-    <line x1="120" y1="1880" x2="1480" y2="1880" stroke="#d1d0ca" stroke-width="2"/>
-    <text x="120" y="1940" font-size="22" fill="#51514d">cutting-internal-leaks-from-copy · repository editing guide</text>
-  </g>
+  <text x="120" y="1980" class="sans small">cutting-internal-leaks-from-copy</text>
 </svg>

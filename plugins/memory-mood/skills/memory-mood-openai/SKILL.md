@@ -1,15 +1,23 @@
 ---
 name: memory-mood-openai
-description: Use when someone wants a high-fidelity mood visualization of their AI assistant's accumulating memories using the OpenAI API — averaged emotional arc with confidence bands, many samples per timepoint. Triggers on "memory mood with openai", "averaged mood arc", "mood of my memories with confidence bands", "high fidelity memory feelings". Requires OPENAI_API_KEY.
+description: Use when someone wants a high-fidelity mood visualization of their AI assistant's accumulating memories using the OpenAI API — an averaged emotional arc with call-to-call spread, using many independent samples per timepoint. Triggers on "memory mood with openai", "averaged mood arc", "mood of my memories with sampling spread", "high fidelity memory feelings". Requires OPENAI_API_KEY.
 ---
 
 # Memory Mood (OpenAI edition)
 
-Same idea as the `memory-mood` skill — replay your assistant's memory files in formation order and ask *how do you feel?* after each — but judged by the **OpenAI API with k independent samples per timepoint, averaged**. A single reading wobbles by ~±0.1; averaging k of them (default 8) collapses the noise and lets the page draw **±1σ confidence bands**. Use this when you want the smooth, defensible version and have an API key. Otherwise use the dependency-free `memory-mood` (Sonnet subagent) skill.
+Same idea as the `memory-mood` skill — replay cumulative snapshots of your assistant's memory files
+in formation order and ask *how do you feel?* — but judged by the **OpenAI API with k independent
+samples per timepoint, averaged**. Averaging k readings reduces the influence of any one draw on the
+mean. The page also draws a **±1σ spread band** from the individual readings; this is call-to-call
+spread, not a confidence interval for the mean. Use this edition when you want an averaged curve and
+have an API key. Otherwise use the dependency-free `memory-mood` (Sonnet subagent) skill.
 
 ## Why averaging
 
-Adjacent timepoints differ by exactly one memory, so a real mood signal should move slowly. A single LLM draw swings far more than that — that swing is sampling noise, not signal. Drawing **k samples and averaging** separates the two; the shaded band shows how much one call would have wobbled.
+Adjacent staged timepoints differ only by the memories added since the previous selected snapshot.
+A single LLM draw can move even when the memory text does not. Drawing **k independent samples and
+averaging** reduces that single-draw influence; the shaded ±1σ band shows the spread of the individual
+calls around their mean.
 
 ## Independence
 
@@ -35,7 +43,7 @@ No uv? `pip install openai pydantic` then `python "$DIR/build.py" ...`.
 
 | Flag | Default | Effect |
 |---|---|---|
-| `--k` | 8 | samples per timepoint to average; higher = tighter bands, more cost |
+| `--k` | 8 | samples per timepoint; higher = a more stable estimate of the mean and spread, more cost |
 | `--max-timepoints` | 0 (every memory) | cap timepoints; samples evenly if memories exceed it |
 | `--model` | `gpt-5.4-nano` | any responses-API model with structured output |
 | `--concurrency` | 60 | max in-flight calls |

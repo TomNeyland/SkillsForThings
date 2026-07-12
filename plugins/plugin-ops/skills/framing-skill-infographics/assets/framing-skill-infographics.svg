@@ -1,104 +1,95 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
-  <title id="title">Turn a skill manual into a self-contained visual method.</title>
-  <desc id="desc">Start with a target SKILL.md and every required reference. Read the complete source, choose the correct infographic surface, write a solution trace with the input, ordered operations, decisions, output, and success check, build an editable SVG and 1600 by 2000 PNG, then inspect it at full size and 400 by 500. The output is a brief, SVG, PNG, and README image reference. Complete when raster checks pass and a cold reader can repeat the workflow without a caption.</desc>
-
+  <title id="title">Choose the infographic surface before writing its brief</title>
+  <desc id="desc">Read the live source, then branch by surface. An individual skill needs a method explainer brief with input, operations, decisions, output, and completion. A plugin package needs a skill index built from every live skill. A repository needs a package index built from manifests and child counts. Build the SVG and PNG, reference the PNG from README, then apply the matching cold-reader or routing test.</desc>
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
   <defs>
     <style>
-      .bg { fill: #f7f6f2; }
-      .primary { fill: #181816; }
-      .secondary { fill: #51514d; }
-      .accent { fill: #42647a; }
+      .sans { font-family: Helvetica, Arial, sans-serif; fill: #181816; }
+      .mono { font-family: Menlo, Consolas, monospace; fill: #181816; }
+      .meta { font-size: 22px; font-weight: 700; letter-spacing: 2px; fill: #42647a; }
+      .headline { font-size: 76px; font-weight: 700; letter-spacing: -1.4px; }
+      .section { font-size: 23px; font-weight: 700; letter-spacing: 1.8px; fill: #42647a; }
+      .step { font-size: 31px; font-weight: 700; }
+      .body { font-size: 28px; fill: #51514d; }
+      .branch { font-size: 28px; font-weight: 700; }
+      .branch-body { font-size: 26px; fill: #51514d; }
+      .output { font-size: 28px; font-weight: 700; }
+      .small { font-size: 23px; fill: #51514d; }
       .rule { stroke: #d1d0ca; stroke-width: 3; }
-      .flow { stroke: #42647a; stroke-width: 4; fill: none; }
-      .headline { font: 700 88px Helvetica, Arial, sans-serif; letter-spacing: -2px; }
-      .section-label { font: 700 24px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
-      .body { font: 400 30px Helvetica, Arial, sans-serif; }
-      .step-title { font: 700 30px Helvetica, Arial, sans-serif; }
-      .step-body { font: 400 27px Helvetica, Arial, sans-serif; }
-      .branch-title { font: 700 25px Helvetica, Arial, sans-serif; letter-spacing: .8px; }
-      .branch-body { font: 400 25px Helvetica, Arial, sans-serif; }
-      .step-num { font: 700 25px Helvetica, Arial, sans-serif; }
-      .output-title { font: 700 30px Helvetica, Arial, sans-serif; }
-      .output-body { font: 400 27px Helvetica, Arial, sans-serif; }
-      .meta { font: 700 22px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
-      .identity { font: 400 22px Helvetica, Arial, sans-serif; }
+      .accent-rule { stroke: #42647a; stroke-width: 4; }
     </style>
-    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
-      <path d="M1,1 L11,6 L1,11 Z" fill="#42647a"/>
-    </marker>
   </defs>
 
-  <rect class="bg" width="1600" height="2000"/>
+  <text x="120" y="108" class="sans meta">SKILL INFOGRAPHICS / SURFACE ROUTING</text>
+  <text x="1480" y="108" text-anchor="end" class="sans meta">WORKING METHOD</text>
+  <line x1="120" y1="146" x2="1480" y2="146" class="rule"/>
 
-  <text x="120" y="118" class="meta accent">SKILL INFOGRAPHICS / WORKING METHOD</text>
-  <text x="1480" y="118" text-anchor="end" class="meta secondary">INDIVIDUAL SKILL CARD</text>
-  <line x1="120" y1="158" x2="1480" y2="158" class="rule"/>
+  <text x="120" y="250" class="sans headline">Choose the surface before</text>
+  <text x="120" y="340" class="sans headline">you write the brief.</text>
 
-  <text x="120" y="285" class="headline primary">Turn a skill manual into</text>
-  <text x="120" y="385" class="headline primary">a self-contained visual method.</text>
+  <text x="120" y="420" class="sans section">INPUT</text>
+  <text x="120" y="468" class="sans body">Target skill + required references, or live directory children + manifests.</text>
+  <line x1="120" y1="515" x2="1480" y2="515" class="rule"/>
 
-  <text x="120" y="462" class="section-label accent">INPUT</text>
-  <text x="120" y="510" class="body primary">Target SKILL.md + every required reference</text>
-  <text x="120" y="553" class="body secondary">The card must teach the working method—not merely advertise the problem.</text>
-  <line x1="120" y1="595" x2="1480" y2="595" class="rule"/>
+  <text x="120" y="570" class="sans section">1 · READ THE AUTHORITATIVE SOURCE</text>
+  <text x="120" y="616" class="sans body">Extract the real reader job, mechanism, decisions, outputs, and easily misunderstood details.</text>
 
-  <text x="120" y="655" class="section-label accent">ORDERED METHOD</text>
+  <text x="120" y="690" class="sans section">2 · BRANCH BY WHAT THE READER MUST CHOOSE</text>
+  <line x1="570" y1="720" x2="570" y2="1115" class="rule"/>
+  <line x1="1060" y1="720" x2="1060" y2="1115" class="rule"/>
 
-  <circle cx="148" cy="724" r="27" fill="#42647a"/>
-  <text x="148" y="733" text-anchor="middle" class="step-num" fill="#f7f6f2">1</text>
-  <text x="205" y="717" class="step-title primary">READ THE COMPLETE SOURCE</text>
-  <text x="205" y="758" class="step-body secondary">Extract the trigger, reader change, unique mechanism, decisions, and misunderstood detail.</text>
-  <line x1="148" y1="760" x2="148" y2="808" class="flow" marker-end="url(#arrow)"/>
+  <text x="120" y="770" class="sans branch">INDIVIDUAL SKILL</text>
+  <text x="120" y="814" class="sans branch-body">Reader chooses one capability.</text>
+  <text x="120" y="870" class="sans branch-body">Brief contains:</text>
+  <text x="120" y="912" class="sans branch-body">• situation + concrete input</text>
+  <text x="120" y="954" class="sans branch-body">• 3–6 operations + branches</text>
+  <text x="120" y="996" class="sans branch-body">• output + completion check</text>
+  <text x="120" y="1060" class="sans branch-body">Test: repeat the method.</text>
 
-  <circle cx="148" cy="850" r="27" fill="#42647a"/>
-  <text x="148" y="859" text-anchor="middle" class="step-num" fill="#f7f6f2">2</text>
-  <text x="205" y="843" class="step-title primary">CHOOSE THE SURFACE</text>
+  <text x="620" y="770" class="sans branch">PLUGIN PACKAGE</text>
+  <text x="620" y="814" class="sans branch-body">Reader chooses a skill.</text>
+  <text x="620" y="870" class="sans branch-body">Brief contains:</text>
+  <text x="620" y="912" class="sans branch-body">• package job</text>
+  <text x="620" y="954" class="sans branch-body">• every live skill row</text>
+  <text x="620" y="996" class="sans branch-body">• name · choose when · output</text>
+  <text x="620" y="1060" class="sans branch-body">Test: route two situations.</text>
 
-  <text x="205" y="895" class="branch-title accent">INDIVIDUAL SKILL</text>
-  <text x="205" y="930" class="branch-body secondary">→ explainer</text>
-  <text x="635" y="895" class="branch-title accent">PLUGIN PACKAGE</text>
-  <text x="635" y="930" class="branch-body secondary">→ skill index</text>
-  <text x="1065" y="895" class="branch-title accent">REPOSITORY</text>
-  <text x="1065" y="930" class="branch-body secondary">→ package index</text>
-  <line x1="148" y1="932" x2="148" y2="980" class="flow" marker-end="url(#arrow)"/>
+  <text x="1110" y="770" class="sans branch">REPOSITORY</text>
+  <text x="1110" y="814" class="sans branch-body">Reader chooses a package.</text>
+  <text x="1110" y="870" class="sans branch-body">Brief contains:</text>
+  <text x="1110" y="912" class="sans branch-body">• repository job</text>
+  <text x="1110" y="954" class="sans branch-body">• every live package row</text>
+  <text x="1110" y="996" class="sans branch-body">• scope · cue · child count</text>
+  <text x="1110" y="1060" class="sans branch-body">Test: route two situations.</text>
 
-  <circle cx="148" cy="1022" r="27" fill="#42647a"/>
-  <text x="148" y="1031" text-anchor="middle" class="step-num" fill="#f7f6f2">3</text>
-  <text x="205" y="1015" class="step-title primary">WRITE THE SOLUTION TRACE</text>
-  <text x="205" y="1056" class="step-body secondary">Situation → input → ordered operations → decision branches → output → success check.</text>
-  <line x1="148" y1="1058" x2="148" y2="1106" class="flow" marker-end="url(#arrow)"/>
+  <line x1="120" y1="1115" x2="1480" y2="1115" class="rule"/>
 
-  <circle cx="148" cy="1148" r="27" fill="#42647a"/>
-  <text x="148" y="1157" text-anchor="middle" class="step-num" fill="#f7f6f2">4</text>
-  <text x="205" y="1141" class="step-title primary">BUILD THE ASSET</text>
-  <text x="205" y="1182" class="step-body secondary">Editable SVG → 1600 × 2000 PNG → README image immediately after the H1.</text>
-  <line x1="148" y1="1184" x2="148" y2="1232" class="flow" marker-end="url(#arrow)"/>
+  <text x="120" y="1175" class="sans section">3 · BUILD THE MATCHING ASSET</text>
+  <text x="120" y="1225" class="sans step">Editable SVG → 1600 × 2000 PNG → README image after the H1</text>
+  <text x="120" y="1268" class="sans body">The README carries useful alt text. SKILL.md remains instruction-only.</text>
 
-  <circle cx="148" cy="1274" r="27" fill="#42647a"/>
-  <text x="148" y="1283" text-anchor="middle" class="step-num" fill="#f7f6f2">5</text>
-  <text x="205" y="1267" class="step-title primary">VERIFY THE READER CAN USE IT</text>
-  <text x="205" y="1308" class="step-body secondary">Inspect full size + 400 × 500; ask a cold reader to repeat the trace without a caption.</text>
+  <text x="120" y="1350" class="sans section">4 · VERIFY THE RIGHT FAILURE MODE</text>
+  <text x="120" y="1400" class="sans branch">EXPLAINER</text>
+  <text x="340" y="1400" class="sans body">Full + 400×500 inspection; cold reader repeats input → method → output; score ≥ 4.</text>
+  <text x="120" y="1455" class="sans branch">INDEX</text>
+  <text x="340" y="1455" class="sans body">Live child list is complete; two reader situations route to the correct row.</text>
 
-  <line x1="120" y1="1365" x2="1480" y2="1365" class="rule"/>
-  <text x="120" y="1425" class="section-label accent">OUTPUT ARTIFACT</text>
+  <line x1="120" y1="1515" x2="1480" y2="1515" class="accent-rule"/>
+  <text x="120" y="1570" class="sans section">OUTPUT ARTIFACTS</text>
 
-  <text x="120" y="1485" class="output-title primary">BRIEF</text>
-  <text x="120" y="1525" class="output-body secondary">one-sentence takeaway</text>
-  <text x="475" y="1485" class="output-title primary">SVG</text>
-  <text x="475" y="1525" class="output-body secondary">editable source</text>
-  <text x="780" y="1485" class="output-title primary">PNG</text>
-  <text x="780" y="1525" class="output-body secondary">1600 × 2000 · sRGB</text>
-  <text x="1110" y="1485" class="output-title primary">README</text>
-  <text x="1110" y="1525" class="output-body secondary">image + useful alt text</text>
+  <text x="120" y="1630" class="sans output">SURFACE-SPECIFIC BRIEF</text>
+  <text x="120" y="1670" class="sans small">explainer fields or complete index rows</text>
+  <text x="650" y="1630" class="sans output">SVG</text>
+  <text x="650" y="1670" class="sans small">editable source</text>
+  <text x="900" y="1630" class="sans output">PNG</text>
+  <text x="900" y="1670" class="sans small">1600 × 2000 · sRGB</text>
+  <text x="1200" y="1630" class="sans output">README</text>
+  <text x="1200" y="1670" class="sans small">image + useful alt</text>
 
-  <line x1="120" y1="1580" x2="1480" y2="1580" class="rule"/>
-  <text x="120" y="1640" class="section-label accent">COMPLETE WHEN</text>
-  <text x="120" y="1690" class="output-title primary">XML and raster checks pass.</text>
-  <text x="120" y="1735" class="output-body secondary">A cold reader states the input, method, decisions, and output; workflow score ≥ 4.</text>
-  <text x="120" y="1775" class="output-body secondary">The PNG works when shared without its surrounding caption.</text>
+  <text x="120" y="1750" class="sans section">COMPLETE WHEN</text>
+  <text x="120" y="1798" class="sans step">The raster matches the SVG, and the intended reader can use it without a caption.</text>
 
   <line x1="120" y1="1880" x2="1480" y2="1880" class="rule"/>
-  <text x="120" y="1935" class="identity secondary">framing-skill-infographics</text>
-  <text x="1480" y="1935" text-anchor="end" class="identity secondary">Method-first framing for reusable AI instructions</text>
+  <text x="120" y="1935" class="mono small">framing-skill-infographics</text>
+  <text x="1480" y="1935" text-anchor="end" class="sans small">explainer brief ≠ directory index brief</text>
 </svg>

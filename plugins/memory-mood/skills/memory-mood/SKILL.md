@@ -5,9 +5,13 @@ description: Use when someone wants to see how their AI assistant's accumulating
 
 # Memory Mood
 
-Replays the memory files your assistant has formed — **one at a time, in the order they were formed** — and after each one asks a fresh judge the plainest possible question: *how do you feel?* The result is a self-contained HTML page: an emotional arc chart (valence, arousal, eight named feelings) plus a timestamped "tweet feed" of how the assistant felt as each memory landed.
+Replays cumulative snapshots of the memory files your assistant has formed, in formation order, and
+asks a fresh judge the plainest possible question at each staged timepoint: *how do you feel?* With
+the default timepoint cap, long histories are sampled evenly rather than judged after every single
+file. The result is a self-contained HTML page: an emotional arc chart (valence, arousal, eight named
+feelings) plus a timestamped "tweet feed" of how the assistant felt as each staged snapshot landed.
 
-This version uses **Sonnet subagents as the judge — one fresh subagent per timepoint, one reading each.** Free-tier friendly, no API key, no external dependencies (stdlib Python only). For smoother averaged curves with ±1σ bands, see the `memory-mood-openai` skill.
+This version uses **Sonnet subagents as the judge — one fresh subagent per timepoint, one reading each.** Free-tier friendly, no API key, no external dependencies (stdlib Python only). For averaged curves with ±1σ call-to-call spread bands, see the `memory-mood-openai` skill.
 
 ## Why a fresh subagent per timepoint
 

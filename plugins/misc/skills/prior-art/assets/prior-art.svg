@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
   <title id="title">Prior-art discovery workflow</title>
-  <desc id="desc">Start with a proposed custom design and its underlying need. Choose the search scope, brainstorm the known landscape, then scale effort to settledness: verify one obvious official solution, or run parallel evidence searches for an unsettled category. Compare coverage, then adopt, adapt, or build custom.</desc>
+  <desc id="desc">Start with a proposed custom design and its underlying need. Choose the search scope, brainstorm the known landscape, then scale effort to settledness: verify one obvious official solution, or run parallel evidence searches for an unsettled category. Compare weighted must-have fit and disqualifying gaps, then adopt, adapt, or build custom.</desc>
   <style>.sans{font-family:Helvetica,Arial,sans-serif}.mono{font-family:Menlo,Consolas,monospace}</style>
   <rect width="1600" height="2000" fill="#f7f6f2"/>
   <text class="sans" x="120" y="112" font-size="22" font-weight="700" letter-spacing="2.4" fill="#42647a">PRIOR-ART DISCOVERY</text>
@@ -56,26 +56,26 @@
 
   <line x1="120" y1="1270" x2="1480" y2="1270" stroke="#d1d0ca" stroke-width="2"/>
   <text class="sans" x="120" y="1320" font-size="23" font-weight="700" letter-spacing="2.2" fill="#42647a">3 · COMPARE THE EVIDENCE WHEN THE SPACE IS UNSETTLED</text>
-  <text class="mono" x="120" y="1370" font-size="25" fill="#181816">OPTION → COVERAGE → ID / FORMAT → ACCESS → LICENSE → ADOPTION → FIT</text>
-  <text class="sans" x="120" y="1414" font-size="27" fill="#51514d">Include “build custom” as a row so its maintenance cost is compared, not assumed.</text>
+  <text class="mono" x="120" y="1370" font-size="25" fill="#181816">OPTION → WEIGHTED MUST-HAVE FIT → ACCESS → LICENSE → ADOPTION → GAPS</text>
+  <text class="sans" x="120" y="1414" font-size="25" fill="#51514d">Declare requirements + weights first; one disqualifying gap overrides the aggregate score.</text>
 
   <line x1="120" y1="1464" x2="1480" y2="1464" stroke="#d1d0ca" stroke-width="2"/>
-  <text class="sans" x="120" y="1514" font-size="23" font-weight="700" letter-spacing="2.2" fill="#42647a">4 · DECIDE BY COVERAGE</text>
+  <text class="sans" x="120" y="1514" font-size="23" font-weight="700" letter-spacing="2.2" fill="#42647a">4 · APPLY A DECLARED DECISION HEURISTIC</text>
   <g class="sans">
     <text x="120" y="1574" font-size="31" font-weight="700" fill="#42647a">ADOPT</text>
-    <text x="120" y="1614" font-size="27" fill="#181816">More than 80%</text><text x="120" y="1650" font-size="25" fill="#51514d">use directly</text>
+    <text x="120" y="1614" font-size="27" fill="#181816">≥80% weighted fit</text><text x="120" y="1650" font-size="25" fill="#51514d">use directly</text>
     <line x1="412" y1="1544" x2="412" y2="1660" stroke="#d1d0ca" stroke-width="2"/>
     <text x="470" y="1574" font-size="31" font-weight="700" fill="#42647a">ADAPT</text>
-    <text x="470" y="1614" font-size="27" fill="#181816">50–80%</text><text x="470" y="1650" font-size="25" fill="#51514d">extend only the gaps</text>
+    <text x="470" y="1614" font-size="27" fill="#181816">50% to &lt;80%</text><text x="470" y="1650" font-size="25" fill="#51514d">extend only the gaps</text>
     <line x1="820" y1="1544" x2="820" y2="1660" stroke="#d1d0ca" stroke-width="2"/>
     <text x="878" y="1574" font-size="31" font-weight="700" fill="#42647a">BUILD CUSTOM</text>
-    <text x="878" y="1614" font-size="27" fill="#181816">Less than 50%</text><text x="878" y="1650" font-size="25" fill="#51514d">record why options failed</text>
+    <text x="878" y="1614" font-size="27" fill="#181816">&lt;50% or fatal gap</text><text x="878" y="1650" font-size="25" fill="#51514d">record why options failed</text>
   </g>
 
   <line x1="120" y1="1714" x2="1480" y2="1714" stroke="#181816" stroke-width="3"/>
   <text class="sans" x="120" y="1764" font-size="23" font-weight="700" letter-spacing="2.2" fill="#42647a">OUTPUT + COMPLETION</text>
   <text class="sans" x="120" y="1810" font-size="29" font-weight="700" fill="#181816">Currency check + ADOPT note, or comparison table + recommendation.</text>
-  <text class="sans" x="120" y="1850" font-size="25" fill="#51514d">Complete when the official option is verified, or coverage, fit, and rejections are documented.</text>
+  <text class="sans" x="120" y="1850" font-size="25" fill="#51514d">Complete when the option is verified, or weights, evidence, gaps, and rejections are documented.</text>
 
   <text class="sans" x="120" y="1946" font-size="22" fill="#51514d">prior-art</text>
 </svg>

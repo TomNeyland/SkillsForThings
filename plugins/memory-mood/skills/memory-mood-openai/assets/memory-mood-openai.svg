@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
   <title id="title">One model reading can wobble. Do not chart it as a mood shift.</title>
-  <desc id="desc">From dated AI assistant memory notes and an API key, build cumulative snapshots, evaluate each with k independent API calls, summarize the readings as a mean and plus-or-minus one standard deviation, select the reaction closest to the mean, and render index.html. With no API key or k equal to one, use the single-evaluator workflow. Complete when every selected snapshot has k standalone readings and index.html opens.</desc>
+  <desc id="desc">From dated AI assistant memory notes and an OpenAI API key, build cumulative snapshots, evaluate each with k independent OpenAI API calls, summarize the readings as a mean and plus-or-minus one standard deviation of call-to-call spread, select the reaction closest to the mean, and render index.html. With no API key or k equal to one, use the Sonnet-subagent workflow. Complete when every selected snapshot has k standalone readings and index.html opens.</desc>
 
   <defs>
     <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
@@ -12,11 +12,11 @@
   <rect width="1600" height="2000" fill="#f7f6f2"/>
 
   <g font-family="Helvetica, Arial, sans-serif" fill="#181816">
-    <text x="120" y="130" font-size="24" font-weight="700" letter-spacing="3" fill="#42647a">AI MEMORY VISUALIZATION / INDEPENDENT SAMPLING</text>
+    <text x="120" y="130" font-size="24" font-weight="700" letter-spacing="3" fill="#42647a">OPENAI API MEMORY VISUALIZATION / INDEPENDENT SAMPLING</text>
 
     <text x="120" y="305" font-size="92" font-weight="700" letter-spacing="-3">One model reading can wobble.</text>
     <text x="120" y="410" font-size="92" font-weight="700" letter-spacing="-3">Do not chart it as a mood shift.</text>
-    <text x="120" y="500" font-size="31" fill="#51514d">INPUT: dated memory notes + API key. Choose k independent readings per snapshot.</text>
+    <text x="120" y="500" font-size="31" fill="#51514d">INPUT: dated memory notes + OPENAI_API_KEY. Choose k readings per snapshot.</text>
 
     <line x1="120" y1="570" x2="1480" y2="570" stroke="#d1d0ca" stroke-width="2"/>
 
@@ -52,7 +52,7 @@
     <line x1="475" y1="1045" x2="535" y2="1045" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
 
     <g>
-      <text x="580" y="1005" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">k SEPARATE API CALLS</text>
+      <text x="580" y="1005" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">k SEPARATE OPENAI API CALLS</text>
       <text x="580" y="1055" font-size="30">reading 1 · 2 · … · k</text>
       <text x="580" y="1095" font-size="24" fill="#51514d">same memory snapshot each time</text>
     </g>
@@ -100,7 +100,7 @@
     <line x1="120" y1="1650" x2="1480" y2="1650" stroke="#d1d0ca" stroke-width="2"/>
 
     <text x="120" y="1690" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">OUTPUT</text>
-    <text x="120" y="1725" font-size="28" font-weight="700">index.html · mean ±1σ chart · closest-to-average reaction feed</text>
+    <text x="120" y="1725" font-size="28" font-weight="700">index.html · mean + ±1σ spread · closest-to-average reaction feed</text>
 
     <text x="120" y="1770" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">BRANCH</text>
     <text x="120" y="1800" font-size="24" fill="#51514d">No API key or k=1 → use memory-mood.</text>

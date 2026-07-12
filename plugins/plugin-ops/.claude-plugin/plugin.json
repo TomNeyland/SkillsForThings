@@ -1,7 +1,7 @@
 {
   "name": "plugin-ops",
   "description": "Skills for maintaining Claude Code plugins — refreshing skill content against current evidence, validating manifests, auditing for stale claims",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "author": {
     "name": "Thomas Neyland",
     "email": "tcneyland@gmail.com"

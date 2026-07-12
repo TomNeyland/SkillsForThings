@@ -24,10 +24,10 @@
 
     <g transform="translate(0 78)">
       <text class="mono" x="0" y="28" font-size="27" font-weight="700" fill="#181816">prior-art</text>
-      <text class="sans" x="390" y="24" font-size="28" font-weight="700" fill="#181816">Before building a custom schema, identifier,</text>
-      <text class="sans" x="390" y="64" font-size="28" font-weight="700" fill="#181816">algorithm, file format, or taxonomy.</text>
-      <text class="sans" x="1050" y="22" font-size="26" fill="#181816">standard or library</text>
-      <text class="sans" x="1050" y="60" font-size="26" fill="#181816">+ adopt/adapt/build rule</text>
+      <text class="sans" x="390" y="24" font-size="28" font-weight="700" fill="#181816">Before hand-rolling a capability, technique,</text>
+      <text class="sans" x="390" y="64" font-size="28" font-weight="700" fill="#181816">data source, schema, or file format.</text>
+      <text class="sans" x="1050" y="22" font-size="26" fill="#181816">current options + evidence</text>
+      <text class="sans" x="1050" y="60" font-size="26" fill="#181816">→ adopt, adapt, or build</text>
       <line x1="0" y1="112" x2="1360" y2="112" stroke="#d1d0ca" stroke-width="2"/>
     </g>
 
@@ -35,18 +35,18 @@
       <text class="mono" x="0" y="28" font-size="27" font-weight="700" fill="#181816">align-terminology</text>
       <text class="sans" x="390" y="24" font-size="28" font-weight="700" fill="#181816">A schema field, model, or enum name feels</text>
       <text class="sans" x="390" y="64" font-size="28" font-weight="700" fill="#181816">invented, inconsistent, or unclear to experts.</text>
-      <text class="sans" x="1050" y="22" font-size="26" fill="#181816">recognized term</text>
-      <text class="sans" x="1050" y="60" font-size="26" fill="#181816">+ aligned model</text>
+      <text class="sans" x="1050" y="22" font-size="26" fill="#181816">authority + status</text>
+      <text class="sans" x="1050" y="60" font-size="26" fill="#181816">+ action for every name</text>
       <line x1="0" y1="112" x2="1360" y2="112" stroke="#d1d0ca" stroke-width="2"/>
     </g>
 
     <g transform="translate(0 418)">
       <text class="mono" x="0" y="20" font-size="24" font-weight="700" fill="#181816">orchestrating-</text>
       <text class="mono" x="0" y="54" font-size="24" font-weight="700" fill="#181816">greenfield-builds</text>
-      <text class="sans" x="390" y="24" font-size="28" font-weight="700" fill="#181816">A long multi-agent build must preserve</text>
-      <text class="sans" x="390" y="64" font-size="28" font-weight="700" fill="#181816">product intent across agents and sessions.</text>
-      <text class="sans" x="1050" y="22" font-size="26" fill="#181816">durable product docs</text>
-      <text class="sans" x="1050" y="60" font-size="26" fill="#181816">+ independent read test</text>
+      <text class="sans" x="390" y="24" font-size="28" font-weight="700" fill="#181816">Prototype ancestor of coordinate-agents;</text>
+      <text class="sans" x="390" y="64" font-size="28" font-weight="700" fill="#181816">use for showcase-grade greenfield builds.</text>
+      <text class="sans" x="1050" y="22" font-size="26" fill="#181816">durable product system</text>
+      <text class="sans" x="1050" y="60" font-size="26" fill="#181816">+ tested build/review gates</text>
       <line x1="0" y1="112" x2="1360" y2="112" stroke="#d1d0ca" stroke-width="2"/>
     </g>
 

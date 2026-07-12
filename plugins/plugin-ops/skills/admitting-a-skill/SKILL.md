@@ -62,5 +62,6 @@ most skills, not a rare pass; don't manufacture findings to look thorough.
 
 ## Composes with
 
-The dual-model mechanism itself: `fan-and-critic` (conductor plugin). For refreshing a skill's
-*content* against current evidence (a different problem — staleness, not origin leaks): `refresh-skill`.
+The judgment gate runs the `skill-admission-critic` agent twice with the same prompt; it does not
+delegate that mechanism to another skill. For refreshing a skill's *content* against current
+evidence (a different problem — staleness, not origin leaks), use `refresh-skill`.

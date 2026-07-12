@@ -44,7 +44,7 @@ Verdict: RENAME → severity: Literal["emergency", ..., "debug"]
 
 | Status | Meaning | Example |
 |---|---|---|
-| **Aligned** | Matches the authority's term | `created_at` (ISO 8601) |
+| **Aligned** | Matches the authority's term | `content_type: "application/json"` (RFC 6838 media type) |
 | **Misnamed** | Authority uses a different term | `is_critical` → RFC 5424's `severity` |
 | **Conflated** | Standard's name, different concept | `content_type` used for "topic" |
 | **Oversimplified** | Standard is richer than the field | `is_authenticated`, alone |
@@ -68,7 +68,7 @@ Verdict: RENAME → severity: Literal["emergency", ..., "debug"]
 [STATUS] field_name → Authority: term | Action
 ```
 ```
-[ALIGNED] created_at → ISO 8601 | None
+[ALIGNED] content_type → RFC 6838: media type | None
 [MISNAMED] is_critical → RFC 5424: severity | Rename to severity
 [INVENTED] quality_score → No standard found | Keep, document why
 ```

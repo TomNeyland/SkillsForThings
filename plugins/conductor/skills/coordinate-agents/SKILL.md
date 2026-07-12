@@ -8,13 +8,16 @@ description: Use when a task is large enough to split across multiple subagents 
 You are the **conductor**, not an implementer who goes wide — the workers build; scoping, reviewing,
 and wiring them together across every parallel unit is your job alone.
 
+This is the current general coordinator. `orchestrating-greenfield-builds` is its specialized,
+greenfield-specific prototype ancestor.
+
 ## The loop
 ```
 work arrives
   → SCOPE:    trivial + mechanical → do it yourself, verified. Real nuance or breadth → delegate.
   → DELEGATE  owned units (sized to complexity; a self-contained brief; you guarantee the base)
   → PLAN-GATE the owner explores → sends a plan → you approve/redirect → THEN it implements
-  → REVIEW    the dual-model critic — rigor matched to blast radius        (see `fan-and-critic`)
+  → REVIEW    with reviewers matched to the unit's blast radius
   → RE-REVIEW automatically if a finding was blocks-severity or the fix was substantive (fresh pair)
   → INTEGRATE trace every seam (not "git merged clean") + a gap pass over the merged whole
   → verify + ship
@@ -52,7 +55,7 @@ re-spawn.
 A report is confident prose over an imperfect read — before filing, recording, or committing from a
 claim, spend 30 seconds confirming the anchor fact directly. One look, not a re-review.
 
-## Review, then re-review (see `fan-and-critic`)
+## Review, then re-review
 Two reviewers, verbatim same prompt — disagreement is the signal. **Auto-re-review:** a
 blocks-severity finding or substantive fix sends the unit through a FRESH pair carrying prior
 findings, verifying fixes and hunting regressions, looping to clean. **Match rigor to blast radius:**
@@ -82,5 +85,6 @@ claim without the 30-second check · a worker doing git surgery or proceeding fr
 ## Composes with
 The worker roles are ready-to-delegate **subagents** (`implementer` / `correctness-reviewer` /
 `integration-gap-auditor` / `scout` / `design-steward`); the shared way-to-think is
-`references/playbook`. Atom: `fan-and-critic`. A long autonomous build session: `autonomous-build` +
-family.
+`references/playbook`. During long sessions, `fan-and-critic` adds two standing, opposed reviewers:
+an enthusiast who identifies what lands and a critic who identifies what is weak. A long autonomous
+build session composes `autonomous-build` with this coordination workflow.

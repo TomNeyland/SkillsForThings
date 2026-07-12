@@ -32,7 +32,7 @@
       <text x="980" y="778" font-size="27">timestamped reactions.</text>
       <text x="980" y="842" font-size="27" font-weight="700">Sampling</text>
       <text x="980" y="884" font-size="27">1 fresh Sonnet reading</text>
-      <text x="980" y="923" font-size="27">per memory date.</text>
+      <text x="980" y="923" font-size="27">per selected snapshot.</text>
       <text x="980" y="975" font-size="27" fill="#51514d">Tradeoff: no sampling band.</text>
     </g>
 
@@ -54,14 +54,14 @@
       <text x="980" y="1258" font-size="27">timestamped reactions.</text>
       <text x="980" y="1322" font-size="27" font-weight="700">Sampling</text>
       <text x="980" y="1364" font-size="27">k independent API calls</text>
-      <text x="980" y="1403" font-size="27">per memory date.</text>
+      <text x="980" y="1403" font-size="27">per selected snapshot.</text>
       <text x="980" y="1455" font-size="27" fill="#51514d">Tradeoff: more setup, calls, and cost.</text>
     </g>
 
     <line x1="120" y1="1498" x2="1480" y2="1498" stroke="#181816" stroke-width="3"/>
 
     <text x="120" y="1580" font-size="22" font-weight="700" letter-spacing="2.2" fill="#42647a">SHARED METHOD</text>
-    <text x="120" y="1632" font-size="30">Memory files are replayed in formation order as cumulative snapshots.</text>
+    <text x="120" y="1632" font-size="30">Memory files are staged in formation order as selected cumulative snapshots.</text>
     <text x="120" y="1676" font-size="30">Each reading receives the current snapshot and no prior answers.</text>
 
     <line x1="120" y1="1888" x2="1480" y2="1888" stroke="#d1d0ca" stroke-width="2"/>

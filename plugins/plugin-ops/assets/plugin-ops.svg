@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
   <title id="title">PLUGIN-OPS skill index: 3 skills.</title>
-  <desc id="desc">A three-row package index with columns for skill path, use when, and output. Admitting a Skill reviews a new or edited skill before public release. Refresh Skill checks claims after external changes. Framing Skill Infographics selects content for a self-contained skill image.</desc>
+  <desc id="desc">A three-row package index with columns for skill path, use when, and output. Admitting a Skill reviews a new or edited skill before public release. Refresh Skill checks claims after external changes. Framing Skill Infographics produces a surface-specific explainer or directory-index brief and verified README asset.</desc>
 
   <rect width="1600" height="2000" fill="#f7f6f2"/>
 
@@ -59,13 +59,13 @@
       <text x="120" y="1215" font-family="Menlo, Consolas, monospace" font-size="28" font-weight="700">framing-skill-</text>
       <text x="120" y="1255" font-family="Menlo, Consolas, monospace" font-size="28" font-weight="700">infographics/</text>
 
-      <text x="520" y="1185" font-size="28">A skill needs a shareable image</text>
-      <text x="520" y="1225" font-size="28">and you must choose which</text>
-      <text x="520" y="1265" font-size="28">manual content belongs in it.</text>
+      <text x="520" y="1185" font-size="28">A skill or directory needs an image,</text>
+      <text x="520" y="1225" font-size="28">and the explainer versus index</text>
+      <text x="520" y="1265" font-size="28">information architecture must be chosen.</text>
 
-      <text x="1070" y="1185" font-size="30" font-weight="700">Infographic brief</text>
-      <text x="1070" y="1235" font-size="28" fill="#51514d">Reader situation + useful</text>
-      <text x="1070" y="1275" font-size="28" fill="#51514d">change + one concrete proof.</text>
+      <text x="1070" y="1185" font-size="30" font-weight="700">Surface-specific brief</text>
+      <text x="1070" y="1235" font-size="28" fill="#51514d">Explainer trace or complete</text>
+      <text x="1070" y="1275" font-size="28" fill="#51514d">routable child index.</text>
     </g>
 
     <line x1="120" y1="1535" x2="1480" y2="1535" stroke="#d1d0ca" stroke-width="2"/>

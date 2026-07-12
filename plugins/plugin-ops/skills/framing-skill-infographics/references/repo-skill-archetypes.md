@@ -15,9 +15,9 @@ This is a starting map for consistent marketplace storytelling, not authority ov
 | `autonomous-build-jealousy-ranking` | Contrarian reframe | “Easy-to-build is not the same as worth building.” | Candidate backlog filtered by named audience, tool/toy value, red-team, kill-and-replace |
 | `autonomous-build-commit-essays` | Contrarian reframe | “A git log can preserve product intent, not merely diffs.” | Thin commit subject versus narrative commit tied to audience and purpose layer |
 | `creating-technical-infographics` | Method / quality multiplier | “Why did ‘restrained’ still turn into a tiny dashboard?” | Card-grid baseline versus one-path technical-document page; rendered collision check |
-| `fan-and-critic` | Method / quality multiplier | “Several plausible agent answers still do not tell you which result is safe to use.” | Independent attempts broaden coverage; separate reviewers try to find faults in the combined real artifact; every concrete finding is kept |
+| `fan-and-critic` | Method / quality multiplier | “The critic says cut it; the fan says protect it. What should I believe?” | The same artifact goes to a calibrated enthusiast and harsh critic; their separate takes become convergences to act on and divergences for the lead to decide |
 | `coordinate-agents` | Method / quality multiplier | “Parallel agents can each finish their part while the combined system still fails at the boundaries.” | Split owned work, review each result, connect real producers to consumers, then inspect the assembled whole for missing connections |
-| `orchestrating-greenfield-builds` | Transformation | “How does a long AI-assisted build preserve the same product direction when agents and context keep changing?” | Record product constraints in durable design documents, test those documents with an independent reader, then build and review against them |
+| `orchestrating-greenfield-builds` | Transformation | “How does the prototype ancestor of `coordinate-agents` preserve direction through a showcase-grade greenfield build?” | Specialized path through prior art, durable product decisions, binding designs, independent playthroughs, build/review gates, and replayable feedback |
 | `autonomous-build` | Transformation | “Give an autonomous session a product arc before it gets a scaffold.” | Audience/arc/budget pins becoming a layered build system rather than an unaimed feature pile |
 | `memory-mood` | Curiosity / experience | “Your assistant remembers you. What mood did that accumulation create?” | Growing memory snapshots → fresh isolated judges → emotional arc and feelings feed |
 | `memory-mood-openai` | Comparison / upgrade | “Is that mood change signal or one model draw wobbling?” | Single reading variance versus k independent samples, mean curve, and ±1σ band |
@@ -63,8 +63,8 @@ Use these as examples of the translation pass, not mandatory phrasing:
 
 | Repository shorthand | Public-language starting point |
 |---|---|
-| fan | multiple independent attempts or task owners |
-| critic | separate reviewers trying to find faults |
+| fan | enthusiast reviewer who identifies what genuinely lands and should be protected |
+| critic | harsh reviewer who identifies what is weak and needs fixing |
 | union coverage | combine the distinct useful results |
 | union findings | keep every concrete issue either reviewer found |
 | user pins | recorded product constraints: audience, platform, tone, scope |

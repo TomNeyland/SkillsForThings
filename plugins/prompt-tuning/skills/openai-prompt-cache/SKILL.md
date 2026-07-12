@@ -7,20 +7,25 @@ description: Use when designing or auditing OpenAI API prompts for cache hit rat
 
 ## Overview
 
-OpenAI's prompt cache discounts repeated input tokens **50–90%** (varies by model family) and cuts first-token latency **up to 80%** on long prompts. The cache is a **prefix cache** — it matches the longest exact byte-prefix of your request against an inference engine's KV state. Anything that perturbs those bytes causes a full miss.
+OpenAI's prompt cache can reduce the cost and latency of repeated prompt prefixes. The cache is a
+**prefix cache**: it reuses the longest exact prefix available on the routed inference engine.
+Anything that changes the rendered prefix ends reuse at that point. Rates, write charges, retention
+controls, and breakpoint support vary by model family; verify them against the current official
+[prompt-caching guide](https://developers.openai.com/api/docs/guides/prompt-caching).
 
 The skill is the discipline of:
 1. Getting stable content above the **1,024-token minimum**
 2. Putting it at the **head of the rendered prefix**, byte-stable
 3. Putting all dynamic content in the **tail**
-4. **Measuring** `cached_tokens` to verify
+4. Choosing the **automatic or explicit-breakpoint path** for the target model
+5. **Measuring** cache reads and writes to verify
 
 ## When to use
 
 - Designing a prompt that will be called repeatedly (>10×/hour, or any reused-system-prompt pattern)
 - Cost has spiked unexpectedly on a workload that should be cache-friendly
 - First-token latency is high on calls that share most of their input
-- Migrating from Chat Completions → Responses API (cache semantics shift)
+- Migrating between Chat Completions and Responses API and needing to preserve a cacheable prefix
 - Adding/changing a `response_format` JSON schema or Lark grammar
 - Auditing a tool-using agent loop where every turn re-sends large state
 
@@ -35,21 +40,21 @@ The skill is the discipline of:
 | Property | Value |
 |---|---|
 | Minimum cacheable prefix | **1,024 tokens** |
-| Cache-hit quantization | **128-token boundaries** beyond the floor |
 | Routing hash window | First **~256 tokens** (varies by model) + `prompt_cache_key` |
-| Default retention | **`24h` by default** on GPT-5-series non-ZDR orgs (since **2026-05-29**); the older `in_memory` policy = 5–10 min idle, 1 hr hard cap |
-| `in_memory` removal | gpt-5.5 / gpt-5.5-pro and **all future models** support **only `24h`**; ZDR orgs default to `in_memory` but `24h` is **permitted under ZDR** (stores KV tensors, not content) |
+| GPT-5.6+ retention control | `prompt_cache_options.ttl`; current default and only value is **`30m` minimum lifetime**; OpenAI may retain longer |
+| Earlier-model retention control | `prompt_cache_retention`; `in_memory` is typically 5–10 min idle (up to 1 hr), while supported extended policies retain up to 24 hr |
+| GPT-5.6+ write accounting | Cache writes cost **1.25× uncached input** and appear in `cache_write_tokens`; reads appear in `cached_tokens` |
 | Throughput per (prefix, key) bucket | **~15 RPM** before overflow to cold engines (OpenAI cookbook) |
-| Isolation | **Per-org** (documented: "not shared between organizations"); per-model-snapshot / per-region are community-inferred |
-| Cache discount | **50%** (gpt-4o, o1), **75%** (o-series, gpt-4.1), **90%** (gpt-5.x); up to **98.75%** (gpt-realtime audio) |
+| Isolation | Caches are not shared between organizations |
 
 ## The optimization workflow
 
-1. **AUDIT.** Identify your stable content. Is it ≥ 1,024 tokens? If no, pad deliberately or accept zero cache.
+1. **AUDIT.** Identify genuinely reusable content. Is the rendered reusable prefix at least 1,024
+   tokens? If not, accept zero cache or consolidate real shared context; never add meaningless padding.
 
 2. **STRUCTURE.** Order content so dynamic stuff lands at the tail. Wire prefix sequence is forced:
    ```
-   tools → response_format / text.format → developer/system → few-shots → user input
+   tools / schema → developer or system content → few-shots → changing user input
    ```
 
 3. **STABILIZE.** Make the prefix byte-identical across calls.
@@ -59,20 +64,29 @@ The skill is the discipline of:
    - RAG chunks: sort by stable doc id BEFORE splicing
    - Few-shots: fixed order, no shuffling
 
-4. **ROUTE.** Set `prompt_cache_key` per logical workload to pin requests to the same engine. Shard the key (e.g. `f"workflow-v3-shard-{i%N}"`) to keep each (prefix, key) bucket under ~15 RPM.
+4. **ROUTE.** Set `prompt_cache_key` per logical workload. GPT-5.6+ requires it for the more reliable
+   cache-matching path. Shard the key with a stable mapping to keep each key around 15 RPM.
 
-5. **EXTEND.** GPT-5-series non-ZDR orgs already **default to `24h`** retention (since 2026-05-29), so low-cadence workloads cache across gaps with no action. Pre-gpt-5 / `in_memory` defaults still evict in 5–10 min — set `prompt_cache_retention="24h"` there. `24h` is **allowed under ZDR** (and forced on gpt-5.5+).
+5. **CHOOSE THE MODEL-FAMILY PATH.**
+   - **GPT-5.6 and later:** automatic caching still works, but explicit breakpoints make the write
+     boundary controllable. Put `prompt_cache_breakpoint: {"mode":"explicit"}` after stable content;
+     set `prompt_cache_options.mode="explicit"` only when every write must be explicit. The current
+     `prompt_cache_options.ttl` default/only value is `30m`.
+   - **Earlier models:** continue using automatic prefix caching and, where supported, configure
+     `prompt_cache_retention` (`in_memory` or `24h`). Do not send GPT-5.6 breakpoint fields to older
+     models; they reject them.
 
-6. **MEASURE.** Read `cached_tokens` after every call. Field path differs by surface (see `references/by-surface.md`).
+6. **MEASURE.** Read `cached_tokens` after every call. On GPT-5.6+, also read
+   `cache_write_tokens` and compare billed writes with later reads. Field paths differ by API surface.
 
 ## Quick reference: API surface differences
 
-| Surface | Cache-hit field | Notable quirk |
+| Surface | Cache usage fields | Notable quirk |
 |---|---|---|
-| Chat Completions | `usage.prompt_tokens_details.cached_tokens` | Wire prefix order forced (tools → schema → messages) |
-| Responses | `usage.input_tokens_details.cached_tokens` | `instructions` parameter does NOT reliably cache — use `developer` role item in `input` instead |
-| JSON Schema | (same as host API) | Schema is in cached prefix; separate ~120s schema-compile cache also exists |
-| Lark grammar | (same as host API) | Grammar is in cached prefix; ~10× decode-latency overhead with CFG enabled |
+| Chat Completions | `usage.prompt_tokens_details.cached_tokens`; GPT-5.6+ `cache_write_tokens` is its sibling | Wire prefix order forced (tools → schema → messages) |
+| Responses | `usage.input_tokens_details.cached_tokens`; GPT-5.6+ `cache_write_tokens` is its sibling | GPT-5.6+ breakpoints can mark `input_text`, `input_image`, and `input_file` blocks |
+| JSON Schema | (same as host API) | Structured-output schemas are part of the cacheable prefix |
+| Lark grammar | (same as host API) | Stabilize the exact grammar definition and verify reads on the host API |
 
 ## Common mistakes (highest-impact first)
 
@@ -83,18 +97,16 @@ The skill is the discipline of:
 | Reordering RAG chunks per call | Sort by stable doc id before splicing |
 | Tool JSON without `sort_keys=True` | Pin canonical serialization once at startup |
 | Mutating `tools` array to gate availability | Use `tool_choice={"type":"allowed_tools",...}` |
-| `instructions` parameter on Responses for system prompt | Use `developer` role item in `input` |
 | Reading `prompt_tokens_details.cached_tokens` on Responses | Path is `input_tokens_details.cached_tokens` on Responses |
-| Model alias (`gpt-5.1`) in production | Pin dated snapshot — alias rotations are different KV caches |
-| Trusting cache on gpt-5-mini / `*-nano` / now gpt-5.4 / gpt-5.5 | gpt-5-mini **72–76% miss rate** ([DavidDev, thread 1368208](https://community.openai.com/t/possible-cache-issue-on-gpt-5-mini-and-gpt-5-nano/1368208)); gpt-5.4-nano **0% hit rate** ([thread 1379973](https://community.openai.com/t/switching-to-gpt5-4-nano-results-in-0-cache-hit-rate/1379973)). Still open & broadening as of **2026-06-27** (gpt-5.4/5.5 too; trailing content >~500 tokens zeroes cache — [thread 1384129](https://community.openai.com/t/prompt-cache-documented-byte-prefix-matching-does-not-occur-on-gpt-5-4-gpt-5-5-when-trailing-user-content-exceeds-500-tokens/1384129)). A Responses-API escape hatch is reported but uncorroborated. Fix is claimed only for **GPT-5.6** (preview, gated). For now use gpt-5.1 for cache-sensitive routing (6–19% miss) and instrument `cached_tokens`. |
-| Sharding `prompt_cache_key` per model in multi-model workloads | Possibly use the SAME key across sibling models — but the only evidence is a **single unverified HN self-report** ([46070749](https://news.ycombinator.com/item?id=46070749), Nov 2025, 0 comments, Chat-Completions test) claiming prefix-processing cache is shared across gpt-4o-mini/5-mini/5. Not corroborated; measure `cached_tokens` before relying on it. |
+| Assuming the advertised cached-input rate guarantees hits | Measure the chosen model and API directly; log reads and, on GPT-5.6+, billed writes before forecasting savings |
 | Dynamic `Field(description=f"As of {today}...")` | Strip dynamic content from descriptions; move to user message |
 
-## Companion considerations
+## Cost tradeoff
 
-**Static reminder at the cache tail (the Pareto move).** Place a short, **static** reminder block as the LAST item before the user message. Because it's static, it caches (~90% discount). Because it's at the tail of the prefix, it captures recency-bias attention boost — Anthropic measured up to 30% adherence improvement from query-at-end on multi-doc inputs; "Drift No More?" (arXiv 2510.07777, Oct 2025) measured 16–27% LLM-judge improvement from goal reminders. Zero per-call cost beyond the one-time cache write. **Anti-pattern:** dynamic reminders that interpolate per-call values (timestamps, IDs) — they break the cache from that point down. See `references/architecture-patterns.md`.
-
-**Cost vs. cache tradeoffs.** A larger schema/grammar costs more per miss but more saved per hit. If hit rate is uncertain, smaller schemas amortize faster. See `references/by-surface.md` for the schema-vs-grammar decision criteria.
+On GPT-5.6+, a cache write is billable. Place explicit breakpoints only after stable content that is
+likely to be reused, then compare `cache_write_tokens` on the writing request with `cached_tokens`
+on subsequent requests. A breakpoint that is continually rewritten but rarely read is not saving
+money.
 
 ## Validation: confirm the cache is hitting
 
@@ -106,9 +118,14 @@ print(resp.usage.prompt_tokens_details.cached_tokens, "/", resp.usage.prompt_tok
 # Responses API
 resp = client.responses.create(...)
 print(resp.usage.input_tokens_details.cached_tokens, "/", resp.usage.input_tokens)
+
+# GPT-5.6+ write accounting (same detail object on either API)
+resp = client.responses.create(...)
+print(resp.usage.input_tokens_details.cache_write_tokens)
 ```
 
-A new prefix takes **2–10 calls and 17–450 sec** to reach steady-state hits (community-measured) — single-call repros are noise. Run 20+ identical-prefix calls before concluding cache is broken.
+Run repeated identical-prefix calls. On GPT-5.6+, confirm the first eligible request reports a write
+and later requests report reads. Do not conclude from a single request or from pricing tables alone.
 
 ## Deep reference
 

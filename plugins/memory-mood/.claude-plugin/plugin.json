@@ -1,7 +1,7 @@
 {
   "name": "memory-mood",
-  "description": "Visualize the emotional arc of an AI assistant's accumulating memory — replay the assistant's notes-to-self in formation order and chart how each new memory shifts its mood",
-  "version": "0.3.1",
+  "description": "Visualize the emotional arc of an AI assistant's accumulating memory — replay selected cumulative snapshots in formation order and chart the resulting model readings",
+  "version": "0.4.0",
   "author": {
     "name": "Thomas Neyland",
     "email": "tcneyland@gmail.com"

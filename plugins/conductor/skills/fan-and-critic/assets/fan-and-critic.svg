@@ -1,99 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
-  <title id="title">AI wrote the patch. Review it twice—independently.</title>
-  <desc id="desc">Before merging AI-written code, give two independent reviewers the same candidate patch, surrounding repository code, and identical review instructions. Both try to find faults and return ranked findings with a failure scenario, file and line, and severity. Keep every concrete issue either reviewer finds, and send ship-blocking or substantively fixed code to two new reviewers.</desc>
+  <title id="title">Use an enthusiast fan and a harsh critic as opposed standing reviewers</title>
+  <desc id="desc">A reviewable change is sent to two calibrated reviewers. The critic records what is weak while the fan records what genuinely lands. The lead reads both files at feature boundaries, acts on convergence, and decides what to fix or protect when the two perspectives diverge.</desc>
 
   <defs>
-    <style>
-      .bg { fill: #f7f6f2; }
-      .primary { fill: #181816; }
-      .secondary { fill: #51514d; }
-      .accent { fill: #42647a; }
-      .rule { stroke: #d1d0ca; stroke-width: 3; }
-      .flow { stroke: #42647a; stroke-width: 4; fill: none; }
-      .headline { font: 700 94px Helvetica, Arial, sans-serif; letter-spacing: -2px; }
-      .section-label { font: 700 24px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
-      .body { font: 400 34px Helvetica, Arial, sans-serif; }
-      .body-sm { font: 400 28px Helvetica, Arial, sans-serif; }
-      .body-bold { font: 700 32px Helvetica, Arial, sans-serif; }
-      .reviewer-title { font: 700 31px Helvetica, Arial, sans-serif; }
-      .reviewer-body { font: 400 28px Helvetica, Arial, sans-serif; }
-      .output-title { font: 700 38px Helvetica, Arial, sans-serif; }
-      .decision-title { font: 700 28px Helvetica, Arial, sans-serif; letter-spacing: .6px; }
-      .decision-body { font: 400 30px Helvetica, Arial, sans-serif; }
-      .statement { font: 700 50px Helvetica, Arial, sans-serif; letter-spacing: -.8px; }
-      .mono { font: 400 27px Menlo, Consolas, monospace; }
-      .mono-bold { font: 700 34px Menlo, Consolas, monospace; }
-      .meta { font: 700 22px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
-      .identity { font: 400 22px Helvetica, Arial, sans-serif; }
-    </style>
-    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
-      <path d="M1,1 L11,6 L1,11 Z" fill="#42647a"/>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 Z" fill="#51514d"/>
     </marker>
   </defs>
 
-  <rect class="bg" width="1600" height="2000"/>
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
 
-  <!-- Outer top band: concrete domain and artifact -->
-  <text x="120" y="118" class="meta accent">AI-GENERATED CODE REVIEW</text>
-  <text x="1480" y="118" text-anchor="end" class="meta secondary">CANDIDATE PATCH · SCHEMATIC METHOD</text>
-  <line x1="120" y1="158" x2="1480" y2="158" class="rule"/>
+  <g font-family="Helvetica, Arial, sans-serif" fill="#181816">
+    <text x="120" y="102" font-size="24" font-weight="700" letter-spacing="2.2" fill="#42647a">LONG AUTONOMOUS BUILD · STANDING REVIEW</text>
+    <text x="1480" y="102" text-anchor="end" font-size="24" font-weight="700" letter-spacing="1.5" fill="#51514d">FAN + CRITIC</text>
+    <line x1="120" y1="142" x2="1480" y2="142" stroke="#d1d0ca" stroke-width="3"/>
 
-  <!-- Situation and changed behavior -->
-  <text x="120" y="290" class="headline primary">AI wrote the patch.</text>
-  <text x="120" y="394" class="headline primary">Review it twice—independently.</text>
+    <text x="120" y="250" font-size="86" font-weight="700">The critic finds what is weak.</text>
+    <text x="120" y="350" font-size="86" font-weight="700">The fan finds what to protect.</text>
+    <text x="120" y="418" font-size="34" fill="#51514d">Opposed reviewers expose the spread that one neutral opinion hides.</text>
 
-  <text x="120" y="490" class="section-label accent">BEFORE YOU MERGE</text>
-  <text x="120" y="543" class="body secondary">Give two reviewers the same real code and identical instructions.</text>
-  <text x="120" y="588" class="body secondary">Ask both to find faults—not to confirm the author.</text>
-  <line x1="120" y1="630" x2="1480" y2="630" class="rule"/>
+    <line x1="120" y1="478" x2="1480" y2="478" stroke="#d1d0ca" stroke-width="3"/>
 
-  <!-- Concrete input -->
-  <text x="120" y="690" class="section-label accent">SAME INPUT TO BOTH</text>
-  <text x="120" y="745" class="mono-bold primary">candidate patch + surrounding repository code</text>
-  <text x="120" y="792" class="mono secondary">one identical review prompt</text>
+    <text x="120" y="538" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">INPUT · ONE REVIEWABLE CHANGE</text>
+    <text x="120" y="600" font-size="42" font-weight="700">Screenshot, copy, schema, or plan</text>
+    <text x="120" y="646" font-size="30" fill="#51514d">Send the same artifact, change summary, focus, and project rules to both.</text>
 
-  <!-- Split to independent reviewers. Column bounds: 120..740, 860..1480. -->
-  <path d="M800 812 L800 845 L430 845 L430 875 M800 845 L1170 845 L1170 875" class="flow"/>
-  <circle cx="430" cy="910" r="31" fill="#42647a"/>
-  <circle cx="1170" cy="910" r="31" fill="#42647a"/>
-  <text x="430" y="920" text-anchor="middle" class="body-bold" fill="#f7f6f2">1</text>
-  <text x="1170" y="920" text-anchor="middle" class="body-bold" fill="#f7f6f2">2</text>
+    <line x1="800" y1="680" x2="440" y2="762" stroke="#51514d" stroke-width="4" marker-end="url(#arrow)"/>
+    <line x1="800" y1="680" x2="1160" y2="762" stroke="#51514d" stroke-width="4" marker-end="url(#arrow)"/>
 
-  <text x="120" y="970" class="reviewer-title primary">INDEPENDENT REVIEWER 1</text>
-  <text x="120" y="1012" class="reviewer-body secondary">Reads the real code and tries to find a failure.</text>
-  <text x="120" y="1052" class="reviewer-body secondary">Returns ranked findings:</text>
-  <text x="120" y="1097" class="mono primary">scenario · file:line · severity</text>
+    <line x1="120" y1="802" x2="760" y2="802" stroke="#a14332" stroke-width="6"/>
+    <text x="120" y="854" font-size="24" font-weight="700" letter-spacing="2" fill="#a14332">HARSH CRITIC</text>
+    <text x="120" y="914" font-size="42" font-weight="700">What is weak?</text>
+    <text x="120" y="964" font-size="30" fill="#51514d">Name specific failures and consequences.</text>
+    <text x="120" y="1006" font-size="30" fill="#51514d">Recommend a concrete fix.</text>
+    <text x="120" y="1064" font-size="26" font-weight="700" fill="#a14332">APPENDS TO feedback_critic.md</text>
 
-  <text x="860" y="970" class="reviewer-title primary">INDEPENDENT REVIEWER 2</text>
-  <text x="860" y="1012" class="reviewer-body secondary">Reads the real code and tries to find a failure.</text>
-  <text x="860" y="1052" class="reviewer-body secondary">Returns ranked findings:</text>
-  <text x="860" y="1097" class="mono primary">scenario · file:line · severity</text>
+    <line x1="840" y1="802" x2="1480" y2="802" stroke="#42647a" stroke-width="6"/>
+    <text x="840" y="854" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">ENTHUSIAST FAN</text>
+    <text x="840" y="914" font-size="42" font-weight="700">What genuinely lands?</text>
+    <text x="840" y="964" font-size="30" fill="#51514d">Name the value and why it works.</text>
+    <text x="840" y="1006" font-size="30" fill="#51514d">Choose one place to double down.</text>
+    <text x="840" y="1064" font-size="26" font-weight="700" fill="#42647a">APPENDS TO feedback_fan.md</text>
 
-  <!-- Combine concrete findings -->
-  <path d="M430 1125 L430 1155 L800 1188 M1170 1125 L1170 1155 L800 1188" class="flow" marker-end="url(#arrow)"/>
-  <text x="800" y="1250" text-anchor="middle" class="section-label accent">COMBINED OUTPUT</text>
-  <text x="800" y="1310" text-anchor="middle" class="output-title primary">Keep every concrete issue either reviewer found.</text>
-  <text x="800" y="1358" text-anchor="middle" class="body-sm secondary">Do not average disagreement away. A verified “clean” also counts.</text>
+    <text x="800" y="1138" text-anchor="middle" font-size="28" fill="#51514d">Each replies in one line. The substance stays in separate files.</text>
+    <line x1="440" y1="1160" x2="690" y2="1214" stroke="#51514d" stroke-width="4" marker-end="url(#arrow)"/>
+    <line x1="1160" y1="1160" x2="910" y2="1214" stroke="#51514d" stroke-width="4" marker-end="url(#arrow)"/>
 
-  <!-- Decision rules -->
-  <line x1="120" y1="1405" x2="1480" y2="1405" class="rule"/>
-  <text x="120" y="1460" class="section-label accent">ACT ON THE RESULT</text>
+    <line x1="120" y1="1238" x2="1480" y2="1238" stroke="#d1d0ca" stroke-width="3"/>
+    <text x="120" y="1298" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">THE LEAD READS BOTH AT A FEATURE BOUNDARY</text>
 
-  <text x="120" y="1525" class="decision-title primary">ISSUES FOUND</text>
-  <text x="520" y="1525" class="decision-body secondary">Fix the ranked list.</text>
+    <text x="120" y="1382" font-size="28" font-weight="700" fill="#42647a">CONVERGENCE</text>
+    <text x="400" y="1382" font-size="36" font-weight="700">Both identify the same thing</text>
+    <line x1="1040" y1="1370" x2="1160" y2="1370" stroke="#51514d" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="1210" y="1382" font-size="34" font-weight="700">Act on it</text>
 
-  <text x="120" y="1585" class="decision-title primary">NO CONCRETE ISSUES</text>
-  <text x="520" y="1585" class="decision-body secondary">Record a clean result.</text>
+    <line x1="120" y1="1432" x2="1480" y2="1432" stroke="#d1d0ca" stroke-width="2"/>
 
-  <text x="120" y="1645" class="decision-title primary">SHIP-BLOCKING ISSUE OR SUBSTANTIVE FIX</text>
-  <text x="120" y="1685" class="decision-body secondary">Send the fixed patch to two new reviewers.</text>
+    <text x="120" y="1504" font-size="28" font-weight="700" fill="#a14332">DIVERGENCE</text>
+    <text x="400" y="1504" font-size="34" font-weight="700">Critic: cut it</text>
+    <text x="400" y="1550" font-size="34" font-weight="700" fill="#42647a">Fan: protect it</text>
+    <line x1="780" y1="1520" x2="980" y2="1520" stroke="#51514d" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="1030" y="1504" font-size="32" font-weight="700">Inspect the artifact.</text>
+    <text x="1030" y="1550" font-size="32" font-weight="700">The lead decides.</text>
 
-  <!-- Final action -->
-  <line x1="120" y1="1725" x2="1480" y2="1725" class="rule"/>
-  <text x="120" y="1790" class="statement primary">Keep every issue. Re-review substantive fixes.</text>
+    <line x1="120" y1="1606" x2="1480" y2="1606" stroke="#d1d0ca" stroke-width="3"/>
+    <text x="120" y="1666" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">OUTPUT · A WEIGHTED DECISION LOG</text>
+    <text x="120" y="1720" font-size="36" font-weight="700">FIX</text>
+    <text x="120" y="1762" font-size="29" fill="#51514d">shared weaknesses</text>
+    <text x="600" y="1720" font-size="36" font-weight="700">PROTECT</text>
+    <text x="600" y="1762" font-size="29" fill="#51514d">value that lands</text>
+    <text x="1080" y="1720" font-size="36" font-weight="700">DECIDE</text>
+    <text x="1080" y="1762" font-size="29" fill="#51514d">the splits</text>
 
-  <!-- Quiet skill handle in the outer bottom band -->
-  <line x1="120" y1="1880" x2="1480" y2="1880" class="rule"/>
-  <text x="120" y="1935" class="identity secondary">fan-and-critic</text>
-  <text x="1480" y="1935" text-anchor="end" class="identity secondary">Independent reviews before trust</text>
+    <text x="120" y="1818" font-size="30" font-weight="700">Complete when each convergence and split has an explicit disposition.</text>
+
+    <line x1="120" y1="1876" x2="1480" y2="1876" stroke="#d1d0ca" stroke-width="3"/>
+    <text x="120" y="1932" font-size="24" fill="#51514d">fan-and-critic</text>
+    <text x="1480" y="1932" text-anchor="end" font-size="24" fill="#51514d">fan = enthusiast, not task fan-out</text>
+  </g>
 </svg>
