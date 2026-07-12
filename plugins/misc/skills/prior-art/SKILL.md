@@ -73,6 +73,8 @@ Before searching, dump what you already know. List:
 
 Share this brainstorm with the user BEFORE launching searches — they may already know some of these and can steer the search.
 
+**Scale effort to how settled the answer already is.** "Integrate with Stripe from Python" isn't a contested space with multiple viable contenders — it's a named vendor's own official SDK. If the brainstorm already surfaces a single, obvious, officially-maintained answer, don't run the full 5-agent machinery to confirm the thing you already know: check the package is current (name, PyPI/npm listing, last release, maintenance status), note it, and go straight to Step 4's ADOPT. Save the full search-and-compare process for the genuinely unsettled cases — where the category has several live contenders, or you don't already know the answer cold.
+
 ### Step 2: Parallel Web Search (3-5 subagents)
 
 Launch subagents simultaneously, each investigating a different angle:
