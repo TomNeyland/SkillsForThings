@@ -1,6 +1,6 @@
 ---
 name: prior-art
-description: Use before building a custom identifier scheme, data model, algorithm, file format, or taxonomy. Triggers on "what prior art exists", "is there a standard for this", "are there libraries for X", "does X already exist", "what should I leverage", noticing you're about to hand-roll something that feels like a solved problem, or starting work in a domain you haven't researched yet.
+description: Use before building a custom identifier scheme, data model, algorithm, file format, taxonomy, or hand-rolling a technique/capability a library likely already solves. Triggers on "what prior art exists", "is there a standard for this", "are there libraries for X", "does X already exist", "what should I leverage", noticing you're about to hand-roll something that feels like a solved problem, or starting work in a domain you haven't researched yet.
 ---
 
 # Prior Art Discovery
@@ -11,11 +11,15 @@ description: Use before building a custom identifier scheme, data model, algorit
 
 Before building anything custom, systematically discover what already exists. The cost of adopting an existing standard is almost always less than maintaining a custom one — and that's usually discovered too late, after the custom version is load-bearing.
 
-## The XY Problem — Read This First
+## Two Different Reasons This Skill Fires
 
-The user is often deep in the weeds solving problem Y (their attempted solution) when the real question is about problem X (the root need). They self-identify as prone to this. When they ask "is there a library for X?", first ask yourself: **is X the actual problem, or is it an approach they chose for a deeper problem?**
+Most of the time, this is the simple case: **the user correctly knows what they need (X), they just haven't discovered the solution space for X yet.** No confusion, no deeper problem to excavate — just run the search process below and report back. This is the default. Don't go hunting for a hidden XY problem that isn't there.
 
-The user is often exploring domains new to them and may not know the vocabulary well enough to ask the right question. Don't automatically presume every question is an XY problem — but ask yourself whether it might be. Apply the **5 Whys** at multiple stages of your thinking:
+The trickier, less common case is the **XY problem**: the user is deep in the weeds on their attempted solution (Y) when the real question is about a different root need (X). When they ask "is there a library for X?", ask yourself: **is X the actual problem, or is it an approach they chose for a deeper problem?** This matters because the two cases search differently — the simple case searches for X directly; the XY case searches for the root problem too, and may find something that dissolves X entirely.
+
+## Spotting an XY Problem
+
+The user is often exploring domains new to them and may not know the vocabulary well enough to ask the right question — that's a signal worth checking, not proof by itself. Don't automatically presume every question is an XY problem — most aren't — but ask yourself whether it might be. Apply the **5 Whys** at multiple stages of your thinking:
 
 1. **Before searching** — Why does the user need this? Why that approach? Is there a deeper need?
 2. **After brainstorming** — Why are we building this specific thing? Is there a broader solution that dissolves the problem?
@@ -89,8 +93,8 @@ Present findings as:
 
 One of three outcomes:
 
-- **ADOPT** — An existing standard covers >80% of needs. Use it directly. Map your data to their IDs. Worth the upfront cost.
-- **ADAPT** — An existing standard covers 50-80%. Use their IDs as the base, extend with a thin custom layer for the gaps. Document what's standard vs custom.
+- **ADOPT** — An existing standard, library, or technique covers >80% of needs. Use it directly (call the library, map to their IDs, apply the pattern). Worth the upfront cost.
+- **ADAPT** — Existing coverage is 50-80%. Use it as the base, extend with a thin custom layer for the gaps. Document what's off-the-shelf vs custom.
 - **BUILD CUSTOM** — Nothing covers >50%, or the domain is genuinely novel. But document WHY existing options were rejected, so future work doesn't re-discover them from scratch.
 
 ## What to Search For (by problem type)
@@ -104,6 +108,8 @@ One of three outcomes:
 | API design | REST conventions, GraphQL patterns, existing public APIs in the domain |
 | Scoring / ranking | Established methodologies (e.g. graph-centrality ranking, Elo/Glicko rating systems, a domain-specific scoring framework) |
 | Text extraction / classification | Pre-trained models, annotated corpora, shared tasks and benchmark leaderboards |
+| A capability (parsing, matching, queueing, auth, retries...) | Established packages in your language ecosystem — check PyPI/npm/crates.io/etc. directly, not just web search |
+| A technique for a class of problem (rate limiting, concurrency, caching...) | The named pattern for it (token bucket, optimistic locking, LRU/LFU) — search the pattern name, not your specific symptom |
 
 ## Common Mistakes
 
