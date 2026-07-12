@@ -5,7 +5,7 @@ description: Use when someone wants to see how their AI assistant's accumulating
 
 # Memory Mood
 
-![Cumulative AI-assistant memory snapshots are each read by a different isolated evaluator; the independent mood readings become an emotional arc, feeling scores, and timestamped reactions without prior answers influencing later ones.](assets/memory-mood.png)
+![From dated AI-assistant memory notes, build cumulative snapshots, send each to a different isolated evaluator, validate the structured reading, rerun invalid timepoints, and render index.html; complete when every snapshot has valid JSON and the page opens.](assets/memory-mood.png)
 
 Replays the memory files your assistant has formed — **one at a time, in the order they were formed** — and after each one asks a fresh judge the plainest possible question: *how do you feel?* The result is a self-contained HTML page: an emotional arc chart (valence, arousal, eight named feelings) plus a timestamped "tweet feed" of how the assistant felt as each memory landed.
 

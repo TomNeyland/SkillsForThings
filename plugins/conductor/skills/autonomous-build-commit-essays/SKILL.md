@@ -5,7 +5,7 @@ description: Use when writing commit messages during greenfield product-building
 
 # Autonomous Build — Commit Essays
 
-![For non-trivial feature work, a short commit body preserves who needed the change, what it enables, and which product decision future developers should inherit, turning git history into a record of intent rather than only diffs.](assets/autonomous-build-commit-essays.png)
+![Given a non-trivial feature commit, write the subject and short body while the reasoning is fresh, naming who needs the change, what it enables, and which behavior or tradeoff future work must preserve; the message is complete when a future developer can recover product intent without reconstructing the diff.](assets/autonomous-build-commit-essays.png)
 
 ## Overview
 

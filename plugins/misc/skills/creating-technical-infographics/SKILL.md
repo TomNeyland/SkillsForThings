@@ -5,7 +5,7 @@ description: Use when turning technical explanations, workflows, failure modes, 
 
 # Creating Technical Infographics
 
-![A valid SVG can still fail in a feed; distill one reader question into one visible proof and action, keep essential content inside the center square so feed crops cannot remove it, then inspect the rendered PNG at full and phone size.](assets/creating-technical-infographics.png)
+![Turn a technical explanation into an editable SVG and faithful PNG by defining the reader task, choosing a visual form from the relationship, exposing the working method, building within feed-safe geometry, inspecting full and phone-size rasters, and passing a caption-free reader gate.](assets/creating-technical-infographics.png)
 
 ## Overview
 
@@ -21,6 +21,8 @@ Create a useful technical-document page that happens to be shareable. The visual
 - Keep 120 px left/right margins. Metadata and attribution may use the outer top/bottom bands.
 - Use live SVG text and explicit coordinates. Do not use `foreignObject`.
 - Make the image understandable without its filename, post caption, repository, or skill name.
+- For a workflow or skill explainer, expose the concrete input, ordered operations, decision criteria, output, and completion check—not only the problem and payoff.
+- For a directory index, use a literal `Package index` or `Skill index` title and let the table dominate; omit hooks, promises, and closing slogans.
 
 ## Visual recipe
 
@@ -36,7 +38,7 @@ Use the reference's opener taxonomy to select one left-aligned reading path:
 | Curiosity | Intriguing phenomenon → reveal → implication |
 | Reference | Orientation question → organizing map → use rule |
 
-Use a two-line headline at 80–100 px bold sans. Give the core relationship one diagram, comparison, or organizing map. End with the action, decision rule, or implication. If the brief supplies a name or source, place it quietly at the bottom. If it does not, end without attribution; do not invent one.
+For an individual explainer, use a compact headline at 80–100 px bold sans, then give the working method at least half of the useful canvas. For a directory index, use a literal title and child table instead of a headline. Give the core relationship one diagram, comparison, workflow, or organizing map. End with the output, completion check, decision rule, or neutral directory path. If the brief supplies a name or source, place it quietly at the bottom. If it does not, end without attribution; do not invent one.
 
 Style the page with:
 
@@ -54,7 +56,7 @@ Sections are made from whitespace, alignment, and rules. A diagram may use plain
 
 ## Build and verify
 
-1. Write the audience, cold-reader premise, struggling moment or information need, one-sentence takeaway, and intended action. If the reader should not act, state what they should understand.
+1. Write the audience, cold-reader premise, struggling moment or information need, concrete input, solution trace, output, completion check, and intended action. If the reader should not act, state what they should understand.
 2. Choose the visual form from the reference. Draft the headline and diagram in text before drawing.
 3. Write the SVG with explicit line breaks (`tspan`) and known widths.
    - For columns, declare each column's `x_min` and `x_max` before placing text. Wrap every line to end at least 32 px before the next column.
@@ -67,7 +69,7 @@ identify -format '%wx%h %[colorspace]\n' output.png
 ```
 
 5. Inspect the PNG itself at full resolution and as a small preview. Check the right edge, bottom edge, line breaks, diagram labels, safe area, and every place adjacent text blocks could collide. In tables, scan each row across every column boundary.
-6. Give the PNG alone to a fresh reader. They must correctly state the situation, method, and changed behavior, score it at least 4/5 for self-contained comprehension, and say they would share it without an explanatory caption.
+6. Give the PNG alone to a fresh reader. They must correctly state the situation, concrete input, ordered method, output, and changed behavior; score it at least 4/5 for self-contained comprehension; and say they would share it without an explanatory caption. For a directory index, test two concrete routing scenarios instead.
 7. Write alt text that states the takeaway and describes the essential relationship, not every decorative detail.
 8. Re-render and compare after the final edit; the PNG must match the SVG exactly.
 
@@ -81,5 +83,7 @@ identify -format '%wx%h %[colorspace]\n' output.png
 | Text from one comparison column enters the next | Declare column bounds first and wrap with explicit `tspan` lines |
 | Diagram is readable but only insiders understand its nouns | Replace coined labels with concrete objects and ordinary programming/AI language |
 | Product name or feature list leads | Lead with the reader's situation; use the name as attribution |
+| The card sells the pain but leaves the workflow in a tiny footer | Give the method at least half the canvas; show input → operations/decisions → output → completion check |
+| A directory README uses a teaser headline | Replace it with a literal index title and a complete child table |
 | Brief has no author, so a plausible label is invented | Omit the identity line; provenance must come from the brief |
 | SVG validates, so QA stops | Render and inspect the raster; XML validity cannot reveal clipping |

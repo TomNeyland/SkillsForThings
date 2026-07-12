@@ -1,104 +1,77 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
-  <title id="title">A field name can look clear and still be wrong</title>
-  <desc id="desc">The invented boolean is_critical makes an expert ask what critical means. RFC 5424 instead uses the recognized field severity with an eight-level scale. The infographic recommends identifying the authority, classifying the mismatch, and using the authoritative term.</desc>
+  <title id="title">Align schema terminology with authoritative names</title>
+  <desc id="desc">Audit schema field, model, and enum names by locating the right authority, applying the expert-recognition test, classifying each name, and recording an action. The audit is complete when every name has an authority, status, and action.</desc>
+  <style>.sans{font-family:Helvetica,Arial,sans-serif}.mono{font-family:Menlo,Consolas,monospace}</style>
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+  <text class="sans" x="120" y="112" font-size="22" font-weight="700" letter-spacing="2.4" fill="#42647a">SCHEMA TERMINOLOGY AUDIT</text>
+  <text class="sans" x="1480" y="112" text-anchor="end" font-size="22" fill="#51514d">FIELDS · MODELS · ENUMS</text>
+  <line x1="120" y1="146" x2="1480" y2="146" stroke="#d1d0ca" stroke-width="2"/>
 
-  <defs>
-    <style>
-      .bg { fill: #f7f6f2; }
-      .primary { fill: #181816; }
-      .secondary { fill: #51514d; }
-      .accent { fill: #42647a; }
-      .failure { fill: #a14332; }
-      .rule { stroke: #d1d0ca; stroke-width: 3; }
-      .rule-dark { stroke: #51514d; stroke-width: 3; }
-      .rule-failure { stroke: #a14332; stroke-width: 3; }
-      .headline { font: 700 94px Helvetica, Arial, sans-serif; letter-spacing: -2px; }
-      .section-label { font: 700 24px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
-      .body { font: 400 34px Helvetica, Arial, sans-serif; }
-      .body-bold { font: 700 34px Helvetica, Arial, sans-serif; }
-      .proof-question { font: 700 38px Helvetica, Arial, sans-serif; }
-      .statement { font: 700 55px Helvetica, Arial, sans-serif; letter-spacing: -1px; }
-      .step-num { font: 700 26px Helvetica, Arial, sans-serif; }
-      .step-title { font: 700 30px Helvetica, Arial, sans-serif; }
-      .step-body { font: 400 28px Helvetica, Arial, sans-serif; }
-      .mono-lg { font: 700 42px Menlo, Consolas, monospace; }
-      .mono { font: 400 28px Menlo, Consolas, monospace; }
-      .mono-bold { font: 700 30px Menlo, Consolas, monospace; }
-      .meta { font: 700 22px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
-      .identity { font: 400 22px Helvetica, Arial, sans-serif; }
-    </style>
-    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="11" markerHeight="11" orient="auto">
-      <path d="M1,1 L11,6 L1,11 Z" fill="#51514d"/>
-    </marker>
-    <marker id="arrow-failure" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="11" markerHeight="11" orient="auto">
-      <path d="M1,1 L11,6 L1,11 Z" fill="#a14332"/>
-    </marker>
-  </defs>
+  <text class="sans" x="120" y="284" font-size="82" font-weight="700" fill="#181816">A readable name can still</text>
+  <text class="sans" x="120" y="378" font-size="82" font-weight="700" fill="#181816">be wrong to an expert.</text>
+  <text class="sans" x="120" y="446" font-size="32" fill="#51514d">Input: a schema’s field names, model names, and enum values.</text>
 
-  <rect class="bg" width="1600" height="2000"/>
+  <line x1="120" y1="510" x2="1480" y2="510" stroke="#181816" stroke-width="3"/>
+  <text class="sans" x="120" y="562" font-size="23" font-weight="700" letter-spacing="2.2" fill="#42647a">THE WORKFLOW</text>
 
-  <!-- Outer top band: subject metadata -->
-  <text x="120" y="118" class="meta accent">SCHEMA REVIEW NOTE</text>
-  <text x="1480" y="118" text-anchor="end" class="meta secondary">FIELDS · MODELS · ENUMS</text>
-  <line x1="120" y1="158" x2="1480" y2="158" class="rule"/>
+  <circle cx="150" cy="646" r="28" fill="#42647a"/>
+  <text class="sans" x="150" y="656" text-anchor="middle" font-size="26" font-weight="700" fill="#fff">1</text>
+  <text class="sans" x="210" y="638" font-size="31" font-weight="700" fill="#181816">Inventory the names and the concepts they claim to represent.</text>
+  <text class="sans" x="210" y="680" font-size="28" fill="#51514d">Do not audit spelling alone; name the underlying concept first.</text>
 
-  <!-- Wrong assumption -->
-  <text x="120" y="290" class="headline primary">A field name can look clear</text>
-  <text x="120" y="394" class="headline primary">and still be wrong.</text>
+  <line x1="150" y1="680" x2="150" y2="748" stroke="#42647a" stroke-width="4"/>
+  <circle cx="150" cy="782" r="28" fill="#42647a"/>
+  <text class="sans" x="150" y="792" text-anchor="middle" font-size="26" font-weight="700" fill="#fff">2</text>
+  <text class="sans" x="210" y="774" font-size="31" font-weight="700" fill="#181816">Find the highest applicable authority.</text>
 
-  <text x="120" y="502" class="section-label accent">COMMON BELIEF</text>
-  <text x="120" y="555" class="body secondary">“If the name is readable, the schema is clear.”</text>
-  <line x1="120" y1="610" x2="1480" y2="610" class="rule"/>
+  <g class="sans">
+    <rect x="210" y="816" width="370" height="122" fill="#e8edf0"/>
+    <text x="232" y="854" font-size="22" font-weight="700" letter-spacing="1.4" fill="#42647a">CROSS-DOMAIN</text>
+    <text x="232" y="892" font-size="26" fill="#181816">ISO · IETF/RFC · IANA</text>
+    <text x="232" y="924" font-size="24" fill="#51514d">or a format specification</text>
+    <rect x="605" y="816" width="370" height="122" fill="#e8edf0"/>
+    <text x="627" y="854" font-size="22" font-weight="700" letter-spacing="1.4" fill="#42647a">DOMAIN-SPECIFIC</text>
+    <text x="627" y="892" font-size="26" fill="#181816">Standards body</text>
+    <text x="627" y="924" font-size="24" fill="#51514d">or reference vocabulary</text>
+    <rect x="1000" y="816" width="370" height="122" fill="#e8edf0"/>
+    <text x="1022" y="854" font-size="22" font-weight="700" letter-spacing="1.4" fill="#42647a">GENUINELY INTERNAL</text>
+    <text x="1022" y="892" font-size="26" fill="#181816">No authority exists</text>
+    <text x="1022" y="924" font-size="24" fill="#51514d">document why it is new</text>
+  </g>
 
-  <!-- Counterexample. Column bounds: left x=120..720, right x=820..1480. -->
-  <text x="120" y="675" class="section-label failure">INVENTED NAME</text>
-  <text x="120" y="746" class="mono-lg failure">is_critical: bool</text>
-  <line x1="555" y1="731" x2="750" y2="731" class="rule-failure" marker-end="url(#arrow-failure)"/>
+  <line x1="150" y1="938" x2="150" y2="996" stroke="#42647a" stroke-width="4"/>
+  <circle cx="150" cy="1030" r="28" fill="#42647a"/>
+  <text class="sans" x="150" y="1040" text-anchor="middle" font-size="26" font-weight="700" fill="#fff">3</text>
+  <text class="sans" x="210" y="1022" font-size="31" font-weight="700" fill="#181816">Apply the expert test.</text>
+  <text class="sans" x="210" y="1066" font-size="28" fill="#51514d">Would a specialist recognize this name without an explanation?</text>
 
-  <text x="820" y="675" class="section-label secondary">THE EXPERT TEST</text>
-  <text x="820" y="730" class="proof-question primary">“Critical compared to what—</text>
-  <text x="820" y="780" class="proof-question primary">error? emergency?”</text>
+  <line x1="150" y1="1064" x2="150" y2="1130" stroke="#42647a" stroke-width="4"/>
+  <circle cx="150" cy="1164" r="28" fill="#42647a"/>
+  <text class="sans" x="150" y="1174" text-anchor="middle" font-size="26" font-weight="700" fill="#fff">4</text>
+  <text class="sans" x="210" y="1156" font-size="31" font-weight="700" fill="#181816">Classify each name before changing it.</text>
+  <g class="sans" font-size="25">
+    <text x="210" y="1212" font-weight="700" fill="#42647a">ALIGNED</text><text x="392" y="1212" fill="#51514d">authority’s term matches</text>
+    <text x="210" y="1254" font-weight="700" fill="#a14332">MISNAMED</text><text x="392" y="1254" fill="#51514d">authority uses another term</text>
+    <text x="210" y="1296" font-weight="700" fill="#a14332">CONFLATED</text><text x="392" y="1296" fill="#51514d">standard term, different concept</text>
+    <text x="820" y="1212" font-weight="700" fill="#a14332">OVERSIMPLIFIED</text><text x="1060" y="1212" fill="#51514d">standard is richer</text>
+    <text x="820" y="1254" font-weight="700" fill="#a14332">AMBIGUOUS</text><text x="1060" y="1254" fill="#51514d">authorities disagree</text>
+    <text x="820" y="1296" font-weight="700" fill="#42647a">INVENTED</text><text x="1060" y="1296" fill="#51514d">no standard covers it</text>
+  </g>
 
-  <line x1="120" y1="840" x2="1480" y2="840" class="rule"/>
+  <line x1="150" y1="1316" x2="150" y2="1372" stroke="#42647a" stroke-width="4"/>
+  <circle cx="150" cy="1406" r="28" fill="#42647a"/>
+  <text class="sans" x="150" y="1416" text-anchor="middle" font-size="26" font-weight="700" fill="#fff">5</text>
+  <text class="sans" x="210" y="1398" font-size="31" font-weight="700" fill="#181816">Record the authority, status, and action.</text>
 
-  <!-- Authoritative model -->
-  <text x="120" y="910" class="section-label accent">AUTHORITY</text>
-  <text x="120" y="970" class="mono-bold accent">RFC 5424</text>
-  <text x="320" y="970" class="body primary">uses an eight-level <tspan class="mono-bold">severity</tspan> scale—not a flag.</text>
+  <rect x="210" y="1442" width="1160" height="138" fill="#e8edf0"/>
+  <text class="mono" x="238" y="1490" font-size="24" fill="#51514d">[STATUS] current_name → Authority: recognized_term | Action</text>
+  <text class="mono" x="238" y="1538" font-size="25" fill="#181816">[MISNAMED] is_critical → RFC 5424: severity | Rename to severity</text>
 
-  <text x="120" y="1058" class="mono secondary">emergency · alert · critical · error</text>
-  <text x="120" y="1106" class="mono secondary">warning · notice · informational · debug</text>
+  <line x1="120" y1="1640" x2="1480" y2="1640" stroke="#181816" stroke-width="3"/>
+  <text class="sans" x="120" y="1694" font-size="23" font-weight="700" letter-spacing="2.2" fill="#42647a">OUTPUT</text>
+  <text class="sans" x="120" y="1744" font-size="31" font-weight="700" fill="#181816">A terminology audit with one action for every schema name.</text>
+  <text class="sans" x="120" y="1790" font-size="28" fill="#51514d">Complete when every name has an authority, classification, and recorded action.</text>
 
-  <line x1="120" y1="1160" x2="120" y2="1210" class="rule-dark" marker-end="url(#arrow)"/>
-  <text x="120" y="1265" class="section-label accent">ALIGNED MODEL</text>
-  <text x="120" y="1335" class="mono-lg accent">severity: Literal["emergency", …, "debug"]</text>
-
-  <!-- Better model -->
-  <line x1="120" y1="1400" x2="1480" y2="1400" class="rule"/>
-  <text x="120" y="1488" class="statement primary">A recognized term carries its definition.</text>
-
-  <!-- Action -->
-  <text x="120" y="1585" class="section-label accent">RUN THE EXPERT TEST</text>
-  <text x="120" y="1640" class="body-bold primary">Would an expert recognize this without explanation?</text>
-
-  <!-- Action columns: 120..500, 600..980, 1080..1480. -->
-  <circle cx="147" cy="1722" r="27" fill="#42647a"/>
-  <text x="147" y="1731" text-anchor="middle" class="step-num" fill="#f7f6f2">1</text>
-  <text x="190" y="1718" class="step-title primary">Find the authority</text>
-  <text x="190" y="1760" class="step-body secondary">Standard or vocabulary</text>
-
-  <circle cx="627" cy="1722" r="27" fill="#42647a"/>
-  <text x="627" y="1731" text-anchor="middle" class="step-num" fill="#f7f6f2">2</text>
-  <text x="670" y="1718" class="step-title primary">Classify the field</text>
-  <text x="670" y="1760" class="step-body secondary">Aligned, misnamed, or invented</text>
-
-  <circle cx="1107" cy="1722" r="27" fill="#42647a"/>
-  <text x="1107" y="1731" text-anchor="middle" class="step-num" fill="#f7f6f2">3</text>
-  <text x="1150" y="1718" class="step-title primary">Use the standard term</text>
-  <text x="1150" y="1760" class="step-body secondary">Or document why it is new</text>
-
-  <!-- Quiet skill handle in the outer bottom band -->
-  <line x1="120" y1="1880" x2="1480" y2="1880" class="rule"/>
-  <text x="120" y="1935" class="identity secondary">align-terminology</text>
-  <text x="1480" y="1935" text-anchor="end" class="identity secondary">Use during schema design or review</text>
+  <line x1="120" y1="1888" x2="1480" y2="1888" stroke="#d1d0ca" stroke-width="2"/>
+  <text class="sans" x="120" y="1946" font-size="22" fill="#51514d">align-terminology</text>
 </svg>

@@ -1,106 +1,71 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
-  <title id="title">Memory Mood skill directory</title>
-  <desc id="desc">Choose memory-mood for a quick no-API-key mood arc with one fresh reading per memory date. Choose memory-mood-openai for an averaged curve with call-to-call variation using independent OpenAI API calls.</desc>
+  <title id="title">Memory Mood skill index</title>
+  <desc id="desc">A two-row package index. Use memory-mood for a quick run without an API key. Use memory-mood-openai for averaged readings with visible call-to-call variation.</desc>
   <rect width="1600" height="2000" fill="#f7f6f2"/>
 
   <g font-family="Helvetica, Arial, sans-serif" fill="#181816">
-    <text x="120" y="178" font-size="24" font-weight="700" letter-spacing="3.2" fill="#42647a">MEMORY MOOD · TWO VISUALIZATION SKILLS</text>
-    <text x="120" y="304" font-size="88" font-weight="700">Turn AI memory files into</text>
-    <text x="120" y="406" font-size="88" font-weight="700">an emotional arc.</text>
-    <text x="120" y="480" font-size="34" fill="#51514d">Both replay stored notes in formation order with independent readings.</text>
-    <text x="120" y="526" font-size="34" fill="#51514d">Choose by sampling depth and setup.</text>
+    <text x="120" y="182" font-size="24" font-weight="700" letter-spacing="3.2" fill="#42647a">MEMORY-MOOD</text>
+    <text x="120" y="314" font-size="84" font-weight="700">Skill index</text>
+    <text x="1480" y="314" text-anchor="end" font-size="34" font-weight="700" fill="#51514d">2 skills</text>
+    <text x="120" y="386" font-size="32" fill="#51514d">Skills that turn accumulating assistant memory files into self-contained HTML emotional-arc reports.</text>
 
-    <line x1="120" y1="592" x2="1480" y2="592" stroke="#181816" stroke-width="3"/>
-    <text x="120" y="642" font-size="23" font-weight="700" letter-spacing="2.4" fill="#42647a">SHARED JOB</text>
-
-    <g transform="translate(120 690)">
-      <rect x="0" y="0" width="278" height="108" rx="4" fill="#e8edf0"/>
-      <text x="24" y="45" font-size="27" font-weight="700">Memory files</text>
-      <text x="24" y="78" font-size="25" fill="#51514d">formation order</text>
-
-      <line x1="300" y1="54" x2="352" y2="54" stroke="#42647a" stroke-width="4"/>
-      <path d="M352 54 L334 43 M352 54 L334 65" fill="none" stroke="#42647a" stroke-width="4"/>
-
-      <rect x="378" y="0" width="278" height="108" rx="4" fill="#e8edf0"/>
-      <text x="402" y="45" font-size="27" font-weight="700">Cumulative</text>
-      <text x="402" y="78" font-size="25" fill="#51514d">snapshots by date</text>
-
-      <line x1="678" y1="54" x2="730" y2="54" stroke="#42647a" stroke-width="4"/>
-      <path d="M730 54 L712 43 M730 54 L712 65" fill="none" stroke="#42647a" stroke-width="4"/>
-
-      <rect x="756" y="0" width="278" height="108" rx="4" fill="#e8edf0"/>
-      <text x="780" y="45" font-size="27" font-weight="700">Fresh readings</text>
-      <text x="780" y="78" font-size="25" fill="#51514d">no prior answers</text>
-
-      <line x1="1056" y1="54" x2="1108" y2="54" stroke="#42647a" stroke-width="4"/>
-      <path d="M1108 54 L1090 43 M1108 54 L1090 65" fill="none" stroke="#42647a" stroke-width="4"/>
-
-      <rect x="1134" y="0" width="226" height="108" rx="4" fill="#42647a"/>
-      <text x="1158" y="45" font-size="27" font-weight="700" fill="#ffffff">HTML report</text>
-      <text x="1158" y="78" font-size="25" fill="#ffffff">arc + reactions</text>
+    <line x1="120" y1="474" x2="1480" y2="474" stroke="#181816" stroke-width="3"/>
+    <g font-size="22" font-weight="700" letter-spacing="2.2" fill="#42647a">
+      <text x="120" y="526">SKILL</text>
+      <text x="520" y="526">USE WHEN</text>
+      <text x="980" y="526">OUTPUT / TRADEOFF</text>
     </g>
-
-    <line x1="120" y1="862" x2="1480" y2="862" stroke="#d1d0ca" stroke-width="2"/>
-    <text x="120" y="920" font-size="23" font-weight="700" letter-spacing="2.4" fill="#42647a">CHOOSE A SKILL</text>
-
-    <g font-size="21" font-weight="700" letter-spacing="1.8" fill="#51514d">
-      <text x="120" y="974">SKILL / CHOOSE WHEN</text>
-      <text x="670" y="974">WHAT IT PRODUCES</text>
-      <text x="1120" y="974">SAMPLING / TRADEOFF</text>
-    </g>
-    <line x1="120" y1="998" x2="1480" y2="998" stroke="#181816" stroke-width="3"/>
-    <line x1="630" y1="998" x2="630" y2="1510" stroke="#d1d0ca" stroke-width="2"/>
-    <line x1="1080" y1="998" x2="1080" y2="1510" stroke="#d1d0ca" stroke-width="2"/>
+    <line x1="120" y1="558" x2="1480" y2="558" stroke="#181816" stroke-width="3"/>
+    <line x1="470" y1="558" x2="470" y2="1498" stroke="#d1d0ca" stroke-width="2"/>
+    <line x1="930" y1="558" x2="930" y2="1498" stroke="#d1d0ca" stroke-width="2"/>
 
     <g>
-      <text x="120" y="1064" font-size="42" font-weight="700" fill="#42647a">memory-mood</text>
-      <text x="120" y="1113" font-size="28">No API key.</text>
-      <text x="120" y="1153" font-size="28">Quick, dependency-free run.</text>
+      <text x="120" y="648" font-size="42" font-weight="700" fill="#42647a">memory-mood</text>
+      <text x="120" y="696" font-size="23" font-weight="700" letter-spacing="1.8" fill="#51514d">NO API KEY</text>
 
-      <text x="670" y="1064" font-size="29" font-weight="700">Emotional arc</text>
-      <text x="670" y="1107" font-size="27">Valence, arousal, and</text>
-      <text x="670" y="1145" font-size="27">eight feeling scores</text>
-      <text x="670" y="1183" font-size="27">+ timestamped reactions</text>
+      <text x="520" y="648" font-size="29">You need a quick run</text>
+      <text x="520" y="690" font-size="29">without an API key.</text>
 
-      <text x="1120" y="1064" font-size="29" font-weight="700">1 fresh Sonnet reading</text>
-      <text x="1120" y="1107" font-size="27">per memory date</text>
-      <text x="1120" y="1153" font-size="27" fill="#51514d">No sampling band</text>
+      <text x="980" y="648" font-size="29" font-weight="700">Self-contained HTML report</text>
+      <text x="980" y="700" font-size="27">Emotional arc: valence, arousal,</text>
+      <text x="980" y="739" font-size="27">eight feeling scores, and</text>
+      <text x="980" y="778" font-size="27">timestamped reactions.</text>
+      <text x="980" y="842" font-size="27" font-weight="700">Sampling</text>
+      <text x="980" y="884" font-size="27">1 fresh Sonnet reading</text>
+      <text x="980" y="923" font-size="27">per memory date.</text>
+      <text x="980" y="975" font-size="27" fill="#51514d">Tradeoff: no sampling band.</text>
     </g>
 
-    <line x1="120" y1="1248" x2="1480" y2="1248" stroke="#d1d0ca" stroke-width="2"/>
+    <line x1="120" y1="1038" x2="1480" y2="1038" stroke="#d1d0ca" stroke-width="2"/>
 
     <g>
-      <text x="120" y="1318" font-size="42" font-weight="700" fill="#42647a">memory-mood-openai</text>
-      <text x="120" y="1367" font-size="28">OpenAI API key available.</text>
-      <text x="120" y="1407" font-size="28">Want averaged readings.</text>
+      <text x="120" y="1128" font-size="42" font-weight="700" fill="#42647a">memory-mood-</text>
+      <text x="120" y="1178" font-size="42" font-weight="700" fill="#42647a">openai</text>
+      <text x="120" y="1226" font-size="23" font-weight="700" letter-spacing="1.8" fill="#51514d">OPENAI API</text>
 
-      <text x="670" y="1318" font-size="29" font-weight="700">Averaged mood curve</text>
-      <text x="670" y="1361" font-size="27">Mean scores with ±1σ</text>
-      <text x="670" y="1399" font-size="27">call-to-call spread</text>
-      <text x="670" y="1437" font-size="27">+ timestamped reactions</text>
+      <text x="520" y="1128" font-size="29">You have an OpenAI API key</text>
+      <text x="520" y="1170" font-size="29">and need averaged readings</text>
+      <text x="520" y="1212" font-size="29">with visible call-to-call</text>
+      <text x="520" y="1254" font-size="29">variation.</text>
 
-      <text x="1120" y="1318" font-size="29" font-weight="700">k independent API calls</text>
-      <text x="1120" y="1361" font-size="27">per memory date</text>
-      <text x="1120" y="1407" font-size="27" fill="#51514d">More setup, calls, and cost</text>
+      <text x="980" y="1128" font-size="29" font-weight="700">Self-contained HTML report</text>
+      <text x="980" y="1180" font-size="27">Averaged mood curve, mean scores,</text>
+      <text x="980" y="1219" font-size="27">±1σ call-to-call spread, and</text>
+      <text x="980" y="1258" font-size="27">timestamped reactions.</text>
+      <text x="980" y="1322" font-size="27" font-weight="700">Sampling</text>
+      <text x="980" y="1364" font-size="27">k independent API calls</text>
+      <text x="980" y="1403" font-size="27">per memory date.</text>
+      <text x="980" y="1455" font-size="27" fill="#51514d">Tradeoff: more setup, calls, and cost.</text>
     </g>
 
-    <line x1="120" y1="1510" x2="1480" y2="1510" stroke="#181816" stroke-width="3"/>
+    <line x1="120" y1="1498" x2="1480" y2="1498" stroke="#181816" stroke-width="3"/>
 
-    <text x="120" y="1584" font-size="23" font-weight="700" letter-spacing="2.4" fill="#42647a">SELECTION RULE</text>
-    <rect x="120" y="1620" width="1360" height="188" rx="5" fill="#e8edf0"/>
-    <text x="158" y="1684" font-size="30" font-weight="700">QUICK / NO API KEY</text>
-    <line x1="492" y1="1673" x2="558" y2="1673" stroke="#42647a" stroke-width="4"/>
-    <path d="M558 1673 L540 1662 M558 1673 L540 1684" fill="none" stroke="#42647a" stroke-width="4"/>
-    <text x="588" y="1684" font-size="34" font-weight="700" fill="#42647a">memory-mood</text>
-
-    <text x="158" y="1747" font-size="30" font-weight="700">AVERAGED CURVE / SHOW VARIATION</text>
-    <line x1="714" y1="1736" x2="780" y2="1736" stroke="#42647a" stroke-width="4"/>
-    <path d="M780 1736 L762 1725 M780 1736 L762 1747" fill="none" stroke="#42647a" stroke-width="4"/>
-    <text x="810" y="1747" font-size="34" font-weight="700" fill="#42647a">memory-mood-openai</text>
-    <text x="158" y="1784" font-size="24" fill="#51514d">Both keep each reading independent: cumulative snapshot in, no previous answer carried forward.</text>
+    <text x="120" y="1580" font-size="22" font-weight="700" letter-spacing="2.2" fill="#42647a">SHARED METHOD</text>
+    <text x="120" y="1632" font-size="30">Memory files are replayed in formation order as cumulative snapshots.</text>
+    <text x="120" y="1676" font-size="30">Each reading receives the current snapshot and no prior answers.</text>
 
     <line x1="120" y1="1888" x2="1480" y2="1888" stroke="#d1d0ca" stroke-width="2"/>
-    <text x="120" y="1948" font-size="24" font-weight="700" letter-spacing="2.8" fill="#42647a">MEMORY-MOOD</text>
-    <text x="1480" y="1948" text-anchor="end" font-size="24" fill="#51514d">PACKAGE DIRECTORY · 2 SKILLS</text>
+    <text x="120" y="1948" font-size="24" fill="#51514d">plugins/memory-mood/skills/</text>
+    <text x="1480" y="1948" text-anchor="end" font-size="24" fill="#51514d">PACKAGE DIRECTORY</text>
   </g>
 </svg>

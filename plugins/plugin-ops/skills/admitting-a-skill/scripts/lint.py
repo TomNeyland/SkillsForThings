@@ -37,7 +37,7 @@ def find_skills(root: pathlib.Path):
 
 def all_skill_names(root: pathlib.Path) -> set[str]:
     names = {p.parent.name for p in find_skills(root)}
-    # Agents are a valid cross-reference target too (`conducting` names its
+    # Agents are a valid cross-reference target too (`coordinate-agents` names its
     # delegatable subagents by filename stem).
     names |= {p.stem for p in root.glob("plugins/*/agents/*.md")}
     return names

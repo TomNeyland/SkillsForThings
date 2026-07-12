@@ -1,3 +1,3 @@
 # Memory Mood
 
-![Cumulative AI-assistant memory snapshots are each read by a different isolated evaluator; the independent mood readings become an emotional arc, feeling scores, and timestamped reactions without prior answers influencing later ones.](assets/memory-mood.png)
+![From dated AI-assistant memory notes, build cumulative snapshots, send each to a different isolated evaluator, validate the structured reading, rerun invalid timepoints, and render index.html; complete when every snapshot has valid JSON and the page opens.](assets/memory-mood.png)

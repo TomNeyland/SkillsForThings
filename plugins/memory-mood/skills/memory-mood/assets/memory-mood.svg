@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
   <title id="title">Your assistant’s memory grows. What mood arc does it create?</title>
-  <desc id="desc">At each date in an AI assistant’s stored memory notes, create a cumulative snapshot containing every memory so far. Send each snapshot to a different isolated evaluator that sees no prior answers and asks, How do you feel? Each reading returns pleasant-to-unpleasant valence, calm-to-energized arousal, eight named feelings, and a short reaction. The resulting page charts an emotional arc over memory time while isolating changes in stored memory from carryover between evaluators.</desc>
+  <desc id="desc">From a directory of dated AI assistant memory notes, create cumulative snapshots, send each snapshot to a different isolated evaluator with no prior answers, validate the structured reading, and render an HTML mood arc. If a reading is missing or out of range, rerun that timepoint instead of skipping it. The workflow is complete when every staged snapshot has valid JSON from a different evaluator and index.html opens.</desc>
 
   <defs>
     <style>
@@ -100,10 +100,14 @@
   <text x="1080" y="1467" class="output-body secondary">timestamp</text>
   <text x="1080" y="1507" class="output-body secondary">+ short reaction</text>
 
-  <!-- Decision and interpretation -->
+  <!-- Recovery branch and completion check -->
   <line x1="120" y1="1560" x2="1480" y2="1560" class="rule"/>
-  <text x="120" y="1640" class="statement primary">New snapshot. New evaluator. No previous answers.</text>
-  <text x="120" y="1705" class="interpretation accent">The chart isolates memory changes from evaluator carryover.</text>
+  <text x="120" y="1620" class="section-label accent">RECOVERY BRANCH</text>
+  <text x="120" y="1665" class="interpretation primary">Missing or out-of-range JSON → rerun that timepoint. Do not skip it.</text>
+
+  <text x="120" y="1730" class="section-label accent">COMPLETE WHEN</text>
+  <text x="120" y="1775" class="output-body primary">index.html opens and every staged snapshot has valid JSON</text>
+  <text x="120" y="1815" class="output-body primary">from a different evaluator with no previous answers.</text>
 
   <!-- Quiet, defined repository handle in the outer bottom band -->
   <line x1="120" y1="1880" x2="1480" y2="1880" class="rule"/>

@@ -1,11 +1,11 @@
 ---
-name: conducting
+name: coordinate-agents
 description: Use when a task is large enough to split across multiple subagents that you coordinate as the lead, rather than doing it all yourself in one context.
 ---
 
-# Conducting — coordinating a fleet of subagents
+# Coordinate Agents
 
-![Parallel coding agents can each finish and merge cleanly while the product remains disconnected; assign complete units, approve plans, review results, then verify every control, endpoint, producer, consumer, state, and exit in the assembled system.](assets/conducting.png)
+![Given parallel UI, API, and data work, assign one complete unit per coding agent, approve plans before implementation, review the results, and trace every control to an endpoint, producer to a consumer, and state to a next action; integration is complete when every boundary has a real counterpart.](assets/coordinate-agents.png)
 
 You are the **conductor**, not an implementer who goes wide — the workers build; scoping, reviewing,
 and wiring them together across every parallel unit is your job alone.

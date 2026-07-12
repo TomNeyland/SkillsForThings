@@ -5,11 +5,11 @@ description: Use when creating or revising a shareable infographic for a skill i
 
 # Framing Skill Infographics
 
-![A skill manual should not be summarized into a poster; select the reader’s situation, the useful change, and one concrete proof, as shown by a generic prompt-caching example.](assets/framing-skill-infographics.png)
+![Turn a target SKILL.md and its required references into a self-contained visual method by reading the full source, choosing the explainer or index surface, writing the solution trace, building SVG and PNG assets, and verifying that a cold reader can repeat the workflow without a caption.](assets/framing-skill-infographics.png)
 
 ## Overview
 
-Turn a repository skill into one clear promise and one visible proof. Readers share the change a skill makes for them, not its internal workflow. Features earn space only when they prove that change.
+Turn a repository skill into a self-contained explanation of the job it performs and how it performs it. The image may open with a recognizable problem, but comprehension of the working method is the primary job; persuasion is secondary.
 
 The image must explain itself after it is separated from this repository, its post caption, and the skill name. Default audience: a technically literate stranger encountering it in a general programming or AI feed.
 
@@ -28,6 +28,8 @@ The repository has two different information architectures. Do not use the skill
 | Repository README | Understand the marketplace and choose a package | Marketplace index: repository job, one row per live package, package scope, choose-if cue, child count |
 
 Directory images are **reference / orientation** artifacts, not teaser posters. Their headline names the collection's shared job. Their dominant visual is the live child index. A package image must not borrow one child's pain story and present it as the whole package.
+
+Keep directory titles literal: **Package index** at repository root and **Skill index** inside a plugin. Do not add a hook, pain opener, promise, CTA, or closing slogan. The index itself is the artifact: names, scope or use-when, and output. Prefer the visual register of technical reference documentation over a landing page.
 
 Build directory indexes from the filesystem, manifests, and live descriptions—not from a remembered catalog. When a child is added, renamed, moved, or removed, its parent index is stale until regenerated.
 
@@ -82,6 +84,20 @@ Read the target `SKILL.md` and every reference it requires. Extract:
 
 Do not frame from the skill name or headings alone.
 
+## Explain the solution, not only the stakes
+
+An individual skill card must expose a complete solution trace. A before/after example or contrarian headline can prove the problem, but it does not explain the skill by itself.
+
+Extract and show:
+
+1. **Input** — the concrete artifact or state the skill receives.
+2. **Operations** — three to six causal steps the skill actually performs, in order.
+3. **Decision criteria** — classifications, branches, stop conditions, or source hierarchy that determine the next step.
+4. **Output** — the report, patch, brief, ranked list, model, decision, or other artifact produced.
+5. **Success check** — how the reader knows the job is complete.
+
+At least half of an individual skill image should explain operations, decision criteria, and output. The opener and problem proof together should not dominate the canvas. If a fresh reader can repeat the headline but cannot describe what happens after invoking the skill, the card is marketing copy and fails.
+
 ## Choose one primary archetype
 
 | Observable predicate | Primary archetype | Opening |
@@ -100,14 +116,16 @@ PAS and Jobs-to-be-Done apply when the trigger contains a real struggling moment
 
 ## Decide what earns visual space
 
-The image contains:
+An individual skill image contains:
 
-1. **One hook** in language the reader already uses.
-2. **One premise line** naming the concrete situation and stakes.
-3. **One promise** describing the reader's changed state.
-4. **One proof visual** exposing the skill's mechanism, comparison, or artifact in public language.
-5. **Up to three supports** needed to act or believe.
-6. **The skill name after value is established**, as a quiet handle or invocation.
+1. **The skill/job label** as a navigation handle.
+2. **The triggering situation** in ordinary reader language.
+3. **The concrete input** the workflow acts on.
+4. **The solution trace**: operations and decision criteria in public language.
+5. **The output and completion check**.
+6. **One proof example** only where it clarifies the method.
+
+A hook is optional. When used, it occupies no more than the opening quarter of the page and cannot displace the solution trace.
 
 The adjacent Markdown contains installation, the full workflow, edge cases, detailed citations, long examples, model/provider knobs, and complete API or command syntax. It must not supply a premise missing from the image.
 
@@ -139,6 +157,9 @@ One final headline. Product/skill name excluded unless recognition of that name 
 
 ## Proof visual
 The single relationship, sequence, comparison, or artifact to draw. Include exact labels and source facts.
+
+## Solution trace
+Exact input, ordered operations, decision criteria or branches, output artifact, and success check the image must expose.
 
 ## Public-language mapping
 List every source term that could require repository context and its exact in-image replacement or inline definition.
@@ -182,6 +203,8 @@ The SVG remains the editable source; the Markdown references the PNG for reliabl
 - Headline and premise identify the domain, concrete object, and stakes without a caption.
 - Archetype matches the trigger; pain was not invented.
 - The visual proves the mechanism instead of decorating the copy.
+- A fresh reader can describe what the skill actually does after invocation: input, operations, decisions, and output.
+- Method coverage occupies at least as much visual weight as the opener and problem proof combined.
 - Every coined term is translated, defined inline, or removed.
 - Arrow inputs and outputs are recognizable without the target SKILL.md.
 - No internal orchestration detail appears unless it is causal proof.
@@ -202,7 +225,8 @@ Give the final PNG—without its filename, caption, README, target skill, or rep
 4. every unclear term or relationship;
 5. a 0–5 self-contained comprehension score;
 6. whether they would share it without adding a caption.
+7. the exact workflow they believe runs after invocation, including input and output.
 
-Pass only when the first three answers match the brief, the score is at least 4, no unclear term blocks the method, and the reader would share it without explanatory caption. A failure triggers reframing and a new PNG—not a glossary appended to the same crowded image.
+Pass only when the first three answers and workflow trace match the brief, the score is at least 4, no unclear term blocks the method, and the reader would share it without explanatory caption. A failure triggers reframing and a new PNG—not a glossary appended to the same crowded image.
 
 For a directory index, also name two reader situations and ask the fresh reader which row they would choose. Both routes must match the brief. A directory image that explains the collection but cannot route a reader fails.

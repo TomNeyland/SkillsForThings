@@ -42,7 +42,7 @@ For target `plugins/<plugin>/skills/<skill>/`:
 
 ### Batch 3
 
-- `conductor/conducting`
+- `conductor/coordinate-agents`
 - `conductor/autonomous-build`
 - `conductor/autonomous-build-session-pacing`
 

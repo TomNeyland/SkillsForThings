@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
   <title id="title">The guide stayed still. The SDK moved.</title>
-  <desc id="desc">After an SDK, model, or API release, an unchanged reusable agent instruction file can carry stale advice. A schematic claim, Use SDK vN, becomes evidence-at-risk when SDK vN+1 ships. The guide should inventory time-sensitive claims, check current sources, assign an evidence status, edit after research, and choose PATCH, MINOR, or MAJOR based on whether citations, guidance, or recommendations changed.</desc>
+  <desc id="desc">After an SDK, model, or API release, audit a reusable agent instruction file by marking every time-sensitive claim, checking current sources, assigning evidence status, editing, and choosing PATCH, MINOR, or MAJOR from the impact. The output is an updated cited guide and change log. The audit is complete when every marked claim has a status and the locally reinstalled guide passes verification.</desc>
 
   <defs>
     <style>
@@ -107,10 +107,15 @@
   <text x="1080" y="1553" class="version-body secondary">A recommendation</text>
   <text x="1080" y="1593" class="version-body secondary">was reversed.</text>
 
-  <!-- Final changed behavior -->
+  <!-- Output artifact and completion check -->
   <line x1="120" y1="1650" x2="1480" y2="1650" class="rule"/>
-  <text x="120" y="1722" class="statement primary">Re-check the guide after every release</text>
-  <text x="120" y="1778" class="statement primary">in the SDK, model, or API it covers.</text>
+  <text x="120" y="1710" class="section-label accent">OUTPUT</text>
+  <text x="120" y="1755" class="step-title primary">UPDATED, CITED GUIDE</text>
+  <text x="120" y="1797" class="step-body secondary">+ version bump + detailed change log</text>
+
+  <text x="850" y="1710" class="section-label accent">COMPLETE WHEN</text>
+  <text x="850" y="1755" class="step-body primary">every marked claim has a status</text>
+  <text x="850" y="1797" class="step-body primary">and local reinstall passes.</text>
 
   <!-- Quiet, defined repository handle in the outer bottom band -->
   <line x1="120" y1="1880" x2="1480" y2="1880" class="rule"/>

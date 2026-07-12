@@ -11,7 +11,7 @@
 
   <!-- Nonessential metadata sits outside the centered 1:1 feed-safe area. -->
   <text class="mono" x="120" y="112" font-size="22" fill="#6b6b66">OPENAI-PROMPT-CACHE</text>
-  <text class="sans" x="1480" y="112" font-size="22" fill="#6b6b66" text-anchor="end">cc-plugins</text>
+  <text class="sans" x="1480" y="112" font-size="22" fill="#6b6b66" text-anchor="end">SkillsForThings</text>
   <line x1="120" y1="146" x2="1480" y2="146" stroke="#d1d0ca" stroke-width="2"/>
 
   <!-- Problem -->

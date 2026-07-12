@@ -1,3 +1,3 @@
 # Autonomous Build — Purpose Layers
 
-![A code-review product can gain features without depth; compare three commits that answer the same question with five features that each answer a new user question, then reject any feature whose new question cannot be named.](assets/autonomous-build-purpose-layers.png)
+![Given a working product and a candidate next feature, name the ordered user questions, finish a broken first layer, require the feature to answer a new question or axis, read the schema when current data is sparse, and build one feature per commit; reject the candidate when its new user question cannot be named.](assets/autonomous-build-purpose-layers.png)

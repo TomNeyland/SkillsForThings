@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
-  <title id="title">Choose a cc-plugins package by the job you need done</title>
+  <title id="title">SkillsForThings package index</title>
   <desc id="desc">A visual index of five packages and eighteen skills: conductor for multi-agent builds, prompt-tuning for repeated prompt efficiency, misc for cross-cutting project judgment, plugin-ops for public skill maintenance, and memory-mood for emotional-arc visualization.</desc>
   <style>
     .sans { font-family: Helvetica, Arial, sans-serif; }
@@ -7,22 +7,19 @@
   </style>
   <rect width="1600" height="2000" fill="#f7f6f2"/>
 
-  <text class="mono" x="120" y="112" font-size="22" fill="#42647a">CC-PLUGINS</text>
-  <text class="sans" x="1480" y="112" font-size="22" fill="#51514d" text-anchor="end">5 PACKAGES · 18 SKILLS</text>
+  <text class="mono" x="120" y="112" font-size="22" fill="#42647a">SKILLSFORTHINGS</text>
+  <text class="sans" x="1480" y="112" font-size="22" fill="#51514d" text-anchor="end">PACKAGE INDEX</text>
   <line x1="120" y1="146" x2="1480" y2="146" stroke="#d1d0ca" stroke-width="2"/>
 
   <g transform="translate(120 258)">
-    <text class="sans" x="0" y="0" font-size="88" font-weight="700" fill="#181816">
-      <tspan x="0" y="0">Choose the package by</tspan>
-      <tspan x="0" y="106">the job you need done.</tspan>
-    </text>
-    <text class="sans" x="0" y="188" font-size="36" fill="#51514d">Reusable instructions for recurring decisions in AI-assisted work.</text>
+    <text class="sans" x="0" y="0" font-size="88" font-weight="700" fill="#181816">Package index</text>
+    <text class="sans" x="0" y="80" font-size="34" fill="#51514d">5 packages · 18 skills</text>
   </g>
 
-  <g transform="translate(120 580)">
+  <g transform="translate(120 460)">
     <text class="sans" x="0" y="0" font-size="23" font-weight="700" letter-spacing="1.4" fill="#51514d">PACKAGE</text>
-    <text class="sans" x="320" y="0" font-size="23" font-weight="700" letter-spacing="1.4" fill="#51514d">CHOOSE WHEN</text>
-    <text class="sans" x="1030" y="0" font-size="23" font-weight="700" letter-spacing="1.4" fill="#51514d">WHAT LIVES THERE</text>
+    <text class="sans" x="320" y="0" font-size="23" font-weight="700" letter-spacing="1.4" fill="#51514d">SCOPE</text>
+    <text class="sans" x="1030" y="0" font-size="23" font-weight="700" letter-spacing="1.4" fill="#51514d">SKILLS COVER</text>
     <line x1="0" y1="34" x2="1360" y2="34" stroke="#181816" stroke-width="3"/>
 
     <g transform="translate(0 78)">
@@ -76,15 +73,14 @@
     </g>
   </g>
 
-  <g transform="translate(120 1570)">
-    <text class="sans" x="0" y="0" font-size="24" font-weight="700" letter-spacing="1.5" fill="#42647a">HOW TO NAVIGATE</text>
-    <text class="sans" x="0" y="74" font-size="48" font-weight="700" fill="#181816">Start with the situation—not the skill name.</text>
-    <text class="sans" x="0" y="132" font-size="31" fill="#51514d">Open the matching package, then choose the skill row whose trigger matches your work.</text>
+  <g transform="translate(120 1510)">
+    <line x1="0" y1="0" x2="1360" y2="0" stroke="#d1d0ca" stroke-width="2"/>
+    <text class="sans" x="0" y="72" font-size="30" fill="#51514d">Each package README contains the complete skill index.</text>
   </g>
 
   <g transform="translate(120 1840)">
     <line x1="0" y1="0" x2="1360" y2="0" stroke="#d1d0ca" stroke-width="2"/>
-    <text class="sans" x="0" y="76" font-size="34" font-weight="700" fill="#181816">cc-plugins</text>
-    <text class="mono" x="1360" y="76" font-size="22" fill="#51514d" text-anchor="end">github.com/TomNeyland/cc-plugins</text>
+    <text class="sans" x="0" y="76" font-size="34" font-weight="700" fill="#181816">SkillsForThings</text>
+    <text class="mono" x="1360" y="76" font-size="22" fill="#51514d" text-anchor="end">github.com/TomNeyland/SkillsForThings</text>
   </g>
 </svg>

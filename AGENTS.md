@@ -1,4 +1,4 @@
-# cc-plugins
+# SkillsForThings
 
 A Claude Code plugin marketplace.
 
@@ -50,10 +50,10 @@ plugins/<plugin-name>/
 
 ```bash
 # Add this repo as a marketplace from the local path
-claude plugin marketplace add /path/to/cc-plugins
+claude plugin marketplace add /path/to/SkillsForThings
 
 # Install the plugin
-claude plugin install <plugin-name>@cc-plugins
+claude plugin install <plugin-name>@SkillsForThings
 
 # Restart Claude Code or run /reload-plugins
 ```

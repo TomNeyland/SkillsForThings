@@ -5,7 +5,7 @@ description: Use when ranking a feature backlog under a "next level / take it fu
 
 # Autonomous Build — Jealousy Ranking
 
-![When choosing the next feature from a backlog, do not rank by implementation effort alone; name the audience, test each idea for durable value or demo appeal, challenge it with real inputs and competitor parity, then replace weak candidates before filing the roadmap.](assets/autonomous-build-jealousy-ranking.png)
+![Given a feature backlog, name the audience, classify each idea by durable product value or demo appeal, challenge it against real inputs, competitor parity, and a skeptic, then drop and replace weak candidates; the roadmap is ready when every filed survivor has a named audience and a defensible reason to build it.](assets/autonomous-build-jealousy-ranking.png)
 
 ## Overview
 

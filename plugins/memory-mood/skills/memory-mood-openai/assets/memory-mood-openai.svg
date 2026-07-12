@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
   <title id="title">One model reading can wobble. Do not chart it as a mood shift.</title>
-  <desc id="desc">To visualize model-rated emotion across an AI assistant’s accumulating memory text, evaluate each cumulative snapshot with k independent API calls. Never pass prior answers into later calls. Plot the mean across readings and a plus-or-minus one standard deviation band showing call-to-call spread.</desc>
+  <desc id="desc">From dated AI assistant memory notes and an API key, build cumulative snapshots, evaluate each with k independent API calls, summarize the readings as a mean and plus-or-minus one standard deviation, select the reaction closest to the mean, and render index.html. With no API key or k equal to one, use the single-evaluator workflow. Complete when every selected snapshot has k standalone readings and index.html opens.</desc>
 
   <defs>
     <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
@@ -16,7 +16,7 @@
 
     <text x="120" y="305" font-size="92" font-weight="700" letter-spacing="-3">One model reading can wobble.</text>
     <text x="120" y="410" font-size="92" font-weight="700" letter-spacing="-3">Do not chart it as a mood shift.</text>
-    <text x="120" y="500" font-size="31" fill="#51514d">For each growing memory snapshot, take k independent emotional readings before drawing the curve.</text>
+    <text x="120" y="500" font-size="31" fill="#51514d">INPUT: dated memory notes + API key. Choose k independent readings per snapshot.</text>
 
     <line x1="120" y1="570" x2="1480" y2="570" stroke="#d1d0ca" stroke-width="2"/>
 
@@ -62,6 +62,7 @@
       <text x="1060" y="1005" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">SUMMARY</text>
       <text x="1060" y="1055" font-size="32" font-weight="700">MEAN LINE</text>
       <text x="1060" y="1095" font-size="32" font-weight="700">±1σ BAND</text>
+      <text x="1060" y="1132" font-size="24" fill="#51514d">+ closest reaction to mean</text>
     </g>
 
     <text x="120" y="1160" font-size="24" font-weight="700" letter-spacing="2" fill="#a14332">NEVER THREAD PRIOR ANSWERS INTO THE NEXT CALL</text>
@@ -96,11 +97,15 @@
 
     <text x="670" y="1630" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">CUMULATIVE MEMORY TIMEPOINTS →</text>
 
-    <line x1="120" y1="1670" x2="1480" y2="1670" stroke="#d1d0ca" stroke-width="2"/>
+    <line x1="120" y1="1650" x2="1480" y2="1650" stroke="#d1d0ca" stroke-width="2"/>
 
-    <text x="120" y="1730" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">THE RULE</text>
-    <text x="120" y="1765" font-size="38" font-weight="700">Same accumulated memory. Fresh calls. No prior answers.</text>
-    <text x="120" y="1800" font-size="24" fill="#51514d">The mean shows the recurring signal; the band shows reading-to-reading variation.</text>
+    <text x="120" y="1690" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">OUTPUT</text>
+    <text x="120" y="1725" font-size="28" font-weight="700">index.html · mean ±1σ chart · closest-to-average reaction feed</text>
+
+    <text x="120" y="1770" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">BRANCH</text>
+    <text x="120" y="1800" font-size="24" fill="#51514d">No API key or k=1 → use memory-mood.</text>
+    <text x="760" y="1770" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">COMPLETE WHEN</text>
+    <text x="760" y="1800" font-size="24" fill="#51514d">k readings per snapshot + index.html opens.</text>
 
     <line x1="120" y1="1880" x2="1480" y2="1880" stroke="#d1d0ca" stroke-width="2"/>
     <text x="120" y="1940" font-size="22" fill="#51514d">memory-mood-openai · repository visualization workflow</text>

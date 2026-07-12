@@ -4,14 +4,14 @@
     "name": "Thomas Neyland",
     "email": "tcneyland@gmail.com"
   },
-  "description": "Claude Code plugins for multi-agent orchestration, prompt engineering, and LLM-application workflows",
-  "version": "0.9.0",
+  "description": "Claude Code skills for multi-agent builds, prompt engineering, research, plugin maintenance, and memory visualization",
+  "version": "1.0.0",
   "plugins": [
     {
       "name": "conductor",
       "source": "./plugins/conductor",
       "description": "Coordinate a fleet of subagents — delegate owned units, review with a dual-model critic, trace the seams, integrate. Includes the atomic fan / critic primitives and the autonomous long-build family.",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "author": {
         "name": "Thomas Neyland",
         "email": "tcneyland@gmail.com"
@@ -21,7 +21,7 @@
       "name": "misc",
       "source": "./plugins/misc",
       "description": "Assorted process skills for research, terminology, copy, long-build orchestration, and technical communication",
-      "version": "0.3.0",
+      "version": "0.4.0",
       "author": {
         "name": "Thomas Neyland",
         "email": "tcneyland@gmail.com"
@@ -31,7 +31,7 @@
       "name": "prompt-tuning",
       "source": "./plugins/prompt-tuning",
       "description": "Skills for optimizing LLM prompts across multiple axes — cache hit rate, latency, cost, structure",
-      "version": "0.5.0",
+      "version": "0.6.0",
       "author": {
         "name": "Thomas Neyland",
         "email": "tcneyland@gmail.com"
@@ -41,7 +41,7 @@
       "name": "plugin-ops",
       "source": "./plugins/plugin-ops",
       "description": "Skills for maintaining Claude Code plugins — refreshing skill content against current evidence, validating manifests, auditing for stale claims and origin leaks before publishing",
-      "version": "0.4.0",
+      "version": "0.5.0",
       "author": {
         "name": "Thomas Neyland",
         "email": "tcneyland@gmail.com"
@@ -51,7 +51,7 @@
       "name": "memory-mood",
       "source": "./plugins/memory-mood",
       "description": "Visualize the emotional arc of an AI assistant's accumulating memory — replay your assistant's notes-to-self in formation order and chart how each new memory shifts its mood",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "author": {
         "name": "Thomas Neyland",
         "email": "tcneyland@gmail.com"

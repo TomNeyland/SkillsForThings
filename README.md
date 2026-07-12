@@ -1,8 +1,8 @@
 # SkillsForThings
 
-![Choose a cc-plugins package by the job you need done: conductor for multi-agent builds, prompt-tuning for repeated prompt efficiency, misc for cross-cutting judgment, plugin-ops for public skill maintenance, or memory-mood for emotional-arc visualization.](assets/cc-plugins.png)
+![SkillsForThings package index: five packages covering multi-agent builds, prompt efficiency, cross-cutting project judgment, public skill maintenance, and memory visualization.](assets/skills-for-things.png)
 
-A Claude Code plugin marketplace for multi-agent orchestration, prompt engineering, and LLM-application workflows.
+A Claude Code skill marketplace for multi-agent builds, prompt engineering, research, plugin maintenance, and memory visualization.
 
 ## Install
 
@@ -28,7 +28,7 @@ Coordinate a fleet of subagents to do what one context can't — delegate owned 
 
 | Skill | Use when |
 |---|---|
-| `conducting` | A task is large enough to split across multiple subagents you coordinate as the lead, rather than doing it all in one context |
+| `coordinate-agents` | A task is large enough to split across multiple subagents you coordinate as the lead, rather than doing it all in one context |
 | `fan-and-critic` | One pass isn't enough to trust a result — you need parallel breadth (options, perspectives, coverage), an adversarial check of an artifact before you act, or both |
 | `autonomous-build` | Explicitly kicking off a long, autonomous product-building session by name |
 | `autonomous-build-purpose-layers` | Deciding what to build next in a long session — advancing the product's arc of purpose, not polishing the last view |

@@ -1,3 +1,3 @@
 # Align Terminology
 
-![The invented boolean is_critical makes an expert ask what critical means; RFC 5424's recognized severity field and eight-level scale show why authoritative names carry their definitions.](assets/align-terminology.png)
+![Audit schema fields, models, and enums by locating the highest applicable authority, applying the expert-recognition test, classifying every name, and recording an action; finish when every name has an authority, status, and action.](assets/align-terminology.png)
