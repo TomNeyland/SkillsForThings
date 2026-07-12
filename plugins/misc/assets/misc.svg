@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Choose a misc skill for the decision around the build</title>
+  <desc id="desc">A visual index of five cross-cutting AI project skills: prior-art, align-terminology, orchestrating-greenfield-builds, cutting-internal-leaks-from-copy, and creating-technical-infographics.</desc>
+  <style>
+    .sans { font-family: Helvetica, Arial, sans-serif; }
+    .mono { font-family: Menlo, Consolas, monospace; }
+  </style>
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <text class="mono" x="120" y="112" font-size="22" fill="#42647a">MISC</text>
+  <text class="sans" x="1480" y="112" font-size="22" fill="#51514d" text-anchor="end">5 CROSS-CUTTING SKILLS</text>
+  <line x1="120" y1="146" x2="1480" y2="146" stroke="#d1d0ca" stroke-width="2"/>
+
+  <g transform="translate(120 258)">
+    <text class="sans" x="0" y="0" font-size="84" font-weight="700" fill="#181816">
+      <tspan x="0" y="0">Choose the skill for the</tspan>
+      <tspan x="0" y="102">decision around the build.</tspan>
+    </text>
+    <text class="sans" x="0" y="184" font-size="36" fill="#51514d">Research, naming, direction, reader-facing copy, or technical visuals.</text>
+  </g>
+
+  <g transform="translate(120 570)">
+    <text class="sans" x="0" y="0" font-size="23" font-weight="700" letter-spacing="1.4" fill="#51514d">SKILL</text>
+    <text class="sans" x="390" y="0" font-size="23" font-weight="700" letter-spacing="1.4" fill="#51514d">CHOOSE WHEN</text>
+    <text class="sans" x="1050" y="0" font-size="23" font-weight="700" letter-spacing="1.4" fill="#51514d">YOU GET</text>
+    <line x1="0" y1="34" x2="1360" y2="34" stroke="#181816" stroke-width="3"/>
+
+    <g transform="translate(0 78)">
+      <text class="mono" x="0" y="28" font-size="27" font-weight="700" fill="#181816">prior-art</text>
+      <text class="sans" x="390" y="24" font-size="28" font-weight="700" fill="#181816">Before building a custom schema, identifier,</text>
+      <text class="sans" x="390" y="64" font-size="28" font-weight="700" fill="#181816">algorithm, file format, or taxonomy.</text>
+      <text class="sans" x="1050" y="22" font-size="26" fill="#181816">standard or library</text>
+      <text class="sans" x="1050" y="60" font-size="26" fill="#181816">+ adopt/adapt/build rule</text>
+      <line x1="0" y1="112" x2="1360" y2="112" stroke="#d1d0ca" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(0 248)">
+      <text class="mono" x="0" y="28" font-size="27" font-weight="700" fill="#181816">align-terminology</text>
+      <text class="sans" x="390" y="24" font-size="28" font-weight="700" fill="#181816">A schema field, model, or enum name feels</text>
+      <text class="sans" x="390" y="64" font-size="28" font-weight="700" fill="#181816">invented, inconsistent, or unclear to experts.</text>
+      <text class="sans" x="1050" y="22" font-size="26" fill="#181816">recognized term</text>
+      <text class="sans" x="1050" y="60" font-size="26" fill="#181816">+ aligned model</text>
+      <line x1="0" y1="112" x2="1360" y2="112" stroke="#d1d0ca" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(0 418)">
+      <text class="mono" x="0" y="20" font-size="24" font-weight="700" fill="#181816">orchestrating-</text>
+      <text class="mono" x="0" y="54" font-size="24" font-weight="700" fill="#181816">greenfield-builds</text>
+      <text class="sans" x="390" y="24" font-size="28" font-weight="700" fill="#181816">A long multi-agent build must preserve product</text>
+      <text class="sans" x="390" y="64" font-size="28" font-weight="700" fill="#181816">intent across agents, sessions, and implementation.</text>
+      <text class="sans" x="1050" y="22" font-size="26" fill="#181816">durable product docs</text>
+      <text class="sans" x="1050" y="60" font-size="26" fill="#181816">+ independent read test</text>
+      <line x1="0" y1="112" x2="1360" y2="112" stroke="#d1d0ca" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(0 588)">
+      <text class="mono" x="0" y="20" font-size="24" font-weight="700" fill="#181816">cutting-internal-</text>
+      <text class="mono" x="0" y="54" font-size="24" font-weight="700" fill="#181816">leaks-from-copy</text>
+      <text class="sans" x="390" y="24" font-size="28" font-weight="700" fill="#181816">Accurate LLM-written copy sounds machine-made</text>
+      <text class="sans" x="390" y="64" font-size="28" font-weight="700" fill="#181816">or narrates the process instead of the result.</text>
+      <text class="sans" x="1050" y="22" font-size="26" fill="#181816">reader-facing edit</text>
+      <text class="sans" x="1050" y="60" font-size="26" fill="#181816">+ reusable copy test</text>
+      <line x1="0" y1="112" x2="1360" y2="112" stroke="#d1d0ca" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(0 758)">
+      <text class="mono" x="0" y="20" font-size="24" font-weight="700" fill="#181816">creating-technical-</text>
+      <text class="mono" x="0" y="54" font-size="24" font-weight="700" fill="#181816">infographics</text>
+      <text class="sans" x="390" y="24" font-size="28" font-weight="700" fill="#181816">A technical explanation must stay clear after</text>
+      <text class="sans" x="390" y="64" font-size="28" font-weight="700" fill="#181816">mobile downscaling and square feed crops.</text>
+      <text class="sans" x="1050" y="22" font-size="26" fill="#181816">editable SVG</text>
+      <text class="sans" x="1050" y="60" font-size="26" fill="#181816">+ verified 4:5 PNG</text>
+      <line x1="0" y1="112" x2="1360" y2="112" stroke="#181816" stroke-width="3"/>
+    </g>
+  </g>
+
+  <g transform="translate(120 1570)">
+    <text class="sans" x="0" y="0" font-size="24" font-weight="700" letter-spacing="1.5" fill="#42647a">SELECTION RULE</text>
+    <text class="sans" x="0" y="74" font-size="48" font-weight="700" fill="#181816">Name the decision blocking the work.</text>
+    <text class="sans" x="0" y="132" font-size="31" fill="#51514d">Then choose the row whose trigger names that decision—not the nearest implementation task.</text>
+  </g>
+
+  <g transform="translate(120 1840)">
+    <line x1="0" y1="0" x2="1360" y2="0" stroke="#d1d0ca" stroke-width="2"/>
+    <text class="sans" x="0" y="76" font-size="32" font-weight="700" fill="#181816">misc</text>
+    <text class="sans" x="1360" y="76" font-size="26" fill="#51514d" text-anchor="end">Cross-cutting judgment for AI-assisted work.</text>
+  </g>
+</svg>

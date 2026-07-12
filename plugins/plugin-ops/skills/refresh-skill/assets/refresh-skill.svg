@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">The guide stayed still. The SDK moved.</title>
+  <desc id="desc">After an SDK, model, or API release, an unchanged reusable agent instruction file can carry stale advice. A schematic claim, Use SDK vN, becomes evidence-at-risk when SDK vN+1 ships. The guide should inventory time-sensitive claims, check current sources, assign an evidence status, edit after research, and choose PATCH, MINOR, or MAJOR based on whether citations, guidance, or recommendations changed.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7f6f2; }
+      .primary { fill: #181816; }
+      .secondary { fill: #51514d; }
+      .accent { fill: #42647a; }
+      .failure { fill: #a14332; }
+      .rule { stroke: #d1d0ca; stroke-width: 3; }
+      .flow { stroke: #42647a; stroke-width: 4; fill: none; }
+      .headline { font: 700 94px Helvetica, Arial, sans-serif; letter-spacing: -2px; }
+      .section-label { font: 700 24px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
+      .body { font: 400 34px Helvetica, Arial, sans-serif; }
+      .body-sm { font: 400 28px Helvetica, Arial, sans-serif; }
+      .column-title { font: 700 27px Helvetica, Arial, sans-serif; letter-spacing: .8px; }
+      .step-title { font: 700 31px Helvetica, Arial, sans-serif; }
+      .step-body { font: 400 28px Helvetica, Arial, sans-serif; }
+      .version-title { font: 700 38px Helvetica, Arial, sans-serif; }
+      .version-body { font: 400 28px Helvetica, Arial, sans-serif; }
+      .statement { font: 700 50px Helvetica, Arial, sans-serif; letter-spacing: -.8px; }
+      .mono-lg { font: 700 38px Menlo, Consolas, monospace; }
+      .mono { font: 400 28px Menlo, Consolas, monospace; }
+      .step-num { font: 700 26px Helvetica, Arial, sans-serif; }
+      .meta { font: 700 22px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
+      .identity { font: 400 22px Helvetica, Arial, sans-serif; }
+    </style>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="2000"/>
+
+  <!-- Outer top band: public domain and concrete object -->
+  <text x="120" y="118" class="meta accent">REUSABLE AI WORKFLOW GUIDE</text>
+  <text x="1480" y="118" text-anchor="end" class="meta secondary">EVIDENCE AUDIT · SCHEMATIC EXAMPLE</text>
+  <line x1="120" y1="158" x2="1480" y2="158" class="rule"/>
+
+  <!-- Struggling moment -->
+  <text x="120" y="290" class="headline primary">The guide stayed still.</text>
+  <text x="120" y="394" class="headline primary">The SDK moved.</text>
+
+  <text x="120" y="490" class="section-label accent">WHY THIS MATTERS</text>
+  <text x="120" y="543" class="body secondary">After an SDK, model, or API release, an unchanged</text>
+  <text x="120" y="588" class="body secondary">agent instruction file can carry stale advice.</text>
+  <line x1="120" y1="630" x2="1480" y2="630" class="rule"/>
+
+  <!-- One claim becomes risky. Column bounds: 120..500, 600..980, 1080..1480. -->
+  <text x="120" y="690" class="section-label accent">ONE CLAIM, BEFORE AND AFTER A RELEASE</text>
+
+  <text x="120" y="750" class="column-title secondary">CURRENT GUIDE</text>
+  <text x="120" y="810" class="mono-lg primary">“Use SDK vN.”</text>
+  <text x="120" y="855" class="body-sm secondary">last verified: release N</text>
+
+  <line x1="495" y1="805" x2="570" y2="805" class="flow" marker-end="url(#arrow)"/>
+
+  <text x="610" y="750" class="column-title secondary">EXTERNAL EVENT</text>
+  <text x="610" y="810" class="mono-lg primary">SDK vN+1 ships</text>
+  <text x="610" y="855" class="body-sm secondary">outside the repository</text>
+
+  <line x1="985" y1="805" x2="1060" y2="805" class="flow" marker-end="url(#arrow)"/>
+
+  <text x="1100" y="750" class="column-title secondary">SAME TEXT</text>
+  <text x="1100" y="810" class="mono-lg primary">“Use SDK vN.”</text>
+  <text x="1100" y="855" class="column-title failure">EVIDENCE AT RISK</text>
+
+  <line x1="120" y1="915" x2="1480" y2="915" class="rule"/>
+
+  <!-- Evidence-first audit -->
+  <text x="120" y="975" class="section-label accent">AUDIT THE EVIDENCE BEFORE EDITING</text>
+
+  <circle cx="148" cy="1045" r="27" fill="#42647a"/>
+  <text x="148" y="1054" text-anchor="middle" class="step-num" fill="#f7f6f2">1</text>
+  <text x="205" y="1040" class="step-title primary">MARK EVERY TIME-SENSITIVE CLAIM</text>
+  <text x="205" y="1082" class="step-body secondary">dates · versions · measurements · model names · citations</text>
+  <line x1="148" y1="1080" x2="148" y2="1130" class="flow" marker-end="url(#arrow)"/>
+
+  <circle cx="148" cy="1170" r="27" fill="#42647a"/>
+  <text x="148" y="1179" text-anchor="middle" class="step-num" fill="#f7f6f2">2</text>
+  <text x="205" y="1165" class="step-title primary">CHECK CURRENT SOURCES</text>
+  <text x="205" y="1207" class="step-body secondary">official docs · staff statements · community measurements</text>
+  <line x1="148" y1="1205" x2="148" y2="1255" class="flow" marker-end="url(#arrow)"/>
+
+  <circle cx="148" cy="1295" r="27" fill="#42647a"/>
+  <text x="148" y="1304" text-anchor="middle" class="step-num" fill="#f7f6f2">3</text>
+  <text x="205" y="1290" class="step-title primary">ASSIGN STATUS, THEN EDIT</text>
+  <text x="205" y="1332" class="step-body secondary">confirmed · updated · refuted · no change · still unknown</text>
+
+  <line x1="120" y1="1385" x2="1480" y2="1385" class="rule"/>
+
+  <!-- Version impact. Column bounds: 120..500, 600..980, 1080..1480. -->
+  <text x="120" y="1445" class="section-label accent">VERSION THE GUIDE BY WHAT CHANGED</text>
+
+  <text x="120" y="1510" class="version-title primary">PATCH</text>
+  <text x="120" y="1553" class="version-body secondary">Citation refresh;</text>
+  <text x="120" y="1593" class="version-body secondary">guidance unchanged.</text>
+
+  <text x="600" y="1510" class="version-title primary">MINOR</text>
+  <text x="600" y="1553" class="version-body secondary">New evidence refines</text>
+  <text x="600" y="1593" class="version-body secondary">or expands guidance.</text>
+
+  <text x="1080" y="1510" class="version-title primary">MAJOR</text>
+  <text x="1080" y="1553" class="version-body secondary">A recommendation</text>
+  <text x="1080" y="1593" class="version-body secondary">was reversed.</text>
+
+  <!-- Final changed behavior -->
+  <line x1="120" y1="1650" x2="1480" y2="1650" class="rule"/>
+  <text x="120" y="1722" class="statement primary">Re-check the guide after every release</text>
+  <text x="120" y="1778" class="statement primary">in the SDK, model, or API it covers.</text>
+
+  <!-- Quiet, defined repository handle in the outer bottom band -->
+  <line x1="120" y1="1880" x2="1480" y2="1880" class="rule"/>
+  <text x="120" y="1935" class="identity secondary">refresh-skill</text>
+  <text x="1480" y="1935" text-anchor="end" class="identity secondary">Audit workflow for reusable AI instruction files</text>
+</svg>

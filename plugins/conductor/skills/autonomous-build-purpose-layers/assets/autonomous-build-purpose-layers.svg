@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">More features can still leave the product shallow</title>
+  <desc id="desc">For a developer choosing the next feature in a long AI-assisted build, a schematic code-review product compares three commits that polish or copy around the same question with five features that each answer a new user question: whether a pattern occurs, confidence, local relevance, why it was flagged, and what to do next. The decision rule is to build one feature per new user question and skip features whose new question cannot be named.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7f6f2; }
+      .primary { fill: #181816; }
+      .secondary { fill: #51514d; }
+      .accent { fill: #42647a; }
+      .failure { fill: #a14332; }
+      .rule { stroke: #d1d0ca; stroke-width: 3; }
+      .flow { stroke: #42647a; stroke-width: 4; fill: none; }
+      .flow-failure { stroke: #a14332; stroke-width: 4; fill: none; }
+      .headline { font: 700 94px Helvetica, Arial, sans-serif; letter-spacing: -2px; }
+      .section-label { font: 700 24px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
+      .body { font: 400 34px Helvetica, Arial, sans-serif; }
+      .body-sm { font: 400 28px Helvetica, Arial, sans-serif; }
+      .column-title { font: 700 28px Helvetica, Arial, sans-serif; letter-spacing: .5px; }
+      .question { font: 700 28px Helvetica, Arial, sans-serif; }
+      .commit-title { font: 700 28px Helvetica, Arial, sans-serif; }
+      .commit-body { font: 400 28px Helvetica, Arial, sans-serif; }
+      .rule-title { font: 700 29px Helvetica, Arial, sans-serif; }
+      .rule-body { font: 400 28px Helvetica, Arial, sans-serif; }
+      .statement { font: 700 54px Helvetica, Arial, sans-serif; letter-spacing: -.8px; }
+      .step-num { font: 700 24px Helvetica, Arial, sans-serif; }
+      .meta { font: 700 22px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
+      .identity { font: 400 22px Helvetica, Arial, sans-serif; }
+    </style>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#42647a"/>
+    </marker>
+    <marker id="arrow-failure" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#a14332"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="2000"/>
+
+  <!-- Outer top band: public situation and artifact -->
+  <text x="120" y="118" class="meta accent">LONG AI-ASSISTED PRODUCT BUILD</text>
+  <text x="1480" y="118" text-anchor="end" class="meta secondary">FEATURE PRIORITIZATION · SCHEMATIC</text>
+  <line x1="120" y1="158" x2="1480" y2="158" class="rule"/>
+
+  <!-- Contrarian reframe -->
+  <text x="120" y="290" class="headline primary">More features can still</text>
+  <text x="120" y="394" class="headline primary">leave the product shallow.</text>
+
+  <text x="120" y="490" class="section-label accent">THE TRAP</text>
+  <text x="120" y="543" class="body secondary">The roadmap grows, but every feature answers the same user question.</text>
+  <text x="120" y="588" class="body secondary">A deeper product lets the user ask something new.</text>
+  <line x1="120" y1="630" x2="1480" y2="630" class="rule"/>
+
+  <!-- Comparison. Column bounds: 120..740 and 860..1480. -->
+  <text x="120" y="690" class="section-label accent">SAME CODE-REVIEW PRODUCT, TWO DIRECTIONS</text>
+  <line x1="800" y1="730" x2="800" y2="1145" class="rule"/>
+
+  <!-- Same-question feature pile -->
+  <text x="120" y="755" class="column-title failure">FEATURE PILE — SAME QUESTION</text>
+  <text x="120" y="805" class="body-sm secondary">User question: “Does this pattern occur?”</text>
+
+  <circle cx="148" cy="865" r="25" fill="#a14332"/>
+  <text x="148" y="873" text-anchor="middle" class="step-num" fill="#f7f6f2">1</text>
+  <text x="195" y="860" class="commit-title primary">POLISH THE SAME VIEW</text>
+  <line x1="148" y1="897" x2="148" y2="917" class="flow-failure" marker-end="url(#arrow-failure)"/>
+
+  <circle cx="148" cy="945" r="25" fill="#a14332"/>
+  <text x="148" y="953" text-anchor="middle" class="step-num" fill="#f7f6f2">2</text>
+  <text x="195" y="940" class="commit-title primary">COPY A COMPETITOR FEATURE</text>
+  <line x1="148" y1="977" x2="148" y2="997" class="flow-failure" marker-end="url(#arrow-failure)"/>
+
+  <circle cx="148" cy="1025" r="25" fill="#a14332"/>
+  <text x="148" y="1033" text-anchor="middle" class="step-num" fill="#f7f6f2">3</text>
+  <text x="195" y="1020" class="commit-title primary">POLISH AGAIN</text>
+
+  <text x="120" y="1102" class="commit-body failure">Three commits. No new user question.</text>
+
+  <!-- New-question progression -->
+  <text x="860" y="755" class="column-title accent">DEEPER PRODUCT — NEW QUESTIONS</text>
+
+  <circle cx="888" cy="810" r="23" fill="#42647a"/>
+  <text x="888" y="818" text-anchor="middle" class="step-num" fill="#f7f6f2">1</text>
+  <text x="930" y="805" class="question primary">Does the pattern occur?</text>
+  <line x1="888" y1="840" x2="888" y2="850" class="flow" marker-end="url(#arrow)"/>
+
+  <circle cx="888" cy="875" r="23" fill="#42647a"/>
+  <text x="888" y="883" text-anchor="middle" class="step-num" fill="#f7f6f2">2</text>
+  <text x="930" y="870" class="question primary">How confident is detection?</text>
+  <line x1="888" y1="905" x2="888" y2="915" class="flow" marker-end="url(#arrow)"/>
+
+  <circle cx="888" cy="940" r="23" fill="#42647a"/>
+  <text x="888" y="948" text-anchor="middle" class="step-num" fill="#f7f6f2">3</text>
+  <text x="930" y="935" class="question primary">Does it matter here?</text>
+  <line x1="888" y1="970" x2="888" y2="980" class="flow" marker-end="url(#arrow)"/>
+
+  <circle cx="888" cy="1005" r="23" fill="#42647a"/>
+  <text x="888" y="1013" text-anchor="middle" class="step-num" fill="#f7f6f2">4</text>
+  <text x="930" y="1000" class="question primary">Why was it flagged?</text>
+  <line x1="888" y1="1035" x2="888" y2="1045" class="flow" marker-end="url(#arrow)"/>
+
+  <circle cx="888" cy="1070" r="23" fill="#42647a"/>
+  <text x="888" y="1078" text-anchor="middle" class="step-num" fill="#f7f6f2">5</text>
+  <text x="930" y="1065" class="question primary">What should I do next?</text>
+
+  <text x="860" y="1125" class="commit-body accent">Five distinct reasons to use the product.</text>
+
+  <!-- Decision rule -->
+  <line x1="120" y1="1190" x2="1480" y2="1190" class="rule"/>
+  <text x="120" y="1250" class="section-label accent">BEFORE THE NEXT COMMIT, ASK</text>
+  <text x="120" y="1318" class="statement primary">Which new user question will this feature answer?</text>
+
+  <!-- Supporting decisions. Column bounds: 120..500, 600..980, 1080..1480. -->
+  <text x="120" y="1390" class="section-label accent">DECISION RULES</text>
+
+  <text x="120" y="1450" class="rule-title primary">FIRST LAYER BROKEN?</text>
+  <text x="120" y="1492" class="rule-body secondary">Finish it before</text>
+  <text x="120" y="1532" class="rule-body secondary">adding depth.</text>
+
+  <text x="600" y="1450" class="rule-title primary">NEW QUESTION FOUND?</text>
+  <text x="600" y="1492" class="rule-body secondary">Build one feature</text>
+  <text x="600" y="1532" class="rule-body secondary">in one commit.</text>
+
+  <text x="1080" y="1450" class="rule-title primary">DATA SPARSE TODAY?</text>
+  <text x="1080" y="1492" class="rule-body secondary">Read the schema:</text>
+  <text x="1080" y="1532" class="rule-body secondary">build for what can exist.</text>
+
+  <!-- Final changed behavior -->
+  <line x1="120" y1="1585" x2="1480" y2="1585" class="rule"/>
+  <text x="120" y="1665" class="statement primary">If you cannot name the new question,</text>
+  <text x="120" y="1722" class="statement primary">do not build the feature.</text>
+
+  <!-- Quiet, defined repository handle in the outer bottom band -->
+  <line x1="120" y1="1880" x2="1480" y2="1880" class="rule"/>
+  <text x="120" y="1935" class="identity secondary">autonomous-build-purpose-layers</text>
+  <text x="1480" y="1935" text-anchor="end" class="identity secondary">Choose features by the next user question</text>
+</svg>

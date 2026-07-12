@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Choose the control your AI-assisted build needs</title>
+  <desc id="desc">A visual index of seven Conductor skills. Two route parallel-team coordination and independent artifact review. Five route the kickoff, feature-depth choice, backlog ranking, delivery cadence, and commit narrative of long autonomous builds.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L9,5 L1,9 Z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <text x="120" y="110" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="2.2" fill="#42647a">CONDUCTOR PACKAGE · 7 LIVE SKILLS</text>
+
+  <text x="120" y="260" font-family="Helvetica, Arial, sans-serif" font-size="88" font-weight="700" fill="#181816">
+    <tspan x="120" dy="0">Choose the control your</tspan>
+    <tspan x="120" dy="100">AI-assisted build needs.</tspan>
+  </text>
+  <text x="120" y="446" font-family="Helvetica, Arial, sans-serif" font-size="32" fill="#51514d">
+    <tspan x="120" dy="0">Coordinate parallel coding agents and long autonomous sessions</tspan>
+    <tspan x="120" dy="43">without losing direction, review rigor, or delivery cadence.</tspan>
+  </text>
+
+  <line x1="120" y1="544" x2="1480" y2="544" stroke="#d1d0ca" stroke-width="3"/>
+  <text x="120" y="590" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="1.6" fill="#51514d">SKILL</text>
+  <text x="520" y="590" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="1.6" fill="#51514d">CHOOSE WHEN</text>
+  <text x="1080" y="590" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="1.6" fill="#51514d">YOU GET</text>
+
+  <text x="120" y="646" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="1.8" fill="#42647a">PARALLEL TEAMWORK</text>
+
+  <text x="120" y="704" font-family="Menlo, Consolas, monospace" font-size="25" font-weight="700" fill="#181816">conducting</text>
+  <text x="520" y="694" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#181816">
+    <tspan x="520" dy="0">A large task needs owned work</tspan>
+    <tspan x="520" dy="36">across multiple coding agents.</tspan>
+  </text>
+  <path d="M1020 712 L1050 712" stroke="#42647a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1080" y="694" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">
+    <tspan x="1080" dy="0">Delegation plan + verified</tspan>
+    <tspan x="1080" dy="36">end-to-end integration</tspan>
+  </text>
+  <line x1="120" y1="760" x2="1480" y2="760" stroke="#d1d0ca" stroke-width="2"/>
+
+  <text x="120" y="814" font-family="Menlo, Consolas, monospace" font-size="25" font-weight="700" fill="#181816">fan-and-critic</text>
+  <text x="520" y="804" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#181816">
+    <tspan x="520" dy="0">One AI pass is not enough</tspan>
+    <tspan x="520" dy="36">to trust an artifact.</tspan>
+  </text>
+  <path d="M1020 822 L1050 822" stroke="#42647a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1080" y="804" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">
+    <tspan x="1080" dy="0">Independent attempts +</tspan>
+    <tspan x="1080" dy="36">ranked fault findings</tspan>
+  </text>
+
+  <line x1="120" y1="884" x2="1480" y2="884" stroke="#181816" stroke-width="3"/>
+  <text x="120" y="936" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="1.8" fill="#42647a">LONG AUTONOMOUS BUILDS</text>
+
+  <text x="120" y="998" font-family="Menlo, Consolas, monospace" font-size="25" font-weight="700" fill="#181816">autonomous-build</text>
+  <text x="520" y="988" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#181816">
+    <tspan x="520" dy="0">You explicitly start a long,</tspan>
+    <tspan x="520" dy="36">self-directed product build.</tspan>
+  </text>
+  <path d="M1020 1006 L1050 1006" stroke="#42647a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1080" y="988" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">
+    <tspan x="1080" dy="0">Audience, ordered user</tspan>
+    <tspan x="1080" dy="36">questions, budget, kickoff</tspan>
+  </text>
+  <line x1="120" y1="1054" x2="1480" y2="1054" stroke="#d1d0ca" stroke-width="2"/>
+
+  <text x="120" y="1098" aria-label="autonomous-build-purpose-layers" font-family="Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#181816">
+    <tspan x="120" dy="0">autonomous-build-</tspan>
+    <tspan x="120" dy="31">purpose-layers</tspan>
+  </text>
+  <text x="520" y="1098" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#181816">
+    <tspan x="520" dy="0">The next feature could add</tspan>
+    <tspan x="520" dy="36">depth—or only more polish.</tspan>
+  </text>
+  <path d="M1020 1116 L1050 1116" stroke="#42647a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1080" y="1098" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">
+    <tspan x="1080" dy="0">The next user question</tspan>
+    <tspan x="1080" dy="36">the feature must unlock</tspan>
+  </text>
+  <line x1="120" y1="1168" x2="1480" y2="1168" stroke="#d1d0ca" stroke-width="2"/>
+
+  <text x="120" y="1212" aria-label="autonomous-build-jealousy-ranking" font-family="Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#181816">
+    <tspan x="120" dy="0">autonomous-build-</tspan>
+    <tspan x="120" dy="31">jealousy-ranking</tspan>
+  </text>
+  <text x="520" y="1212" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#181816">
+    <tspan x="520" dy="0">A backlog needs ranking for</tspan>
+    <tspan x="520" dy="36">audience value and distinction.</tspan>
+  </text>
+  <path d="M1020 1230 L1050 1230" stroke="#42647a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1080" y="1212" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">
+    <tspan x="1080" dy="0">Red-teamed shortlist +</tspan>
+    <tspan x="1080" dy="36">stronger replacements</tspan>
+  </text>
+  <line x1="120" y1="1282" x2="1480" y2="1282" stroke="#d1d0ca" stroke-width="2"/>
+
+  <text x="120" y="1326" aria-label="autonomous-build-session-pacing" font-family="Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#181816">
+    <tspan x="120" dy="0">autonomous-build-</tspan>
+    <tspan x="120" dy="31">session-pacing</tspan>
+  </text>
+  <text x="520" y="1326" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#181816">
+    <tspan x="520" dy="0">A multi-hour session needs</tspan>
+    <tspan x="520" dy="36">time, commit, and push cadence.</tspan>
+  </text>
+  <path d="M1020 1344 L1050 1344" stroke="#42647a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1080" y="1326" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">
+    <tspan x="1080" dy="0">Budget-aware feature loop +</tspan>
+    <tspan x="1080" dy="36">checked, pushed increments</tspan>
+  </text>
+  <line x1="120" y1="1396" x2="1480" y2="1396" stroke="#d1d0ca" stroke-width="2"/>
+
+  <text x="120" y="1440" aria-label="autonomous-build-commit-essays" font-family="Menlo, Consolas, monospace" font-size="24" font-weight="700" fill="#181816">
+    <tspan x="120" dy="0">autonomous-build-</tspan>
+    <tspan x="120" dy="31">commit-essays</tspan>
+  </text>
+  <text x="520" y="1440" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#181816">
+    <tspan x="520" dy="0">A multi-commit build needs</tspan>
+    <tspan x="520" dy="36">its product reasons preserved.</tspan>
+  </text>
+  <path d="M1020 1458 L1050 1458" stroke="#42647a" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="1080" y="1440" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">
+    <tspan x="1080" dy="0">Git history that records</tspan>
+    <tspan x="1080" dy="36">audience and product intent</tspan>
+  </text>
+
+  <line x1="120" y1="1530" x2="1480" y2="1530" stroke="#181816" stroke-width="3"/>
+  <text x="120" y="1584" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="1.8" fill="#42647a">SELECTION RULE</text>
+  <text x="120" y="1642" font-family="Helvetica, Arial, sans-serif" font-size="31" font-weight="700" fill="#181816">
+    <tspan x="120" dy="0">Route by what needs control now:</tspan>
+  </text>
+  <text x="120" y="1694" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">
+    <tspan x="120" dy="0">team → conducting · artifact → fan-and-critic · whole session → autonomous-build</tspan>
+    <tspan x="120" dy="42">then choose the current decision: feature depth · backlog · cadence · commit history</tspan>
+  </text>
+
+  <text x="120" y="1930" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="1.7" fill="#42647a">CONDUCTOR</text>
+  <text x="320" y="1930" font-family="Helvetica, Arial, sans-serif" font-size="23" fill="#51514d">routing controls for coordinated AI-assisted software builds</text>
+</svg>

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">A clean grep can still miss a private project leak</title>
+  <desc id="desc">A public-release gate for reusable AI instructions: run deterministic machine checks, send the complete package to two independent readers, combine every concrete issue either reader finds, repair the package, and repeat until all three checks are clean.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <text x="120" y="118" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="2.5" fill="#42647a">PUBLIC-RELEASE GATE · REUSABLE AI INSTRUCTIONS</text>
+
+  <text x="120" y="300" font-family="Helvetica, Arial, sans-serif" font-size="94" font-weight="700" fill="#181816">
+    <tspan x="120" dy="0">A clean grep can still miss</tspan>
+    <tspan x="120" dy="106">a private project leak.</tspan>
+  </text>
+  <text x="120" y="492" font-family="Helvetica, Arial, sans-serif" font-size="32" fill="#51514d">
+    <tspan x="120" dy="0">Copied instructions can carry product-specific assumptions</tspan>
+    <tspan x="120" dy="44">even when no forbidden word remains.</tspan>
+  </text>
+
+  <line x1="120" y1="598" x2="1480" y2="598" stroke="#d1d0ca" stroke-width="3"/>
+  <text x="120" y="652" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="1.8" fill="#51514d">WHY SEARCH STOPS EARLY</text>
+
+  <text x="120" y="724" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#181816">Exact patterns are visible</text>
+  <text x="120" y="770" font-family="Menlo, Consolas, monospace" font-size="25" fill="#42647a">/Users/name/project</text>
+  <text x="120" y="810" font-family="Menlo, Consolas, monospace" font-size="25" fill="#42647a">broken-skill-reference</text>
+  <text x="120" y="850" font-family="Helvetica, Arial, sans-serif" font-size="27" fill="#51514d">A deterministic check can match these.</text>
+
+  <line x1="780" y1="690" x2="780" y2="876" stroke="#d1d0ca" stroke-width="3"/>
+
+  <text x="836" y="724" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="700" fill="#181816">Context can look harmless</text>
+  <text x="836" y="775" font-family="Helvetica, Arial, sans-serif" font-size="29" font-style="italic" fill="#a14332">“After the merge stage, pin the red lane.”</text>
+  <text x="836" y="822" font-family="Helvetica, Arial, sans-serif" font-size="27" fill="#51514d">
+    <tspan x="836" dy="0">No bad token. Still meaningless outside</tspan>
+    <tspan x="836" dy="38">the project that invented it.</tspan>
+  </text>
+
+  <line x1="120" y1="924" x2="1480" y2="924" stroke="#d1d0ca" stroke-width="3"/>
+  <text x="120" y="980" font-family="Helvetica, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="1.8" fill="#51514d">THE RELEASE GATE</text>
+
+  <circle cx="164" cy="1066" r="38" fill="#42647a"/>
+  <text x="164" y="1077" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#f7f6f2">1</text>
+  <text x="226" y="1055" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#181816">Run deterministic machine checks</text>
+  <text x="226" y="1099" font-family="Helvetica, Arial, sans-serif" font-size="27" fill="#51514d">Validate structure, local paths, exact references, and size limits.</text>
+
+  <path d="M164 1116 L164 1178" fill="none" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <circle cx="164" cy="1244" r="38" fill="#42647a"/>
+  <text x="164" y="1255" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#f7f6f2">2</text>
+  <text x="226" y="1233" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#181816">Two independent readers inspect the complete package</text>
+  <text x="226" y="1277" font-family="Helvetica, Arial, sans-serif" font-size="27" fill="#51514d">Same public-release question. Separate reads. No shared notes.</text>
+
+  <path d="M270 1324 L270 1400 L390 1400" fill="none" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+  <path d="M270 1324 L270 1496 L390 1496" fill="none" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+  <text x="420" y="1411" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#181816">READER A</text>
+  <text x="620" y="1411" font-family="Helvetica, Arial, sans-serif" font-size="27" fill="#51514d">finds origin-specific context</text>
+  <text x="420" y="1507" font-family="Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#181816">READER B</text>
+  <text x="620" y="1507" font-family="Helvetica, Arial, sans-serif" font-size="27" fill="#51514d">finds a different blind spot</text>
+
+  <path d="M1230 1400 L1360 1400 L1360 1450" fill="none" stroke="#42647a" stroke-width="4"/>
+  <path d="M1230 1496 L1360 1496 L1360 1450" fill="none" stroke="#42647a" stroke-width="4"/>
+  <path d="M1360 1450 L1360 1570" fill="none" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+
+  <line x1="120" y1="1588" x2="1480" y2="1588" stroke="#d1d0ca" stroke-width="3"/>
+  <text x="120" y="1650" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#181816">Keep every concrete issue either reader found.</text>
+  <text x="120" y="1697" font-family="Helvetica, Arial, sans-serif" font-size="28" fill="#51514d">Verify it, repair the package, then restart both full reads after a substantive fix.</text>
+
+  <rect x="120" y="1728" width="1360" height="4" fill="#42647a"/>
+  <text x="120" y="1786" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="700" fill="#181816">PUBLISH = machine checks pass + reader A clean + reader B clean</text>
+  <text x="120" y="1834" font-family="Helvetica, Arial, sans-serif" font-size="27" fill="#51514d">Search catches tokens. Independent full reads catch meaning.</text>
+
+  <text x="120" y="1940" font-family="Helvetica, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="1.5" fill="#42647a">PUBLIC-RELEASE REVIEW</text>
+  <text x="480" y="1940" font-family="Helvetica, Arial, sans-serif" font-size="23" fill="#51514d">for reusable AI instruction packages</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Why did the same prompt cost full price again?</title>
+  <desc id="desc">A plain technical diagram explaining that a changing value placed early in a prompt ends the cache match. Stable content should come first, changing data last, and cached tokens should be measured.</desc>
+
+  <style>
+    .sans { font-family: Helvetica, Arial, sans-serif; }
+    .mono { font-family: Menlo, Consolas, monospace; }
+  </style>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <!-- Nonessential metadata sits outside the centered 1:1 feed-safe area. -->
+  <text class="mono" x="120" y="112" font-size="22" fill="#6b6b66">OPENAI-PROMPT-CACHE</text>
+  <text class="sans" x="1480" y="112" font-size="22" fill="#6b6b66" text-anchor="end">cc-plugins</text>
+  <line x1="120" y1="146" x2="1480" y2="146" stroke="#d1d0ca" stroke-width="2"/>
+
+  <!-- Problem -->
+  <g transform="translate(120 260)">
+    <text class="sans" x="0" y="0" font-size="96" font-weight="700" fill="#181816">
+      <tspan x="0" y="0">Why did the same prompt</tspan>
+      <tspan x="0" y="112">cost full price again?</tspan>
+    </text>
+    <text class="sans" x="0" y="190" font-size="36" fill="#51514d">One changing value appeared too early.</text>
+  </g>
+
+  <!-- Failure diagram -->
+  <g transform="translate(120 610)">
+    <text class="sans" x="0" y="0" font-size="24" font-weight="700" fill="#51514d">WHAT THE CACHE SEES</text>
+    <line x1="0" y1="34" x2="1360" y2="34" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text class="mono" x="0" y="112" font-size="24" fill="#6b6b66">CALL 1</text>
+    <text class="mono" x="160" y="112" font-size="28" fill="#232320">tools</text>
+    <text class="mono" x="310" y="112" font-size="28" fill="#232320">schema</text>
+    <text class="mono" x="495" y="112" font-size="28" font-weight="700" fill="#a14332">time=12:01</text>
+    <text class="mono" x="740" y="112" font-size="28" fill="#8b8a84">examples</text>
+    <text class="mono" x="970" y="112" font-size="28" fill="#8b8a84">user input</text>
+
+    <text class="mono" x="0" y="202" font-size="24" fill="#6b6b66">CALL 2</text>
+    <text class="mono" x="160" y="202" font-size="28" fill="#232320">tools</text>
+    <text class="mono" x="310" y="202" font-size="28" fill="#232320">schema</text>
+    <text class="mono" x="495" y="202" font-size="28" font-weight="700" fill="#a14332">time=12:02</text>
+    <text class="mono" x="740" y="202" font-size="28" fill="#8b8a84">examples</text>
+    <text class="mono" x="970" y="202" font-size="28" fill="#8b8a84">user input</text>
+
+    <line x1="480" y1="68" x2="480" y2="244" stroke="#a14332" stroke-width="4"/>
+    <text class="sans" x="495" y="282" font-size="28" font-weight="700" fill="#a14332">The match ends here.</text>
+    <text class="sans" x="495" y="326" font-size="28" fill="#51514d">Everything after this point is new input.</text>
+  </g>
+
+  <!-- Consequence -->
+  <g transform="translate(120 1070)">
+    <line x1="0" y1="0" x2="1360" y2="0" stroke="#232320" stroke-width="3"/>
+    <text class="sans" x="0" y="82" font-size="54" font-weight="700" fill="#181816">The request succeeds.</text>
+    <text class="sans" x="0" y="150" font-size="54" font-weight="700" fill="#181816">The cache miss stays hidden.</text>
+  </g>
+
+  <!-- Solution -->
+  <g transform="translate(120 1370)">
+    <text class="sans" x="0" y="0" font-size="24" font-weight="700" fill="#42647a">THE FIX</text>
+    <text class="sans" x="0" y="82" font-size="64" font-weight="700" fill="#181816">Put stable content first.</text>
+
+    <text class="mono" x="0" y="162" font-size="27" fill="#232320">tools  →  schema  →  instructions  →  examples</text>
+    <text class="mono" x="880" y="162" font-size="27" font-weight="700" fill="#42647a">→  changing data</text>
+
+    <line x1="0" y1="214" x2="1360" y2="214" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text class="sans" x="0" y="286" font-size="32" font-weight="700" fill="#181816">1</text>
+    <text class="sans" x="60" y="286" font-size="32" fill="#181816">Reuse the exact same bytes.</text>
+
+    <text class="sans" x="0" y="354" font-size="32" font-weight="700" fill="#181816">2</text>
+    <text class="sans" x="60" y="354" font-size="32" fill="#181816">Move IDs, timestamps, and retrieval results to the end.</text>
+
+    <text class="sans" x="0" y="422" font-size="32" font-weight="700" fill="#181816">3</text>
+    <text class="sans" x="60" y="422" font-size="32" fill="#181816">Check</text>
+    <text class="mono" x="164" y="422" font-size="29" font-weight="700" fill="#42647a">cached_tokens</text>
+    <text class="sans" x="435" y="422" font-size="32" fill="#181816">to prove it worked.</text>
+  </g>
+
+  <!-- Product name; deliberately plain, not a sales panel. -->
+  <g transform="translate(120 1882)">
+    <line x1="0" y1="-58" x2="1360" y2="-58" stroke="#232320" stroke-width="3"/>
+    <text class="sans" x="0" y="0" font-size="30" font-weight="700" fill="#181816">openai-prompt-cache</text>
+    <text class="sans" x="1360" y="0" font-size="26" fill="#51514d" text-anchor="end">Find what broke the match. Prove the fix.</text>
+  </g>
+</svg>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creating Technical Infographics"
+  short_description: "Create plain editable technical infographics"
+  default_prompt: "Use $creating-technical-infographics to turn this material into a plain 4:5 technical infographic."

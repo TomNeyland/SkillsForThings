@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">Every coding agent finished, but the system still fails</title>
+  <desc id="svg-desc">Parallel coding agents can complete UI, API, and data units that pass tests and merge cleanly while the product remains disconnected. A lead agent assigns complete units, approves plans, reviews results, then verifies every control-to-endpoint, producer-to-consumer, and state-to-next-action connection in the merged system.</desc>
+
+  <defs>
+    <style>
+      .sans { font-family: Helvetica, Arial, sans-serif; }
+      .primary { fill: #181816; }
+      .secondary { fill: #51514d; }
+      .accent { fill: #42647a; }
+      .failure { fill: #a14332; }
+      .rule { stroke: #d1d0ca; stroke-width: 3; }
+      .flow { fill: none; stroke: #42647a; stroke-width: 4; }
+    </style>
+    <marker id="arrow-blue" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L13,7 L1,13 Z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <!-- Quality gap -->
+  <g id="headline" class="sans">
+    <text x="120" y="300" class="primary" font-size="96" font-weight="700">
+      <tspan x="120" dy="0">Every coding agent finished.</tspan>
+      <tspan x="120" dy="108">The system still fails.</tspan>
+    </text>
+    <text x="120" y="500" class="secondary" font-size="33">
+      <tspan x="120" dy="0">Parallel tasks can pass tests and merge cleanly while buttons, APIs, data,</tspan>
+      <tspan x="120" dy="42">and states remain disconnected.</tspan>
+    </text>
+    <line x1="120" y1="594" x2="1480" y2="594" class="rule"/>
+  </g>
+
+  <!-- Clean merge is not integration -->
+  <g id="merge-gap" class="sans">
+    <text x="120" y="655" class="secondary" font-size="24" font-weight="700" letter-spacing="1.4">WHY “GREEN” IS NOT ENOUGH</text>
+
+    <!-- Columns: [120,500], [610,990], [1100,1480] -->
+    <text x="310" y="730" text-anchor="middle" class="accent" font-size="24" font-weight="700">UI AGENT</text>
+    <text x="310" y="775" text-anchor="middle" class="primary" font-size="30" font-weight="700">unit complete</text>
+    <text x="310" y="813" text-anchor="middle" class="secondary" font-size="28">tests pass</text>
+
+    <text x="800" y="730" text-anchor="middle" class="accent" font-size="24" font-weight="700">API AGENT</text>
+    <text x="800" y="775" text-anchor="middle" class="primary" font-size="30" font-weight="700">unit complete</text>
+    <text x="800" y="813" text-anchor="middle" class="secondary" font-size="28">tests pass</text>
+
+    <text x="1290" y="730" text-anchor="middle" class="accent" font-size="24" font-weight="700">DATA AGENT</text>
+    <text x="1290" y="775" text-anchor="middle" class="primary" font-size="30" font-weight="700">unit complete</text>
+    <text x="1290" y="813" text-anchor="middle" class="secondary" font-size="28">tests pass</text>
+
+    <path d="M310 840 L310 870 L800 870 M1290 840 L1290 870 L800 870 M800 840 L800 884" class="flow" marker-end="url(#arrow-blue)"/>
+    <rect x="620" y="892" width="360" height="70" rx="8" fill="#42647a"/>
+    <text x="800" y="937" text-anchor="middle" fill="#f7f6f2" font-size="29" font-weight="700">CLEAN MERGE</text>
+    <text x="800" y="1005" text-anchor="middle" class="failure" font-size="24" font-weight="700" letter-spacing="1.2">STILL NOT PROOF OF INTEGRATION</text>
+  </g>
+
+  <!-- Visible seam proof -->
+  <g id="connections" class="sans">
+    <line x1="120" y1="1050" x2="1480" y2="1050" class="rule"/>
+    <text x="120" y="1112" class="accent" font-size="24" font-weight="700" letter-spacing="1.4">THE LEAD AGENT CHECKS THE ASSEMBLED SYSTEM</text>
+    <text x="120" y="1170" class="primary" font-size="40" font-weight="700">Name the real counterpart at every boundary.</text>
+
+    <text x="120" y="1250" class="primary" font-size="30" font-weight="700">CONTROL</text>
+    <line x1="430" y1="1238" x2="615" y2="1238" class="flow" marker-end="url(#arrow-blue)"/>
+    <text x="680" y="1250" class="primary" font-size="30" font-weight="700">LIVE API ENDPOINT</text>
+    <text x="1270" y="1250" class="accent" font-size="30" font-weight="700">CONNECTED</text>
+
+    <text x="120" y="1330" class="primary" font-size="30" font-weight="700">DATA PRODUCER</text>
+    <line x1="430" y1="1318" x2="615" y2="1318" class="flow" marker-end="url(#arrow-blue)"/>
+    <text x="680" y="1330" class="primary" font-size="30" font-weight="700">REAL UI CONSUMER</text>
+    <text x="1270" y="1330" class="accent" font-size="30" font-weight="700">CONNECTED</text>
+
+    <text x="120" y="1410" class="primary" font-size="30" font-weight="700">STATE</text>
+    <line x1="430" y1="1398" x2="615" y2="1398" class="flow" marker-end="url(#arrow-blue)"/>
+    <text x="680" y="1410" class="primary" font-size="30" font-weight="700">NEXT USER ACTION</text>
+    <text x="1270" y="1410" class="accent" font-size="30" font-weight="700">CONNECTED</text>
+  </g>
+
+  <!-- Coordination method -->
+  <g id="method" class="sans">
+    <line x1="120" y1="1470" x2="1480" y2="1470" class="rule"/>
+    <text x="120" y="1530" class="accent" font-size="24" font-weight="700" letter-spacing="1.4">HOW THE LEAD COORDINATES</text>
+
+    <!-- Columns: [120,500], [610,990], [1100,1480] -->
+    <circle cx="156" cy="1600" r="32" fill="#42647a"/>
+    <text x="156" y="1610" text-anchor="middle" fill="#f7f6f2" font-size="26" font-weight="700">1</text>
+    <text x="205" y="1592" class="primary" font-size="29" font-weight="700">ONE COMPLETE UNIT</text>
+    <text x="205" y="1634" class="secondary" font-size="28">
+      <tspan x="205" dy="0">One agent owns logic,</tspan>
+      <tspan x="205" dy="36">tests, and surface.</tspan>
+    </text>
+
+    <circle cx="646" cy="1600" r="32" fill="#42647a"/>
+    <text x="646" y="1610" text-anchor="middle" fill="#f7f6f2" font-size="26" font-weight="700">2</text>
+    <text x="695" y="1592" class="primary" font-size="29" font-weight="700">PLAN, THEN REVIEW</text>
+    <text x="695" y="1634" class="secondary" font-size="28">
+      <tspan x="695" dy="0">Approve before code.</tspan>
+      <tspan x="695" dy="36">Reviewers try to find faults.</tspan>
+    </text>
+
+    <circle cx="1136" cy="1600" r="32" fill="#42647a"/>
+    <text x="1136" y="1610" text-anchor="middle" fill="#f7f6f2" font-size="26" font-weight="700">3</text>
+    <text x="1185" y="1592" class="primary" font-size="29" font-weight="700">CHECK THE WHOLE</text>
+    <text x="1185" y="1634" class="secondary" font-size="28">
+      <tspan x="1185" dy="0">Find missing connections</tspan>
+      <tspan x="1185" dy="36">before shipping.</tspan>
+    </text>
+
+    <line x1="120" y1="1740" x2="1480" y2="1740" class="rule"/>
+    <text x="120" y="1800" class="primary" font-size="36" font-weight="700">Integration means every boundary has a real counterpart.</text>
+  </g>
+
+  <!-- Identity -->
+  <g id="identity" class="sans">
+    <text x="120" y="1918" class="secondary" font-size="23" letter-spacing="1.1">conducting</text>
+  </g>
+</svg>

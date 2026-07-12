@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Accurate copy can still sound machine-written.</title>
+  <desc id="desc">LLM-drafted customer copy often sounds artificial when it describes the writer, production process, or implementation instead of the reader’s result. Edit each sentence by choosing one treatment: cut information the reader does not need, rewrite useful facts in reader language, or relocate useful facts to where the question occurs.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L13,7 L1,13 Z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <g font-family="Helvetica, Arial, sans-serif" fill="#181816">
+    <text x="120" y="130" font-size="24" font-weight="700" letter-spacing="3" fill="#42647a">LLM-DRAFTED CUSTOMER COPY / EDITING TEST</text>
+
+    <text x="120" y="305" font-size="92" font-weight="700" letter-spacing="-3">Accurate copy can still</text>
+    <text x="120" y="410" font-size="92" font-weight="700" letter-spacing="-3">sound machine-written.</text>
+    <text x="120" y="500" font-size="34" fill="#51514d">LLM drafts often explain how they were made instead of what the reader gets.</text>
+
+    <line x1="120" y1="570" x2="1480" y2="570" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text x="120" y="630" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">ONE CUSTOMER-FACING SENTENCE, EDITED</text>
+
+    <text x="120" y="700" font-size="22" font-weight="700" letter-spacing="2" fill="#a14332">BEFORE</text>
+    <g font-size="50" font-weight="700">
+      <text x="120" y="775">“A</text>
+      <text x="190" y="775" fill="#a14332">real</text>
+      <line x1="190" y1="788" x2="282" y2="788" stroke="#a14332" stroke-width="4"/>
+      <text x="298" y="775">analysis of two datasets.”</text>
+    </g>
+    <text x="120" y="835" font-size="30" fill="#51514d">“Real” reassures the writer. It does not tell the reader what they get.</text>
+
+    <line x1="170" y1="875" x2="170" y2="945" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+    <text x="220" y="920" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">DELETE WHAT THE READER DOES NOT NEED</text>
+
+    <text x="120" y="990" font-size="22" font-weight="700" letter-spacing="2" fill="#42647a">AFTER</text>
+    <text x="120" y="1065" font-size="54" font-weight="700">“Two datasets, compared.”</text>
+    <text x="120" y="1120" font-size="30" fill="#51514d">The sentence now states the result directly.</text>
+
+    <line x1="120" y1="1170" x2="1480" y2="1170" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text x="120" y="1230" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">FOR EVERY CUSTOMER-FACING SENTENCE, ASK</text>
+    <text x="120" y="1300" font-size="44" font-weight="700">Does the reader need this information here, in these words?</text>
+
+    <text x="120" y="1365" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">CHOOSE ONE TREATMENT</text>
+
+    <!-- Column bounds: CUT [120,500], REWRITE [590,980], RELOCATE [1070,1480]. -->
+    <g>
+      <text x="120" y="1430" font-size="36" font-weight="700">CUT</text>
+      <text x="120" y="1475" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">NOT NEEDED</text>
+      <text x="120" y="1525" font-size="28" fill="#51514d">Delete self-explanation</text>
+      <text x="120" y="1565" font-size="28" fill="#51514d">or unprompted reassurance.</text>
+    </g>
+
+    <line x1="545" y1="1405" x2="545" y2="1580" stroke="#d1d0ca" stroke-width="2"/>
+
+    <g>
+      <text x="590" y="1430" font-size="36" font-weight="700">REWRITE</text>
+      <text x="590" y="1475" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">RIGHT FACT · WRONG WORDS</text>
+      <text x="590" y="1525" font-size="28" fill="#51514d">Replace implementation terms</text>
+      <text x="590" y="1565" font-size="28" fill="#51514d">with reader language.</text>
+    </g>
+
+    <line x1="1025" y1="1405" x2="1025" y2="1580" stroke="#d1d0ca" stroke-width="2"/>
+
+    <g>
+      <text x="1070" y="1430" font-size="36" font-weight="700">RELOCATE</text>
+      <text x="1070" y="1475" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">RIGHT FACT · WRONG PLACE</text>
+      <text x="1070" y="1525" font-size="28" fill="#51514d">Put the fact where the</text>
+      <text x="1070" y="1565" font-size="28" fill="#51514d">question actually occurs.</text>
+    </g>
+
+    <line x1="120" y1="1625" x2="1480" y2="1625" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text x="120" y="1685" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">THE EDITING RULE</text>
+    <text x="120" y="1750" font-size="44" font-weight="700">State the result the reader needs.</text>
+    <text x="120" y="1795" font-size="30" fill="#51514d">Leave out the writer, process, and implementation unless they help here.</text>
+
+    <line x1="120" y1="1880" x2="1480" y2="1880" stroke="#d1d0ca" stroke-width="2"/>
+    <text x="120" y="1940" font-size="22" fill="#51514d">cutting-internal-leaks-from-copy · repository editing guide</text>
+  </g>
+</svg>

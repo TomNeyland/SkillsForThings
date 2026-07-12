@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">A valid SVG can still fail in the feed</title>
+  <desc id="svg-desc">A technical infographic should distill one reader question into one visible proof and action, keep the headline, premise, diagram, and action inside the center 1600 by 1600 square so feed crops cannot remove them, then inspect the rendered PNG at 1600 by 2000 and 400 by 500.</desc>
+
+  <defs>
+    <style>
+      .sans { font-family: Helvetica, Arial, sans-serif; }
+      .mono { font-family: Menlo, Consolas, monospace; }
+      .primary { fill: #181816; }
+      .secondary { fill: #51514d; }
+      .accent { fill: #42647a; }
+      .rule { stroke: #d1d0ca; stroke-width: 3; }
+      .flow { fill: none; stroke: #42647a; stroke-width: 4; }
+    </style>
+    <marker id="arrow-blue" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L13,7 L1,13 Z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <!-- Quality gap -->
+  <g id="headline" class="sans">
+    <text x="120" y="300" class="primary" font-size="96" font-weight="700">
+      <tspan x="120" dy="0">A valid SVG can still</tspan>
+      <tspan x="120" dy="108">fail in the feed.</tspan>
+    </text>
+    <text x="120" y="500" class="secondary" font-size="33">
+      <tspan x="120" dy="0">Technical infographics fail when the idea is crowded, labels shrink, or a feed</tspan>
+      <tspan x="120" dy="42">crop removes the premise.</tspan>
+    </text>
+    <line x1="120" y1="594" x2="1480" y2="594" class="rule"/>
+  </g>
+
+  <!-- Step 1: message -->
+  <g id="distill" class="sans">
+    <text x="120" y="655" class="accent" font-size="24" font-weight="700" letter-spacing="1.4">1 · DISTILL THE MESSAGE</text>
+    <text x="120" y="725" class="primary" font-size="48" font-weight="700">One question. One proof. One action.</text>
+
+    <!-- Columns: [120,500], [610,990], [1100,1480] -->
+    <text x="120" y="815" class="accent" font-size="24" font-weight="700">READER QUESTION</text>
+    <text x="120" y="860" class="secondary" font-size="29">
+      <tspan x="120" dy="0">What must someone</tspan>
+      <tspan x="120" dy="36">understand?</tspan>
+    </text>
+
+    <line x1="465" y1="846" x2="555" y2="846" class="flow" marker-end="url(#arrow-blue)"/>
+
+    <text x="610" y="815" class="accent" font-size="24" font-weight="700">VISIBLE PROOF</text>
+    <text x="610" y="860" class="secondary" font-size="29">
+      <tspan x="610" dy="0">Show the relationship,</tspan>
+      <tspan x="610" dy="36">not decoration.</tspan>
+    </text>
+
+    <line x1="965" y1="846" x2="1055" y2="846" class="flow" marker-end="url(#arrow-blue)"/>
+
+    <text x="1100" y="815" class="accent" font-size="24" font-weight="700">READER ACTION</text>
+    <text x="1100" y="860" class="secondary" font-size="29">
+      <tspan x="1100" dy="0">State what changes</tspan>
+      <tspan x="1100" dy="36">next.</tspan>
+    </text>
+  </g>
+
+  <!-- Step 2: crop protection -->
+  <g id="crop" class="sans">
+    <line x1="120" y1="972" x2="1480" y2="972" class="rule"/>
+    <text x="120" y="1032" class="accent" font-size="24" font-weight="700" letter-spacing="1.4">2 · PROTECT ESSENTIAL CONTENT FROM FEED CROPS</text>
+
+    <!-- Scaled 1600x2000 post: 360x450. Center 1600x1600 square: 360x360. -->
+    <rect x="120" y="1100" width="360" height="450" fill="#f7f6f2" stroke="#51514d" stroke-width="3"/>
+    <rect x="120" y="1145" width="360" height="360" fill="#e8eef1" stroke="#42647a" stroke-width="3"/>
+    <line x1="120" y1="1145" x2="480" y2="1145" stroke="#42647a" stroke-width="3" stroke-dasharray="10 8"/>
+    <line x1="120" y1="1505" x2="480" y2="1505" stroke="#42647a" stroke-width="3" stroke-dasharray="10 8"/>
+    <text x="300" y="1130" text-anchor="middle" class="secondary" font-size="22">top 200 px · metadata only</text>
+    <text x="300" y="1300" text-anchor="middle" class="accent" font-size="24" font-weight="700">CENTER SQUARE</text>
+    <text x="300" y="1344" text-anchor="middle" class="primary" font-size="28" font-weight="700">headline + premise</text>
+    <text x="300" y="1382" text-anchor="middle" class="primary" font-size="28" font-weight="700">diagram + action</text>
+    <text x="300" y="1538" text-anchor="middle" class="secondary" font-size="22">bottom 200 px · metadata only</text>
+
+    <text x="560" y="1126" class="secondary" font-size="24" font-weight="700" letter-spacing="1.3">1600×2000 POST</text>
+    <text x="560" y="1190" class="primary" font-size="42" font-weight="700">
+      <tspan x="560" dy="0">Keep essentials inside the</tspan>
+      <tspan x="560" dy="50">center 1600×1600 square.</tspan>
+    </text>
+    <text x="560" y="1310" class="secondary" font-size="30">
+      <tspan x="560" dy="0">A square feed crop can remove the top and</tspan>
+      <tspan x="560" dy="40">bottom 200 px of a 1600×2000 post.</tspan>
+    </text>
+    <text x="560" y="1422" class="secondary" font-size="30">
+      <tspan x="560" dy="0">Keep the headline, premise, diagram, and action</tspan>
+      <tspan x="560" dy="40">between y=200 and y=1800.</tspan>
+    </text>
+    <text x="560" y="1515" class="primary" font-size="30" font-weight="700">Use 120 px side margins.</text>
+  </g>
+
+  <!-- Step 3: raster verification -->
+  <g id="verify" class="sans">
+    <line x1="120" y1="1600" x2="1480" y2="1600" class="rule"/>
+    <text x="120" y="1660" class="accent" font-size="24" font-weight="700" letter-spacing="1.4">3 · VERIFY THE RASTER PEOPLE WILL SEE</text>
+    <text x="120" y="1722" class="primary" font-size="44" font-weight="700">Inspect the PNG at 1600×2000 and 400×500.</text>
+    <text x="120" y="1772" class="secondary" font-size="29">
+      <tspan x="120" dy="0">Check edges, line breaks, labels, and collisions. Fix, render again, and compare.</tspan>
+    </text>
+  </g>
+
+  <!-- Identity -->
+  <g id="identity" class="sans">
+    <text x="120" y="1918" class="secondary" font-size="23" letter-spacing="1.1">creating-technical-infographics</text>
+  </g>
+</svg>

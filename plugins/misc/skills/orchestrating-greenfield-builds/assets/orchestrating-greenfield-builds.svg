@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">AI agents change, but the product direction should not</title>
+  <desc id="svg-desc">For a long multi-agent software build, the lead agent records product decisions in repository documents. A second agent tests those documents before code begins. Implementation agents and reviewers then build and verify against the same documents, so new agents inherit the product direction from files instead of lost chat context.</desc>
+
+  <defs>
+    <style>
+      .sans { font-family: Helvetica, Arial, sans-serif; }
+      .primary { fill: #181816; }
+      .secondary { fill: #51514d; }
+      .accent { fill: #42647a; }
+      .rule { stroke: #d1d0ca; stroke-width: 3; }
+      .flow { fill: none; stroke: #42647a; stroke-width: 4; }
+    </style>
+    <marker id="arrow-blue" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L13,7 L1,13 Z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <!-- Situation and stakes -->
+  <g id="headline" class="sans">
+    <text x="120" y="300" class="primary" font-size="96" font-weight="700">
+      <tspan x="120" dy="0">AI agents change.</tspan>
+      <tspan x="120" dy="108">The product direction shouldn’t.</tspan>
+    </text>
+    <text x="120" y="500" class="secondary" font-size="33">
+      <tspan x="120" dy="0">In a long multi-agent software build, record product decisions in repository</tspan>
+      <tspan x="120" dy="42">documents before code begins.</tspan>
+    </text>
+    <line x1="120" y1="594" x2="1480" y2="594" class="rule"/>
+  </g>
+
+  <!-- Three-stage method -->
+  <g id="method" class="sans">
+    <text x="120" y="655" class="secondary" font-size="24" font-weight="700" letter-spacing="1.4">WHO DOES WHAT</text>
+
+    <!-- Step 1 -->
+    <circle cx="156" cy="735" r="36" fill="#42647a"/>
+    <text x="156" y="746" text-anchor="middle" fill="#f7f6f2" font-size="28" font-weight="700">1</text>
+    <text x="220" y="727" class="primary" font-size="35" font-weight="700">LEAD AGENT RECORDS THE DECISIONS</text>
+    <text x="220" y="772" class="secondary" font-size="29">The user’s audience, platform, tone, scope, and quality bar become files.</text>
+
+    <!-- Document columns: [220,570], [650,1030], [1110,1480] -->
+    <line x1="220" y1="822" x2="538" y2="822" class="rule"/>
+    <text x="220" y="862" class="accent" font-size="24" font-weight="700">PRODUCT PRINCIPLES</text>
+    <text x="220" y="903" class="secondary" font-size="28">tone + quality bar</text>
+
+    <line x1="650" y1="822" x2="998" y2="822" class="rule"/>
+    <text x="650" y="862" class="accent" font-size="24" font-weight="700">PRODUCT SPECIFICATION</text>
+    <text x="650" y="903" class="secondary" font-size="28">systems + architecture</text>
+
+    <line x1="1110" y1="822" x2="1448" y2="822" class="rule"/>
+    <text x="1110" y="862" class="accent" font-size="24" font-weight="700">SUBSYSTEM DESIGN DOCS</text>
+    <text x="1110" y="903" class="secondary" font-size="28">one per subsystem</text>
+
+    <line x1="156" y1="771" x2="156" y2="965" class="flow" marker-end="url(#arrow-blue)"/>
+
+    <!-- Step 2 -->
+    <circle cx="156" cy="1015" r="36" fill="#42647a"/>
+    <text x="156" y="1026" text-anchor="middle" fill="#f7f6f2" font-size="28" font-weight="700">2</text>
+    <text x="220" y="1007" class="primary" font-size="35" font-weight="700">TWO AGENTS TEST THE DOCUMENTS</text>
+    <text x="220" y="1052" class="secondary" font-size="29">Both simulate a complete user session before implementation starts.</text>
+
+    <!-- Reader columns: [220,760], [840,1480] -->
+    <text x="220" y="1110" class="accent" font-size="24" font-weight="700">LEAD AGENT</text>
+    <text x="220" y="1150" class="secondary" font-size="28">
+      <tspan x="220" dy="0">Walks through the product using</tspan>
+      <tspan x="220" dy="36">the documents it authored.</tspan>
+    </text>
+
+    <text x="840" y="1110" class="accent" font-size="24" font-weight="700">INDEPENDENT AGENT</text>
+    <text x="840" y="1150" class="secondary" font-size="28">
+      <tspan x="840" dy="0">Reads only the documents, then finds</tspan>
+      <tspan x="840" dy="36">contradictions and missing details.</tspan>
+    </text>
+
+    <path d="M500 1198 L500 1208 L800 1208 M1120 1198 L1120 1208 L800 1208 L800 1214" class="flow" marker-end="url(#arrow-blue)"/>
+    <rect x="600" y="1220" width="400" height="76" rx="8" fill="#42647a"/>
+    <text x="800" y="1251" text-anchor="middle" fill="#f7f6f2" font-size="24" font-weight="700">AMEND THE DOCS</text>
+    <text x="800" y="1280" text-anchor="middle" fill="#f7f6f2" font-size="22">before code begins</text>
+
+    <line x1="156" y1="1051" x2="156" y2="1280" class="flow" marker-end="url(#arrow-blue)"/>
+
+    <!-- Step 3 -->
+    <circle cx="156" cy="1360" r="36" fill="#42647a"/>
+    <text x="156" y="1371" text-anchor="middle" fill="#f7f6f2" font-size="28" font-weight="700">3</text>
+    <text x="220" y="1352" class="primary" font-size="35" font-weight="700">BUILD AND REVIEW AGAINST THE DOCS</text>
+    <text x="220" y="1402" class="secondary" font-size="29">One implementation agent owns each subsystem.</text>
+    <text x="220" y="1446" class="secondary" font-size="29">Separate reviewers compare behavior with the design and code with repository rules.</text>
+    <text x="220" y="1490" class="secondary" font-size="29">Then run typecheck, lint, and build.</text>
+  </g>
+
+  <!-- Observable change -->
+  <g id="result" class="sans">
+    <line x1="120" y1="1545" x2="1480" y2="1545" class="rule"/>
+    <text x="120" y="1610" class="accent" font-size="24" font-weight="700" letter-spacing="1.4">WHAT CHANGES</text>
+    <text x="120" y="1670" class="primary" font-size="48" font-weight="700">
+      <tspan x="120" dy="0">New agents inherit direction from files,</tspan>
+      <tspan x="120" dy="58">not from vanished chat context.</tspan>
+    </text>
+    <line x1="120" y1="1765" x2="1480" y2="1765" class="rule"/>
+    <text x="120" y="1800" class="primary" font-size="34" font-weight="700">Write the docs. Test the docs. Then build.</text>
+  </g>
+
+  <!-- Identity -->
+  <g id="identity" class="sans">
+    <text x="120" y="1918" class="secondary" font-size="23" letter-spacing="1.1">orchestrating-greenfield-builds</text>
+  </g>
+</svg>

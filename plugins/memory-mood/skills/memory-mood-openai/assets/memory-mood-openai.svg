@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">One model reading can wobble. Do not chart it as a mood shift.</title>
+  <desc id="desc">To visualize model-rated emotion across an AI assistant’s accumulating memory text, evaluate each cumulative snapshot with k independent API calls. Never pass prior answers into later calls. Plot the mean across readings and a plus-or-minus one standard deviation band showing call-to-call spread.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L13,7 L1,13 Z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <g font-family="Helvetica, Arial, sans-serif" fill="#181816">
+    <text x="120" y="130" font-size="24" font-weight="700" letter-spacing="3" fill="#42647a">AI MEMORY VISUALIZATION / INDEPENDENT SAMPLING</text>
+
+    <text x="120" y="305" font-size="92" font-weight="700" letter-spacing="-3">One model reading can wobble.</text>
+    <text x="120" y="410" font-size="92" font-weight="700" letter-spacing="-3">Do not chart it as a mood shift.</text>
+    <text x="120" y="500" font-size="31" fill="#51514d">For each growing memory snapshot, take k independent emotional readings before drawing the curve.</text>
+
+    <line x1="120" y1="570" x2="1480" y2="570" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text x="120" y="630" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">THE MEMORY TEXT GROWS ONE FILE AT A TIME</text>
+
+    <!-- Column bounds: TIME 1 [120,490], TIME 2 [560,920], TIME 3 [990,1480]. -->
+    <g>
+      <text x="120" y="700" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">TIME 1</text>
+      <text x="120" y="750" font-family="Menlo, Consolas, monospace" font-size="28">memory 1</text>
+    </g>
+    <line x1="520" y1="680" x2="520" y2="775" stroke="#d1d0ca" stroke-width="2"/>
+    <g>
+      <text x="560" y="700" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">TIME 2</text>
+      <text x="560" y="750" font-family="Menlo, Consolas, monospace" font-size="28">memory 1 + memory 2</text>
+    </g>
+    <line x1="950" y1="680" x2="950" y2="775" stroke="#d1d0ca" stroke-width="2"/>
+    <g>
+      <text x="990" y="700" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">TIME 3</text>
+      <text x="990" y="750" font-family="Menlo, Consolas, monospace" font-size="28">memory 1 + memory 2</text>
+      <text x="990" y="790" font-family="Menlo, Consolas, monospace" font-size="28">+ memory 3</text>
+    </g>
+    <text x="120" y="830" font-size="30" fill="#51514d">Each timepoint evaluates the full accumulated memory text.</text>
+
+    <line x1="120" y1="875" x2="1480" y2="875" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text x="120" y="935" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">AT EACH TIMEPOINT</text>
+
+    <!-- Flow column bounds: SNAPSHOT [120,470], CALLS [560,990], SUMMARY [1080,1480]. -->
+    <g>
+      <text x="120" y="1005" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">FULL MEMORY SNAPSHOT</text>
+      <text x="120" y="1055" font-size="30" font-weight="700">all memories so far</text>
+    </g>
+    <line x1="475" y1="1045" x2="535" y2="1045" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+
+    <g>
+      <text x="580" y="1005" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">k SEPARATE API CALLS</text>
+      <text x="580" y="1055" font-size="30">reading 1 · 2 · … · k</text>
+      <text x="580" y="1095" font-size="24" fill="#51514d">same memory snapshot each time</text>
+    </g>
+    <line x1="955" y1="1045" x2="1015" y2="1045" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+
+    <g>
+      <text x="1060" y="1005" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">SUMMARY</text>
+      <text x="1060" y="1055" font-size="32" font-weight="700">MEAN LINE</text>
+      <text x="1060" y="1095" font-size="32" font-weight="700">±1σ BAND</text>
+    </g>
+
+    <text x="120" y="1160" font-size="24" font-weight="700" letter-spacing="2" fill="#a14332">NEVER THREAD PRIOR ANSWERS INTO THE NEXT CALL</text>
+    <text x="120" y="1205" font-size="28" fill="#51514d">Each call receives the memory snapshot only. Shared answer history would break independence.</text>
+
+    <line x1="120" y1="1250" x2="1480" y2="1250" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text x="120" y="1310" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">SCHEMATIC OUTPUT</text>
+    <text x="180" y="1350" font-size="22" font-weight="700" letter-spacing="1" fill="#51514d">MODEL-RATED EMOTION</text>
+
+    <!-- Plot axes. -->
+    <line x1="200" y1="1380" x2="200" y2="1590" stroke="#51514d" stroke-width="3"/>
+    <line x1="200" y1="1590" x2="1450" y2="1590" stroke="#51514d" stroke-width="3"/>
+
+    <!-- ±1σ band around the mean. -->
+    <path d="M280 1450 L560 1385 L840 1420 L1120 1335 L1400 1365 L1400 1480 L1120 1455 L840 1535 L560 1495 L280 1560 Z" fill="#42647a" opacity="0.16"/>
+    <path d="M280 1505 L560 1440 L840 1475 L1120 1395 L1400 1420" fill="none" stroke="#42647a" stroke-width="6"/>
+
+    <!-- Individual readings around each mean point. -->
+    <g fill="#51514d" opacity="0.72">
+      <circle cx="280" cy="1465" r="7"/><circle cx="280" cy="1515" r="7"/><circle cx="280" cy="1550" r="7"/>
+      <circle cx="560" cy="1405" r="7"/><circle cx="560" cy="1445" r="7"/><circle cx="560" cy="1480" r="7"/>
+      <circle cx="840" cy="1435" r="7"/><circle cx="840" cy="1480" r="7"/><circle cx="840" cy="1520" r="7"/>
+      <circle cx="1120" cy="1360" r="7"/><circle cx="1120" cy="1395" r="7"/><circle cx="1120" cy="1440" r="7"/>
+      <circle cx="1400" cy="1385" r="7"/><circle cx="1400" cy="1425" r="7"/><circle cx="1400" cy="1465" r="7"/>
+    </g>
+
+    <text x="1210" y="1315" font-size="22" font-weight="700" letter-spacing="1" fill="#42647a">±1σ = READING SPREAD</text>
+    <line x1="1280" y1="1330" x2="1250" y2="1370" stroke="#42647a" stroke-width="3"/>
+    <text x="1080" y="1515" font-size="22" font-weight="700" letter-spacing="1" fill="#42647a">MEAN ACROSS k READINGS</text>
+    <line x1="1140" y1="1495" x2="1120" y2="1400" stroke="#42647a" stroke-width="3"/>
+
+    <text x="670" y="1630" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">CUMULATIVE MEMORY TIMEPOINTS →</text>
+
+    <line x1="120" y1="1670" x2="1480" y2="1670" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text x="120" y="1730" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">THE RULE</text>
+    <text x="120" y="1765" font-size="38" font-weight="700">Same accumulated memory. Fresh calls. No prior answers.</text>
+    <text x="120" y="1800" font-size="24" fill="#51514d">The mean shows the recurring signal; the band shows reading-to-reading variation.</text>
+
+    <line x1="120" y1="1880" x2="1480" y2="1880" stroke="#d1d0ca" stroke-width="2"/>
+    <text x="120" y="1940" font-size="22" fill="#51514d">memory-mood-openai · repository visualization workflow</text>
+  </g>
+</svg>

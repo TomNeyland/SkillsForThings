@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Give the build a product arc before the first commit</title>
+  <desc id="desc">For a long AI coding session with a loose brief, define the product arc—the ordered user questions the product should answer—before scaffolding. Ask two or three high-leverage questions about audience, at least three arc layers, budget, and success. Turn the answers into an announced plan with the first layer, first commit, delivery cadence, and budget triage, so each feature advances the next user question.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7f6f2; }
+      .primary { fill: #181816; }
+      .secondary { fill: #51514d; }
+      .accent { fill: #42647a; }
+      .rule { stroke: #d1d0ca; stroke-width: 3; }
+      .flow { stroke: #42647a; stroke-width: 4; fill: none; }
+      .headline { font: 700 94px Helvetica, Arial, sans-serif; letter-spacing: -2px; }
+      .section-label { font: 700 24px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
+      .body { font: 400 34px Helvetica, Arial, sans-serif; }
+      .body-sm { font: 400 28px Helvetica, Arial, sans-serif; }
+      .column-title { font: 700 29px Helvetica, Arial, sans-serif; }
+      .column-body { font: 400 28px Helvetica, Arial, sans-serif; }
+      .arc-title { font: 700 30px Helvetica, Arial, sans-serif; }
+      .arc-body { font: 400 28px Helvetica, Arial, sans-serif; }
+      .plan-title { font: 700 30px Helvetica, Arial, sans-serif; }
+      .plan-body { font: 400 28px Helvetica, Arial, sans-serif; }
+      .statement { font: 700 52px Helvetica, Arial, sans-serif; letter-spacing: -.8px; }
+      .mono-lg { font: 700 36px Menlo, Consolas, monospace; }
+      .step-num { font: 700 26px Helvetica, Arial, sans-serif; }
+      .meta { font: 700 22px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
+      .identity { font: 400 22px Helvetica, Arial, sans-serif; }
+    </style>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="2000"/>
+
+  <!-- Outer top band: public situation and artifact -->
+  <text x="120" y="118" class="meta accent">LONG AI CODING SESSION</text>
+  <text x="1480" y="118" text-anchor="end" class="meta secondary">PRODUCT KICKOFF · SCHEMATIC METHOD</text>
+  <line x1="120" y1="158" x2="1480" y2="158" class="rule"/>
+
+  <!-- Desired transformation -->
+  <text x="120" y="290" class="headline primary">Give the build a product arc</text>
+  <text x="120" y="394" class="headline primary">before the first commit.</text>
+
+  <text x="120" y="490" class="section-label accent">PRODUCT ARC — DEFINED</text>
+  <text x="120" y="543" class="body secondary">The ordered user questions the product should answer.</text>
+  <text x="120" y="588" class="body secondary">Record the audience, arc, and budget before scaffolding.</text>
+  <line x1="120" y1="630" x2="1480" y2="630" class="rule"/>
+
+  <!-- Concrete input -->
+  <text x="120" y="690" class="section-label accent">LOOSE REQUEST</text>
+  <text x="120" y="750" class="mono-lg primary">“Build me X. Use the time well.”</text>
+  <line x1="800" y1="770" x2="800" y2="810" class="flow" marker-end="url(#arrow)"/>
+
+  <!-- Short kickoff. Column bounds: 120..500, 600..980, 1080..1480. -->
+  <text x="120" y="855" class="section-label accent">ASK 2–3 QUESTIONS THAT CHANGE THE BUILD</text>
+
+  <text x="120" y="920" class="column-title primary">AUDIENCE</text>
+  <text x="120" y="962" class="column-body secondary">Who will use this?</text>
+  <text x="120" y="1002" class="column-body secondary">What do they need?</text>
+
+  <text x="600" y="920" class="column-title primary">ORDERED QUESTIONS</text>
+  <text x="600" y="962" class="column-body secondary">What 3+ questions</text>
+  <text x="600" y="1002" class="column-body secondary">should it answer?</text>
+
+  <text x="1080" y="920" class="column-title primary">BUDGET + SUCCESS</text>
+  <text x="1080" y="962" class="column-body secondary">What fits?</text>
+  <text x="1080" y="1002" class="column-body secondary">What proves success?</text>
+
+  <line x1="800" y1="1025" x2="800" y2="1065" class="flow" marker-end="url(#arrow)"/>
+
+  <!-- Product arc. Column bounds: 120..500, 600..980, 1080..1480. -->
+  <text x="120" y="1110" class="section-label accent">TURN THE ANSWERS INTO AN ORDERED PRODUCT ARC</text>
+
+  <circle cx="148" cy="1185" r="27" fill="#42647a"/>
+  <text x="148" y="1194" text-anchor="middle" class="step-num" fill="#f7f6f2">1</text>
+  <text x="190" y="1180" class="arc-title primary">WHAT HAPPENED?</text>
+  <text x="190" y="1222" class="arc-body secondary">First useful layer</text>
+
+  <line x1="490" y1="1185" x2="570" y2="1185" class="flow" marker-end="url(#arrow)"/>
+
+  <circle cx="628" cy="1185" r="27" fill="#42647a"/>
+  <text x="628" y="1194" text-anchor="middle" class="step-num" fill="#f7f6f2">2</text>
+  <text x="670" y="1180" class="arc-title primary">WHY?</text>
+  <text x="670" y="1222" class="arc-body secondary">Next user question</text>
+
+  <line x1="970" y1="1185" x2="1050" y2="1185" class="flow" marker-end="url(#arrow)"/>
+
+  <circle cx="1108" cy="1185" r="27" fill="#42647a"/>
+  <text x="1108" y="1194" text-anchor="middle" class="step-num" fill="#f7f6f2">3</text>
+  <text x="1150" y="1180" class="arc-title primary">WHAT NEXT?</text>
+  <text x="1150" y="1222" class="arc-body secondary">Actionable layer</text>
+
+  <line x1="120" y1="1280" x2="1480" y2="1280" class="rule"/>
+
+  <!-- Announced plan. Column bounds: 120..500, 600..980, 1080..1480. -->
+  <text x="120" y="1340" class="section-label accent">ANNOUNCE THE PLAN BEFORE CODING</text>
+
+  <text x="120" y="1405" class="plan-title primary">FIRST LAYER</text>
+  <text x="120" y="1447" class="plan-body secondary">First commit</text>
+  <text x="120" y="1487" class="plan-body secondary">+ what it unlocks</text>
+
+  <text x="600" y="1405" class="plan-title primary">DELIVERY CADENCE</text>
+  <text x="600" y="1447" class="plan-body secondary">Commit + push rhythm</text>
+  <text x="600" y="1487" class="plan-body secondary">for the long session</text>
+
+  <text x="1080" y="1405" class="plan-title primary">BUDGET SHIFT</text>
+  <text x="1080" y="1447" class="plan-body secondary">Re-rank what still fits</text>
+  <text x="1080" y="1487" class="plan-body secondary">if time changes</text>
+
+  <!-- Changed outcome -->
+  <line x1="120" y1="1540" x2="1480" y2="1540" class="rule"/>
+  <text x="120" y="1620" class="statement primary">Each feature advances the next user question.</text>
+  <text x="120" y="1672" class="body-sm secondary">Only then: scaffold if needed, announce the plan, and build layer 1.</text>
+
+  <!-- Quiet, defined repository handle in the outer bottom band -->
+  <line x1="120" y1="1880" x2="1480" y2="1880" class="rule"/>
+  <text x="120" y="1935" class="identity secondary">autonomous-build</text>
+  <text x="1480" y="1935" text-anchor="end" class="identity secondary">Kickoff workflow for long AI coding sessions</text>
+</svg>

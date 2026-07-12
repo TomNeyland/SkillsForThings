@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Before you build custom, find what already exists</title>
+  <desc id="desc">A surface request for fuzzy matching is reframed as a root need for canonical product identity. Searching both reveals GTIN or UPC identifiers at the root and fuzzy-matching libraries at the surface. A final gate recommends adopting when coverage exceeds 80 percent, adapting at 50 to 80 percent, and building custom below 50 percent while documenting why existing options fail.</desc>
+
+  <defs>
+    <style>
+      .sans { font-family: Helvetica, Arial, sans-serif; }
+      .mono { font-family: Menlo, Consolas, monospace; }
+      .primary { fill: #181816; }
+      .secondary { fill: #51514d; }
+      .accent { fill: #42647a; }
+      .rule { stroke: #d1d0ca; stroke-width: 3; }
+      .arrow { stroke: #42647a; stroke-width: 4; fill: none; }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <!-- Expendable metadata band -->
+  <text x="120" y="118" class="sans accent" font-size="24" font-weight="700" letter-spacing="2.5">BEFORE YOU BUILD / DESIGN DECISION</text>
+
+  <!-- Essential content: y=200..1800 -->
+  <text x="120" y="302" class="sans primary" font-size="92" font-weight="700">
+    <tspan x="120" dy="0">Before you build custom,</tspan>
+    <tspan x="120" dy="108">find what already exists.</tspan>
+  </text>
+
+  <text x="120" y="506" class="sans secondary" font-size="34">The surface request may hide a standardized root problem.</text>
+  <line x1="120" y1="570" x2="1480" y2="570" class="rule"/>
+
+  <!--
+    Reframe columns:
+    surface x_min=120, x_max=650
+    root    x_min=920, x_max=1480
+  -->
+  <text x="120" y="628" class="sans accent" font-size="24" font-weight="700" letter-spacing="2">ASK THE DEEPER QUESTION</text>
+
+  <text x="120" y="690" class="sans secondary" font-size="23" font-weight="700" letter-spacing="1.5">SURFACE REQUEST</text>
+  <text x="120" y="750" class="sans primary" font-size="40" font-weight="700">“I need fuzzy matching.”</text>
+  <text x="120" y="798" class="sans secondary" font-size="28">reconcile product names</text>
+
+  <line x1="690" y1="744" x2="850" y2="744" class="arrow" marker-end="url(#arrowhead)"/>
+  <text x="770" y="710" text-anchor="middle" class="sans accent" font-size="22" font-weight="700">WHY?</text>
+
+  <text x="920" y="690" class="sans secondary" font-size="23" font-weight="700" letter-spacing="1.5">ROOT NEED</text>
+  <text x="920" y="750" class="sans primary" font-size="40" font-weight="700">“I need canonical IDs.”</text>
+  <text x="920" y="798" class="sans secondary" font-size="28">identify the same product</text>
+
+  <line x1="120" y1="850" x2="1480" y2="850" class="rule"/>
+
+  <!-- Search tracks: input x=120..570, outcome x=850..1480 -->
+  <text x="120" y="910" class="sans accent" font-size="24" font-weight="700" letter-spacing="2">SEARCH BOTH, NOT JUST THE APPROACH</text>
+
+  <text x="120" y="970" class="sans secondary" font-size="23" font-weight="700" letter-spacing="1.5">ROOT PRIOR ART</text>
+  <text x="120" y="1018" class="sans primary" font-size="30">standards · identifiers · registries</text>
+  <line x1="625" y1="1009" x2="800" y2="1009" class="arrow" marker-end="url(#arrowhead)"/>
+  <text x="850" y="1018" class="sans primary" font-size="36" font-weight="700">GTIN / UPC</text>
+  <text x="850" y="1060" class="sans secondary" font-size="28">canonical product identity</text>
+
+  <text x="120" y="1100" class="sans secondary" font-size="23" font-weight="700" letter-spacing="1.5">SURFACE PRIOR ART</text>
+  <text x="120" y="1148" class="sans primary" font-size="30">libraries · techniques · packages</text>
+  <line x1="625" y1="1139" x2="800" y2="1139" class="arrow" marker-end="url(#arrowhead)"/>
+  <text x="850" y="1148" class="sans primary" font-size="36" font-weight="700">fuzzy matcher</text>
+  <text x="850" y="1190" class="sans secondary" font-size="28">name similarity only</text>
+
+  <line x1="120" y1="1238" x2="1480" y2="1238" class="rule"/>
+
+  <!--
+    Decision columns:
+    adopt        x_min=120,  x_max=480
+    adapt        x_min=590,  x_max=960
+    build custom x_min=1070, x_max=1480
+    Lines are explicitly wrapped inside each bound.
+  -->
+  <text x="120" y="1298" class="sans accent" font-size="24" font-weight="700" letter-spacing="2">DECIDE BY COVERAGE</text>
+
+  <text x="120" y="1360" class="sans accent" font-size="38" font-weight="700">ADOPT</text>
+  <text x="120" y="1406" class="sans primary" font-size="28" font-weight="700">&gt;80% coverage</text>
+  <text x="120" y="1456" class="sans secondary" font-size="28">
+    <tspan x="120" dy="0">Use the standard</tspan>
+    <tspan x="120" dy="38">and map to its IDs.</tspan>
+  </text>
+
+  <line x1="535" y1="1330" x2="535" y2="1525" class="rule"/>
+
+  <text x="590" y="1360" class="sans primary" font-size="38" font-weight="700">ADAPT</text>
+  <text x="590" y="1406" class="sans primary" font-size="28" font-weight="700">50–80% coverage</text>
+  <text x="590" y="1456" class="sans secondary" font-size="28">
+    <tspan x="590" dy="0">Use the standard base;</tspan>
+    <tspan x="590" dy="38">extend only the gaps.</tspan>
+  </text>
+
+  <line x1="1015" y1="1330" x2="1015" y2="1525" class="rule"/>
+
+  <text x="1070" y="1360" class="sans primary" font-size="38" font-weight="700">BUILD CUSTOM</text>
+  <text x="1070" y="1406" class="sans primary" font-size="28" font-weight="700">&lt;50% coverage</text>
+  <text x="1070" y="1456" class="sans secondary" font-size="28">
+    <tspan x="1070" dy="0">Document why the</tspan>
+    <tspan x="1070" dy="38">existing options fail.</tspan>
+  </text>
+
+  <line x1="120" y1="1552" x2="1480" y2="1552" class="rule"/>
+
+  <text x="120" y="1612" class="sans accent" font-size="24" font-weight="700" letter-spacing="2">THE DECISION RULE</text>
+  <text x="120" y="1672" class="sans primary" font-size="42" font-weight="700">
+    <tspan x="120" dy="0">Adopt the standard. Adapt the gaps.</tspan>
+    <tspan x="120" dy="54">Build only when the field is truly novel.</tspan>
+  </text>
+  <text x="120" y="1786" class="sans accent" font-size="28" font-weight="700">Use prior-art before you hand-roll a solved problem.</text>
+
+  <!-- Quiet provenance in expendable bottom band -->
+  <line x1="120" y1="1876" x2="1480" y2="1876" class="rule"/>
+  <text x="120" y="1932" class="sans secondary" font-size="22">Schematic example from the prior-art skill · GTIN / UPC for product identity</text>
+</svg>

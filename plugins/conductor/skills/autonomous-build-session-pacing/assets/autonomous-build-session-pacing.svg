@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">A long AI-agent build can stall, pile up changes, or end in a rush.</title>
+  <desc id="desc">A multi-hour AI-agent build stays active and ships checked increments when it uses a recurring background keep-alive, a build-check-commit-push loop for each coherent feature, and a newly ranked shortlist whenever the remaining time changes.</desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L13,7 L1,13 Z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <g font-family="Helvetica, Arial, sans-serif" fill="#181816">
+    <text x="120" y="130" font-size="24" font-weight="700" letter-spacing="3" fill="#42647a">MULTI-HOUR AI-AGENT BUILDS / SESSION CONTROL</text>
+
+    <text x="120" y="305" font-size="88" font-weight="700" letter-spacing="-3">A long AI-agent build can stall,</text>
+    <text x="120" y="410" font-size="88" font-weight="700" letter-spacing="-3">pile up changes, or end in a rush.</text>
+    <text x="120" y="500" font-size="32" fill="#51514d">Keep the session active, ship one checked feature at a time, and replan when the clock changes.</text>
+
+    <line x1="120" y1="570" x2="1480" y2="570" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text x="120" y="630" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">WITHOUT A PACING LOOP</text>
+
+    <!-- Column bounds: QUIET GAP [120,500], LOCAL BATCH [590,980], CLOCK UPDATE [1070,1480]. -->
+    <g>
+      <text x="120" y="700" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">QUIET GAP</text>
+      <text x="120" y="750" font-size="28">no keep-alive running</text>
+      <text x="120" y="805" font-size="32" font-weight="700" fill="#a14332">SESSION STALLS</text>
+    </g>
+    <line x1="545" y1="680" x2="545" y2="825" stroke="#d1d0ca" stroke-width="2"/>
+    <g>
+      <text x="590" y="700" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">LOCAL BATCH</text>
+      <text x="590" y="750" font-size="28">features wait together</text>
+      <text x="590" y="805" font-size="32" font-weight="700" fill="#a14332">GIANT COMMIT</text>
+    </g>
+    <line x1="1025" y1="680" x2="1025" y2="825" stroke="#d1d0ca" stroke-width="2"/>
+    <g>
+      <text x="1070" y="700" font-size="22" font-weight="700" letter-spacing="2" fill="#51514d">CLOCK UPDATE</text>
+      <text x="1070" y="750" font-size="28">“2 hours left” arrives</text>
+      <text x="1070" y="805" font-size="32" font-weight="700" fill="#a14332">FINAL RUSH</text>
+    </g>
+
+    <line x1="120" y1="870" x2="1480" y2="870" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text x="120" y="930" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">PACE THE BUILD IN THREE PLACES</text>
+
+    <g>
+      <text x="120" y="1010" font-size="34" font-weight="700">1  KEEP THE SESSION ACTIVE</text>
+      <text x="120" y="1055" font-size="28" fill="#51514d">Start a ~10-minute timer in the background.</text>
+      <text x="120" y="1095" font-size="28" fill="#51514d">Its completion notification wakes the session. Restart it.</text>
+
+      <line x1="120" y1="1140" x2="1330" y2="1140" stroke="#42647a" stroke-width="4"/>
+      <circle cx="145" cy="1140" r="10" fill="#42647a"/>
+      <circle cx="430" cy="1140" r="10" fill="#42647a"/>
+      <circle cx="730" cy="1140" r="10" fill="#42647a"/>
+      <circle cx="1030" cy="1140" r="10" fill="#42647a"/>
+      <circle cx="1330" cy="1140" r="10" fill="#42647a"/>
+      <text x="120" y="1180" font-size="22" font-weight="700" letter-spacing="1" fill="#42647a">START</text>
+      <text x="430" y="1180" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="1" fill="#42647a">~10 MIN · RESTART</text>
+      <text x="730" y="1180" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="1" fill="#42647a">~10 MIN · RESTART</text>
+      <text x="1030" y="1180" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="1" fill="#42647a">~10 MIN · RESTART</text>
+      <text x="1330" y="1180" text-anchor="middle" font-size="22" font-weight="700" letter-spacing="1" fill="#42647a">~10 MIN · RESTART</text>
+    </g>
+
+    <line x1="120" y1="1210" x2="1480" y2="1210" stroke="#d1d0ca" stroke-width="2"/>
+
+    <g>
+      <text x="120" y="1260" font-size="34" font-weight="700">2  CHECKPOINT EACH FEATURE</text>
+      <text x="120" y="1305" font-size="24" font-weight="700" letter-spacing="2" fill="#51514d">ONE COHERENT FEATURE</text>
+
+      <text x="120" y="1370" font-size="32" font-weight="700">BUILD</text>
+      <line x1="250" y1="1360" x2="330" y2="1360" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+      <text x="375" y="1370" font-size="32" font-weight="700">RUN CHECKS</text>
+      <line x1="610" y1="1360" x2="690" y2="1360" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+      <text x="735" y="1370" font-size="32" font-weight="700">COMMIT</text>
+      <line x1="900" y1="1360" x2="980" y2="1360" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+      <text x="1025" y="1370" font-size="32" font-weight="700">PUSH</text>
+      <text x="1025" y="1405" font-size="24" fill="#51514d">to remote</text>
+      <line x1="1160" y1="1360" x2="1240" y2="1360" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+      <text x="1285" y="1370" font-size="32" font-weight="700">NEXT</text>
+    </g>
+
+    <line x1="120" y1="1430" x2="1480" y2="1430" stroke="#d1d0ca" stroke-width="2"/>
+
+    <g>
+      <text x="120" y="1495" font-size="34" font-weight="700">3  REPLAN WHEN TIME CHANGES</text>
+      <text x="120" y="1545" font-size="22" font-weight="700" letter-spacing="2" fill="#42647a">USER UPDATES THE CLOCK</text>
+      <text x="120" y="1590" font-size="30" font-weight="700">“2 HOURS LEFT”</text>
+      <line x1="405" y1="1575" x2="485" y2="1575" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+      <text x="530" y="1585" font-size="30" font-weight="700">RANK WHAT REMAINS</text>
+      <text x="530" y="1620" font-size="24" fill="#51514d">impact / effort</text>
+      <line x1="900" y1="1575" x2="980" y2="1575" stroke="#42647a" stroke-width="4" marker-end="url(#arrow)"/>
+      <text x="1025" y="1585" font-size="30" font-weight="700">TELL USER THE SHORTLIST</text>
+      <text x="1025" y="1620" font-size="24" fill="#51514d">then build in ranked order</text>
+    </g>
+
+    <line x1="120" y1="1645" x2="1480" y2="1645" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text x="120" y="1705" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">WHAT CHANGES</text>
+    <text x="120" y="1760" font-size="34" font-weight="700">The session stays active. Each finished feature is checked and pushed.</text>
+    <text x="120" y="1798" font-size="30" fill="#51514d">When time changes, the plan changes with it.</text>
+
+    <line x1="120" y1="1880" x2="1480" y2="1880" stroke="#d1d0ca" stroke-width="2"/>
+    <text x="120" y="1940" font-size="22" fill="#51514d">autonomous-build-session-pacing · repository workflow</text>
+  </g>
+</svg>

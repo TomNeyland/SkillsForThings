@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Plugin Operations: publish, maintain, and explain reusable AI instruction files.</title>
+  <desc id="desc">A visual index of three skills. Choose Admitting a Skill when an AI skill is about to become public and you need a release decision. Choose Refresh Skill when external releases may have made claims stale and you need evidence and version decisions. Choose Framing Skill Infographics when a skill needs a self-contained public visual brief.</desc>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <g font-family="Helvetica, Arial, sans-serif" fill="#181816">
+    <text x="120" y="130" font-size="24" font-weight="700" letter-spacing="3" fill="#42647a">PLUGIN OPERATIONS / VISUAL INDEX</text>
+
+    <text x="120" y="305" font-size="86" font-weight="700" letter-spacing="-3">Publish, maintain, and explain</text>
+    <text x="120" y="405" font-size="86" font-weight="700" letter-spacing="-3">reusable AI instruction files.</text>
+    <text x="120" y="495" font-size="32" fill="#51514d">Choose the skill that matches what is happening now.</text>
+
+    <line x1="120" y1="565" x2="1480" y2="565" stroke="#d1d0ca" stroke-width="2"/>
+
+    <!-- Column bounds: SKILL [120,470], CHOOSE WHEN [520,1020], OUTPUT [1070,1480]. -->
+    <text x="120" y="630" font-size="22" font-weight="700" letter-spacing="2" fill="#42647a">SKILL</text>
+    <text x="520" y="630" font-size="22" font-weight="700" letter-spacing="2" fill="#42647a">CHOOSE WHEN</text>
+    <text x="1070" y="630" font-size="22" font-weight="700" letter-spacing="2" fill="#42647a">OUTPUT / DECISION</text>
+
+    <line x1="490" y1="650" x2="490" y2="1570" stroke="#d1d0ca" stroke-width="2"/>
+    <line x1="1040" y1="650" x2="1040" y2="1570" stroke="#d1d0ca" stroke-width="2"/>
+
+    <!-- Row 1: admitting-a-skill. -->
+    <g>
+      <text x="120" y="725" font-size="36" font-weight="700">ADMITTING A SKILL</text>
+      <text x="120" y="770" font-size="22" font-weight="700" letter-spacing="1" fill="#42647a">PUBLIC RELEASE GATE</text>
+
+      <text x="520" y="715" font-size="28">A new or edited AI skill is</text>
+      <text x="520" y="755" font-size="28">about to become public,</text>
+      <text x="520" y="795" font-size="28">especially after a port from</text>
+      <text x="520" y="835" font-size="28">a private codebase.</text>
+
+      <text x="1070" y="715" font-size="30" font-weight="700">RELEASE DECISION</text>
+      <text x="1070" y="765" font-size="28" fill="#51514d">Machine lint + two</text>
+      <text x="1070" y="805" font-size="28" fill="#51514d">independent full reads;</text>
+      <text x="1070" y="845" font-size="28" fill="#51514d">resolve every finding.</text>
+    </g>
+
+    <line x1="120" y1="900" x2="1480" y2="900" stroke="#d1d0ca" stroke-width="2"/>
+
+    <!-- Row 2: refresh-skill. -->
+    <g>
+      <text x="120" y="980" font-size="36" font-weight="700">REFRESH SKILL</text>
+      <text x="120" y="1025" font-size="22" font-weight="700" letter-spacing="1" fill="#42647a">EVIDENCE FRESHNESS</text>
+
+      <text x="520" y="970" font-size="28">An SDK, model, or API release</text>
+      <text x="520" y="1010" font-size="28">may have made claims stale,</text>
+      <text x="520" y="1050" font-size="28">or someone asks:</text>
+      <text x="520" y="1090" font-size="28" font-weight="700">“Is this still current?”</text>
+
+      <text x="1070" y="970" font-size="30" font-weight="700">EVIDENCE + VERSION</text>
+      <text x="1070" y="1010" font-size="30" font-weight="700">DECISION</text>
+      <text x="1070" y="1060" font-size="28" fill="#51514d">Confirm, update, refute,</text>
+      <text x="1070" y="1100" font-size="28" fill="#51514d">or leave unchanged; size</text>
+      <text x="1070" y="1140" font-size="28" fill="#51514d">the version bump.</text>
+    </g>
+
+    <line x1="120" y1="1195" x2="1480" y2="1195" stroke="#d1d0ca" stroke-width="2"/>
+
+    <!-- Row 3: framing-skill-infographics. -->
+    <g>
+      <text x="120" y="1275" font-size="36" font-weight="700">FRAMING SKILL</text>
+      <text x="120" y="1318" font-size="36" font-weight="700">INFOGRAPHICS</text>
+      <text x="120" y="1360" font-size="22" font-weight="700" letter-spacing="1" fill="#42647a">PUBLIC EXPLANATION</text>
+
+      <text x="520" y="1265" font-size="28">You need a shareable skill image</text>
+      <text x="520" y="1305" font-size="28">and do not know which part of</text>
+      <text x="520" y="1345" font-size="28">the manual deserves visual space.</text>
+
+      <text x="1070" y="1265" font-size="30" font-weight="700">SELF-CONTAINED</text>
+      <text x="1070" y="1305" font-size="30" font-weight="700">VISUAL BRIEF</text>
+      <text x="1070" y="1355" font-size="28" fill="#51514d">Reader situation + useful</text>
+      <text x="1070" y="1395" font-size="28" fill="#51514d">change + one concrete proof.</text>
+    </g>
+
+    <line x1="120" y1="1570" x2="1480" y2="1570" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text x="120" y="1630" font-size="24" font-weight="700" letter-spacing="2" fill="#42647a">SELECTION RULE</text>
+
+    <!-- Selection columns: [120,500], [590,980], [1070,1480]. -->
+    <g>
+      <text x="120" y="1695" font-size="24" font-weight="700" letter-spacing="1" fill="#51514d">GOING PUBLIC</text>
+      <text x="120" y="1740" font-size="30" font-weight="700">→ ADMITTING A SKILL</text>
+    </g>
+    <line x1="545" y1="1665" x2="545" y2="1760" stroke="#d1d0ca" stroke-width="2"/>
+    <g>
+      <text x="590" y="1695" font-size="24" font-weight="700" letter-spacing="1" fill="#51514d">MAY BE STALE</text>
+      <text x="590" y="1740" font-size="30" font-weight="700">→ REFRESH SKILL</text>
+    </g>
+    <line x1="1025" y1="1665" x2="1025" y2="1760" stroke="#d1d0ca" stroke-width="2"/>
+    <g>
+      <text x="1070" y="1695" font-size="24" font-weight="700" letter-spacing="1" fill="#51514d">NEEDS AN IMAGE</text>
+      <text x="1070" y="1740" font-size="30" font-weight="700">→ FRAME THE SKILL</text>
+    </g>
+
+    <line x1="120" y1="1880" x2="1480" y2="1880" stroke="#d1d0ca" stroke-width="2"/>
+    <text x="120" y="1940" font-size="22" fill="#51514d">plugin-ops · 3 live skills</text>
+  </g>
+</svg>

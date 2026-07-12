@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Repeated prompts should reuse repeated work</title>
+  <desc id="desc">A plain technical diagram showing how a changing value near the start of a prompt defeats prefix caching, while stable tools, schemas, and instructions placed first can be reused.</desc>
+  <style>
+    .sans { font-family: Helvetica, Arial, sans-serif; }
+    .mono { font-family: Menlo, Consolas, monospace; }
+  </style>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+  <text class="sans" x="120" y="112" font-size="22" font-weight="700" letter-spacing="2" fill="#42647a">PROMPT TUNING</text>
+  <text class="sans" x="1480" y="112" font-size="22" fill="#51514d" text-anchor="end">COST · LATENCY · CACHE BEHAVIOR</text>
+  <line x1="120" y1="146" x2="1480" y2="146" stroke="#d1d0ca" stroke-width="2"/>
+
+  <g transform="translate(120 258)">
+    <text class="sans" x="0" y="0" font-size="92" font-weight="700" fill="#181816">
+      <tspan x="0" y="0">Repeated prompts should</tspan>
+      <tspan x="0" y="108">reuse repeated work.</tspan>
+    </text>
+    <text class="sans" x="0" y="190" font-size="36" fill="#51514d">
+      A successful response can still hide a prompt-cache miss.
+    </text>
+  </g>
+
+  <g transform="translate(120 620)">
+    <text class="sans" x="0" y="0" font-size="24" font-weight="700" letter-spacing="1.5" fill="#a14332">THE HIDDEN FAILURE</text>
+    <line x1="0" y1="38" x2="1360" y2="38" stroke="#d1d0ca" stroke-width="2"/>
+
+    <text class="sans" x="0" y="110" font-size="30" font-weight="700" fill="#181816">CALL A</text>
+    <text class="mono" x="170" y="110" font-size="28" fill="#181816">tools</text>
+    <text class="mono" x="320" y="110" font-size="28" fill="#181816">schema</text>
+    <text class="mono" x="520" y="110" font-size="28" font-weight="700" fill="#a14332">request_id=41</text>
+    <text class="mono" x="830" y="110" font-size="28" fill="#8b8a84">instructions</text>
+
+    <text class="sans" x="0" y="202" font-size="30" font-weight="700" fill="#181816">CALL B</text>
+    <text class="mono" x="170" y="202" font-size="28" fill="#181816">tools</text>
+    <text class="mono" x="320" y="202" font-size="28" fill="#181816">schema</text>
+    <text class="mono" x="520" y="202" font-size="28" font-weight="700" fill="#a14332">request_id=42</text>
+    <text class="mono" x="830" y="202" font-size="28" fill="#8b8a84">instructions</text>
+
+    <line x1="500" y1="62" x2="500" y2="246" stroke="#a14332" stroke-width="4"/>
+    <path d="M 500 282 L 500 330" stroke="#a14332" stroke-width="4"/>
+    <path d="M 488 316 L 500 334 L 512 316" fill="none" stroke="#a14332" stroke-width="4"/>
+    <text class="sans" x="536" y="320" font-size="30" font-weight="700" fill="#a14332">The reusable prefix ends here.</text>
+    <text class="sans" x="536" y="366" font-size="28" fill="#51514d">Everything to the right must be processed again.</text>
+  </g>
+
+  <g transform="translate(120 1095)">
+    <line x1="0" y1="0" x2="1360" y2="0" stroke="#181816" stroke-width="3"/>
+    <text class="sans" x="0" y="96" font-size="62" font-weight="700" fill="#181816">Tune the structure, not just the prose.</text>
+
+    <text class="sans" x="0" y="190" font-size="24" font-weight="700" letter-spacing="1.5" fill="#42647a">STABLE SHARED PREFIX</text>
+    <rect x="0" y="226" width="980" height="116" fill="#e7eef1" stroke="#42647a" stroke-width="3"/>
+    <text class="mono" x="36" y="298" font-size="28" fill="#181816">tools → schema → instructions → examples</text>
+
+    <text class="sans" x="1012" y="190" font-size="24" font-weight="700" letter-spacing="1.5" fill="#51514d">CHANGING TAIL</text>
+    <rect x="1012" y="226" width="348" height="116" fill="#f7f6f2" stroke="#51514d" stroke-width="3"/>
+    <text class="mono" x="1048" y="298" font-size="28" fill="#181816">user input</text>
+
+    <text class="sans" x="0" y="430" font-size="32" font-weight="700" fill="#181816">1</text>
+    <text class="sans" x="68" y="430" font-size="32" fill="#181816">Keep repeated content byte-identical and first.</text>
+    <text class="sans" x="0" y="506" font-size="32" font-weight="700" fill="#181816">2</text>
+    <text class="sans" x="68" y="506" font-size="32" fill="#181816">Move IDs, timestamps, retrieval, and user data to the end.</text>
+    <text class="sans" x="0" y="582" font-size="32" font-weight="700" fill="#181816">3</text>
+    <text class="sans" x="68" y="582" font-size="32" fill="#181816">Measure</text>
+    <text class="mono" x="202" y="582" font-size="29" font-weight="700" fill="#42647a">cached_tokens</text>
+    <text class="sans" x="472" y="582" font-size="32" fill="#181816">instead of assuming the cache hit.</text>
+  </g>
+
+  <g transform="translate(120 1806)">
+    <line x1="0" y1="0" x2="1360" y2="0" stroke="#d1d0ca" stroke-width="2"/>
+    <text class="sans" x="0" y="78" font-size="42" font-weight="700" fill="#181816">Same answer. Less repeated computation.</text>
+  </g>
+
+  <text class="sans" x="120" y="1924" font-size="26" fill="#51514d">prompt-tuning</text>
+  <text class="sans" x="1480" y="1924" font-size="26" fill="#51514d" text-anchor="end">Practical control over repeated prompt cost.</text>
+</svg>

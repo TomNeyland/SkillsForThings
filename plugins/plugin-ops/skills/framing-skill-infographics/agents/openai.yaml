@@ -1,0 +1,4 @@
+interface:
+  display_name: "Framing Skill Infographics"
+  short_description: "Frame marketplace skills for shareable graphics"
+  default_prompt: "Use $framing-skill-infographics to decide what this repository skill infographic should say and show."

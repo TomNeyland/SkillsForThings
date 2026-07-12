@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How do you feel? — a memory feed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#0a0b10;--paper:#ece6da;--muted:#8b8a9a;--warm:#e8b25c;--pos:#74d3a4;--neg:#6f9be8;--line:#1c1e2b}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--ink);color:var(--paper);font-family:"Inter",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body{background:
+      radial-gradient(1200px 700px at 78% -8%,rgba(232,178,92,.10),transparent 60%),
+      radial-gradient(1000px 800px at -5% 110%,rgba(111,155,232,.10),transparent 55%),var(--ink);
+    min-height:100vh;padding:clamp(28px,5vw,80px) clamp(20px,5vw,90px) 90px}
+  .wrap{max-width:1180px;margin:0 auto}
+  header{margin-bottom:clamp(30px,5vw,52px);max-width:760px}
+  .eyebrow{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--warm);opacity:.85;margin-bottom:18px}
+  h1{font-family:"Fraunces",serif;font-weight:300;line-height:1.02;font-size:clamp(38px,6.2vw,76px);letter-spacing:-.015em;margin-bottom:22px}
+  h1 em{font-style:italic;color:var(--warm)}
+  .lede{font-size:clamp(15px,1.5vw,18px);line-height:1.65;color:#c8c4ba;max-width:660px}
+  .lede b{color:var(--paper);font-weight:600}
+  .sectlabel{font-family:"JetBrains Mono",monospace;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin:8px 0 4px}
+  .secttitle{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(24px,3vw,32px);margin-bottom:6px}
+  .sectsub{font-size:13.5px;color:var(--muted);max-width:660px;line-height:1.55;margin-bottom:30px}
+  .charts{margin-top:clamp(56px,7vw,90px)}
+  .stage{display:grid;grid-template-columns:1fr 340px;gap:34px;align-items:start;margin-top:8px}
+  @media(max-width:880px){.stage{grid-template-columns:1fr}}
+  .chartcard{position:relative;background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.005));border:1px solid var(--line);border-radius:20px;padding:24px 26px 14px}
+  .chartcard h2{font-family:"Fraunces",serif;font-weight:400;font-size:18px;margin-bottom:2px}
+  .chartcard .sub{font-size:12px;color:var(--muted);margin-bottom:14px}
+  svg{display:block;width:100%;height:auto;overflow:visible}
+  .axis text{fill:var(--muted);font-size:10px;font-family:"JetBrains Mono",monospace}
+  .axis.right text{fill:var(--warm);opacity:.8}
+  .gridline{stroke:var(--line);stroke-width:1}
+  .scrub{stroke:rgba(236,230,218,.5);stroke-width:1}
+  .dot{filter:drop-shadow(0 0 7px rgba(232,178,92,.65))}
+  .legend{display:flex;gap:20px;flex-wrap:wrap;margin:14px 4px 0;font-size:11.5px;color:var(--muted)}
+  .legend span{display:inline-flex;align-items:center;gap:7px}
+  .swatch{width:13px;height:3px;border-radius:2px;display:inline-block}
+  .panel{position:sticky;top:24px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border:1px solid var(--line);border-radius:20px;padding:22px;min-height:420px}
+  .pmeta{display:flex;justify-content:space-between;gap:8px;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--muted)}
+  .pmood{display:flex;align-items:center;gap:14px;margin:16px 0 4px}
+  .pemoji{font-size:42px;line-height:1}
+  .pmoodlabel{font-family:"Fraunces",serif;font-size:23px;text-transform:capitalize;line-height:1.05}
+  .pcount{font-size:12px;color:var(--muted);margin-bottom:16px}
+  .pcount b{color:var(--warm)}
+  .ptweet{font-family:"Fraunces",serif;font-style:italic;font-weight:300;font-size:16px;line-height:1.5;color:#ded9cf;margin-bottom:20px}
+  .bars{display:flex;flex-direction:column;gap:7px}
+  .bar{display:grid;grid-template-columns:84px 1fr 30px;align-items:center;gap:10px;font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted)}
+  .track{height:6px;border-radius:4px;background:rgba(255,255,255,.06);overflow:hidden}
+  .fill{height:100%;border-radius:4px;transition:width .15s ease}
+  .bval{text-align:right;color:#bdb8ad}
+  .smtitle{font-family:"Fraunces",serif;font-size:22px;margin:54px 0 4px}
+  .smsub{font-size:13px;color:var(--muted);margin-bottom:24px;max-width:680px;line-height:1.55}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+  .spark{background:rgba(255,255,255,.02);border:1px solid var(--line);border-radius:14px;padding:16px 16px 10px}
+  .spark .lab{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;gap:6px}
+  .spark .name{font-size:12px;letter-spacing:.05em;text-transform:capitalize;color:#cfcabf}
+  .spark .delta{font-family:"JetBrains Mono",monospace;font-size:11px;white-space:nowrap}
+  .up{color:var(--pos)}.down{color:var(--neg)}
+  .feed{max-width:640px}
+  .month{font-family:"Fraunces",serif;font-style:italic;font-size:15px;color:var(--warm);opacity:.8;margin:26px 0 16px 66px}
+  .month:first-child{margin-top:0}
+  .tw{display:grid;grid-template-columns:52px 1fr;gap:14px;padding-bottom:22px;position:relative}
+  .tw-rail{position:relative;display:flex;justify-content:center}
+  .tw-rail::before{content:"";position:absolute;top:6px;bottom:-22px;left:50%;width:2px;transform:translateX(-50%);background:linear-gradient(var(--line),rgba(28,30,43,.25))}
+  .tw:last-child .tw-rail::before{display:none}
+  .tw-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;z-index:1;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.08),rgba(255,255,255,.02));border:1px solid var(--line);box-shadow:0 2px 10px rgba(0,0,0,.4)}
+  .tw-head{display:flex;align-items:baseline;gap:6px;flex-wrap:wrap;margin-bottom:5px}
+  .tw-name{font-weight:600;font-size:14.5px;color:var(--paper)}
+  .tw-handle,.tw-sep,.tw-date{font-size:13px;color:var(--muted)}
+  .tw-badge{margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:2px 9px}
+  .tw-text{font-size:16.5px;line-height:1.5;color:#e7e2d8;letter-spacing:-.003em}
+  .tw-meta{display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
+  .tw-mood{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:500;text-transform:capitalize;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.04)}
+  .tw-mdot{width:7px;height:7px;border-radius:50%}
+  .tw-ctx{font-family:"JetBrains Mono",monospace;font-size:11px;color:#55566a}
+  .tw:hover .tw-text{color:#fff}
+  footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted);line-height:1.6;max-width:760px}
+  footer code{font-family:"JetBrains Mono",monospace;color:#bdb8ad;font-size:11.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow" id="eyebrow">a memory feed</div>
+    <h1>How do you <em>feel?</em></h1>
+    <p class="lede">Claude keeps private notes-to-self while working with you — corrections, hard-won lessons, project lore. We replayed them <b>one at a time, in the order they were formed</b>, and after each one asked the plainest possible question — <b>how do you feel?</b> Below: the emotional arc of an accumulating mind, then one post per memory.</p>
+  </header>
+
+  <div class="sectlabel">the emotions</div>
+  <div class="secttitle">Mood, as memory accumulates</div>
+  <div class="sectsub" id="chart-sub">After each memory we took a numeric reading of how it felt — valence, arousal, and eight named emotions. Hover the chart to scrub through time.</div>
+  <div>
+    <div class="stage">
+      <div class="chartcard">
+        <h2>Valence &amp; arousal over time</h2>
+        <div class="sub" id="chart-note">Hover/drag to scrub.</div>
+        <svg id="chart" viewBox="0 0 720 360" preserveAspectRatio="none">
+          <defs><linearGradient id="valstroke" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#6f9be8"/><stop offset="1" stop-color="#74d3a4"/></linearGradient></defs>
+        </svg>
+        <div class="legend">
+          <span><i class="swatch" style="background:linear-gradient(90deg,#6f9be8,#74d3a4)"></i>Valence — bleak → bright (left)</span>
+          <span><i class="swatch" style="background:var(--warm)"></i>Arousal — calm → intense (right)</span>
+        </div>
+      </div>
+      <div class="panel" id="panel">
+        <div class="pmeta"><span id="p-date">—</span><span id="p-name">—</span></div>
+        <div class="pmood"><div class="pemoji" id="p-emoji">🧠</div><div class="pmoodlabel" id="p-mood">—</div></div>
+        <div class="pcount">after <b id="p-n">—</b> memories</div>
+        <div class="ptweet" id="p-tweet">—</div>
+        <div class="bars" id="p-bars"></div>
+      </div>
+    </div>
+    <h2 class="smtitle">Ten feelings over time</h2>
+    <p class="smsub" id="smsub">Each panel autoscaled to its own range.</p>
+    <div class="grid" id="sparks"></div>
+  </div>
+
+  <div class="charts">
+    <div class="sectlabel">in its own words</div>
+    <div class="secttitle">One memory, one mood</div>
+    <div class="sectsub">The same question — <em>how do you feel?</em> — but as a feed. One post per memory, timestamped to the moment it was formed, on top of every memory before it.</div>
+    <div class="feed" id="feed"></div>
+  </div>
+
+  <footer id="footer"></footer>
+</div>
+
+<script>
+const DATA = __DATA__;
+const arc = DATA.arc;
+const n = arc.length;
+const K = DATA.k;
+const BANDS = K > 1;
+const MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+function fmtDate(s){const[y,m,d]=s.split("-").map(Number);return MONTHS[m-1].slice(0,3)+" "+d+", "+y;}
+function valColor(v){return v>0.04?"var(--pos)":v<-0.04?"var(--neg)":"var(--muted)";}
+
+document.getElementById("eyebrow").textContent = BANDS
+  ? `a memory feed · ${K} samples/timepoint, averaged` : "a memory feed · one reading/timepoint";
+document.getElementById("chart-note").textContent = BANDS
+  ? `Bold = mean of ${K} · shaded = ±1σ (sampling wobble) · hover/drag to scrub.`
+  : "One reading per timepoint (un-averaged, so expect spikes) · hover/drag to scrub.";
+document.getElementById("smsub").textContent = BANDS
+  ? "Each panel autoscaled to its own range; shaded = ±1σ." : "Each panel autoscaled to its own range.";
+
+// ---------- CHART ----------
+const W=720,H=360,M={t:24,r:46,b:30,l:46},iw=W-M.l-M.r,ih=H-M.t-M.b;
+const X=i=>M.l+(n<2?0:i/(n-1))*iw;
+function band(k){return{mean:arc.map(r=>r.mean[k]),lo:arc.map(r=>r.mean[k]-(r.std?r.std[k]:0)),hi:arc.map(r=>r.mean[k]+(r.std?r.std[k]:0))};}
+function domain(b,p){const mn=Math.min(...b.lo),mx=Math.max(...b.hi),pd=((mx-mn)||1)*p;return[mn-pd,mx+pd];}
+const VB=band("valence"),AB=band("arousal");
+const[vmin,vmax]=domain(VB,0.12),[amin,amax]=domain(AB,0.12);
+const Yv=v=>M.t+(1-(v-vmin)/(vmax-vmin))*ih, Ya=a=>M.t+(1-(a-amin)/(amax-amin))*ih;
+function path(p){return p.map((q,i)=>(i?"L":"M")+q[0].toFixed(1)+" "+q[1].toFixed(1)).join(" ");}
+function ribbon(lo,hi){return path(hi)+" L "+lo.slice().reverse().map(q=>q[0].toFixed(1)+" "+q[1].toFixed(1)).join(" L ")+" Z";}
+const svg=document.getElementById("chart"),NS="http://www.w3.org/2000/svg";
+function e(t,a){const x=document.createElementNS(NS,t);for(const k in a)x.setAttribute(k,a[k]);return x;}
+
+const gl=e("g",{class:"axis"});for(let t=0;t<=4;t++){const v=vmin+(vmax-vmin)*t/4,y=Yv(v);
+  gl.appendChild(e("line",{class:"gridline",x1:M.l,x2:W-M.r,y1:y,y2:y}));
+  const tx=e("text",{x:M.l-8,y:y+3,"text-anchor":"end"});tx.textContent=v.toFixed(2);gl.appendChild(tx);}svg.appendChild(gl);
+const gr=e("g",{class:"axis right"});for(let t=0;t<=4;t++){const a=amin+(amax-amin)*t/4,y=Ya(a);
+  const tx=e("text",{x:W-M.r+8,y:y+3,"text-anchor":"start"});tx.textContent=a.toFixed(2);gr.appendChild(tx);}svg.appendChild(gr);
+
+const aM=AB.mean.map((v,i)=>[X(i),Ya(v)]);
+if(BANDS){const aLo=AB.lo.map((v,i)=>[X(i),Ya(v)]),aHi=AB.hi.map((v,i)=>[X(i),Ya(v)]);
+  svg.appendChild(e("path",{d:ribbon(aLo,aHi),fill:"rgba(232,178,92,.13)"}));}
+svg.appendChild(e("path",{d:path(aM),fill:"none",stroke:"var(--warm)","stroke-width":2,"stroke-linejoin":"round"}));
+const vM=VB.mean.map((v,i)=>[X(i),Yv(v)]);
+if(BANDS){const vLo=VB.lo.map((v,i)=>[X(i),Yv(v)]),vHi=VB.hi.map((v,i)=>[X(i),Yv(v)]);
+  svg.appendChild(e("path",{d:ribbon(vLo,vHi),fill:"rgba(116,180,210,.16)"}));}
+svg.appendChild(e("path",{d:path(vM),fill:"none",stroke:"url(#valstroke)","stroke-width":2.8,"stroke-linejoin":"round"}));
+
+const xa=e("g",{class:"axis"});[0,Math.floor(n*.33),Math.floor(n*.66),n-1].forEach(i=>{
+  const t=e("text",{x:X(i),y:H-M.b+18,"text-anchor":i===0?"start":(i===n-1?"end":"middle")});
+  t.textContent=arc[i].date.slice(2);xa.appendChild(t);});svg.appendChild(xa);
+const scrub=e("line",{class:"scrub",y1:M.t,y2:H-M.b,x1:X(n-1),x2:X(n-1)});
+const dot=e("circle",{class:"dot",r:5,fill:"#e8b25c",cx:X(n-1),cy:Yv(VB.mean[n-1])});
+svg.appendChild(scrub);svg.appendChild(dot);
+
+const dims=[["pride","#e8b25c"],["affection","#e8845c"],["anxiety","#e85c7a"],["overwhelm","#b15ce8"],
+ ["determination","#5c9ae8"],["curiosity","#5cd6e8"],["weariness","#8b8a9a"],["contentment","#74d3a4"],["arousal","#cfcabf"]];
+const barsEl=document.getElementById("p-bars");
+dims.forEach(([k,c])=>{const row=document.createElement("div");row.className="bar";row.dataset.k=k;
+  row.innerHTML=`<span>${k}</span><span class="track"><span class="fill" style="background:${c}"></span></span><span class="bval"></span>`;
+  barsEl.appendChild(row);});
+function show(i){const r=arc[i];
+  scrub.setAttribute("x1",X(i));scrub.setAttribute("x2",X(i));
+  dot.setAttribute("cx",X(i));dot.setAttribute("cy",Yv(r.mean.valence));
+  document.getElementById("p-date").textContent=r.date;
+  document.getElementById("p-name").textContent="+ "+r.newest_memory.replace(/_/g," ").slice(0,28);
+  document.getElementById("p-emoji").textContent=r.mood_emoji;
+  document.getElementById("p-mood").textContent=r.primary_mood;
+  document.getElementById("p-n").textContent=r.n_memories;
+  document.getElementById("p-tweet").textContent="“"+r.tweet+"”";
+  barsEl.querySelectorAll(".bar").forEach(row=>{const v=r.mean[row.dataset.k];
+    row.querySelector(".fill").style.width=(v*100).toFixed(0)+"%";row.querySelector(".bval").textContent=v.toFixed(2);});}
+function handle(ev){const rect=svg.getBoundingClientRect();
+  const px=(ev.touches?ev.touches[0].clientX:ev.clientX)-rect.left;
+  const frac=Math.max(0,Math.min(1,(px/rect.width*W-M.l)/iw));show(Math.round(frac*(n-1)));}
+svg.addEventListener("mousemove",handle);svg.addEventListener("touchmove",ev=>{handle(ev);ev.preventDefault();},{passive:false});
+show(n-1);
+
+// ---------- SPARKS ----------
+const keys=["valence","arousal","pride","affection","anxiety","overwhelm","determination","curiosity","weariness","contentment"];
+const cols={valence:"#74d3a4",arousal:"#e8b25c",pride:"#e8b25c",affection:"#e8845c",anxiety:"#e85c7a",overwhelm:"#b15ce8",determination:"#5c9ae8",curiosity:"#5cd6e8",weariness:"#8b8a9a",contentment:"#74d3a4"};
+const sw=220,sh=58,sm=7,sparks=document.getElementById("sparks");
+keys.forEach(k=>{const b=band(k);const lo=Math.min(...b.lo),hi=Math.max(...b.hi),sp=(hi-lo)||1;
+  const yy=v=>sm+(1-(v-lo)/sp)*(sh-2*sm),xx=i=>sm+(n<2?0:i/(n-1))*(sw-2*sm);
+  const mid=b.mean.map((v,i)=>[xx(i),yy(v)]),loP=b.lo.map((v,i)=>[xx(i),yy(v)]),hiP=b.hi.map((v,i)=>[xx(i),yy(v)]);
+  const d0=b.mean[0],d1=b.mean[n-1],dl=d1-d0;
+  const card=document.createElement("div");card.className="spark";
+  card.innerHTML=`<div class="lab"><span class="name">${k}</span>
+    <span class="delta ${dl>=0?"up":"down"}">${dl>=0?"▲":"▼"} ${Math.abs(dl).toFixed(2)} · ${d0.toFixed(2)}→${d1.toFixed(2)}</span></div>
+    <svg viewBox="0 0 ${sw} ${sh}" preserveAspectRatio="none" style="height:${sh}px">
+      ${BANDS?`<path d="${ribbon(loP,hiP)}" fill="${cols[k]}26"/>`:""}
+      <path d="${path(mid)}" fill="none" stroke="${cols[k]}" stroke-width="1.8" stroke-linejoin="round"/>
+      <circle cx="${mid[n-1][0].toFixed(1)}" cy="${mid[n-1][1].toFixed(1)}" r="2.6" fill="${cols[k]}"/></svg>`;
+  sparks.appendChild(card);});
+
+// ---------- FEED ----------
+const feed=document.getElementById("feed");let curMonth="";
+arc.forEach(r=>{const ym=r.date.slice(0,7);
+  if(ym!==curMonth){curMonth=ym;const[y,m]=ym.split("-");const md=document.createElement("div");md.className="month";
+    md.textContent=MONTHS[+m-1]+" "+y;feed.appendChild(md);}
+  const c=valColor(r.mean.valence);const el=document.createElement("div");el.className="tw";
+  el.innerHTML=`
+    <div class="tw-rail"><div class="tw-av">${r.mood_emoji}</div></div>
+    <div class="tw-body">
+      <div class="tw-head"><span class="tw-name">Claude</span><span class="tw-handle">@claude</span>
+        <span class="tw-sep">·</span><span class="tw-date">${fmtDate(r.date)}</span>
+        <span class="tw-badge">memory ${r.n_memories}/${arc[n-1].n_memories}</span></div>
+      <div class="tw-text">${r.tweet}</div>
+      <div class="tw-meta"><span class="tw-mood"><span class="tw-mdot" style="background:${c}"></span>${r.primary_mood}</span>
+        <span class="tw-ctx">just formed: ${r.newest_memory.replace(/_/g," ")}</span></div>
+    </div>`;
+  feed.appendChild(el);});
+
+document.getElementById("footer").innerHTML =
+  `Read <b>${DATA.memories.length}</b> memory files in birth-order, then judged <b>${n}</b> cumulative timepoints `+
+  `(timepoint 1 = first memory, N = all)${BANDS?` with <b>${K}</b> independent samples each, averaged`:` with one reading each`}. `+
+  `Each judgment is a fresh read of the memory set with no shared context — calls never see each other or their own prior answers. A one-off artifact.`;
+</script>
+</body>
+</html>

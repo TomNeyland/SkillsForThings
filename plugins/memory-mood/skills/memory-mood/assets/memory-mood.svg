@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Your assistant’s memory grows. What mood arc does it create?</title>
+  <desc id="desc">At each date in an AI assistant’s stored memory notes, create a cumulative snapshot containing every memory so far. Send each snapshot to a different isolated evaluator that sees no prior answers and asks, How do you feel? Each reading returns pleasant-to-unpleasant valence, calm-to-energized arousal, eight named feelings, and a short reaction. The resulting page charts an emotional arc over memory time while isolating changes in stored memory from carryover between evaluators.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7f6f2; }
+      .primary { fill: #181816; }
+      .secondary { fill: #51514d; }
+      .accent { fill: #42647a; }
+      .rule { stroke: #d1d0ca; stroke-width: 3; }
+      .flow { stroke: #42647a; stroke-width: 4; fill: none; }
+      .headline { font: 700 94px Helvetica, Arial, sans-serif; letter-spacing: -2px; }
+      .section-label { font: 700 24px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
+      .body { font: 400 34px Helvetica, Arial, sans-serif; }
+      .snapshot-title { font: 700 28px Helvetica, Arial, sans-serif; letter-spacing: .6px; }
+      .snapshot-body { font: 400 28px Helvetica, Arial, sans-serif; }
+      .evaluator-title { font: 700 29px Helvetica, Arial, sans-serif; }
+      .evaluator-body { font: 400 28px Helvetica, Arial, sans-serif; }
+      .output-title { font: 700 31px Helvetica, Arial, sans-serif; }
+      .output-body { font: 400 28px Helvetica, Arial, sans-serif; }
+      .statement { font: 700 51px Helvetica, Arial, sans-serif; letter-spacing: -.8px; }
+      .interpretation { font: 700 31px Helvetica, Arial, sans-serif; }
+      .mono { font: 700 35px Menlo, Consolas, monospace; }
+      .meta { font: 700 22px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
+      .identity { font: 400 22px Helvetica, Arial, sans-serif; }
+    </style>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="10" markerHeight="10" orient="auto">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="2000"/>
+
+  <!-- Outer top band: public situation and method -->
+  <text x="120" y="118" class="meta accent">AI ASSISTANT MEMORY FILES</text>
+  <text x="1480" y="118" text-anchor="end" class="meta secondary">INDEPENDENT MOOD READINGS · SCHEMATIC</text>
+  <line x1="120" y1="158" x2="1480" y2="158" class="rule"/>
+
+  <!-- Curiosity opener -->
+  <text x="120" y="290" class="headline primary">Your assistant’s memory grows.</text>
+  <text x="120" y="394" class="headline primary">What mood arc does it create?</text>
+
+  <text x="120" y="490" class="section-label accent">THE EXPERIMENT</text>
+  <text x="120" y="543" class="body secondary">At each memory date, read every stored note accumulated so far.</text>
+  <text x="120" y="588" class="body secondary">Use a different evaluator so earlier answers cannot influence later ones.</text>
+  <line x1="120" y1="630" x2="1480" y2="630" class="rule"/>
+
+  <!-- Cumulative snapshots. Column bounds: 120..500, 600..980, 1080..1480. -->
+  <text x="120" y="690" class="section-label accent">CUMULATIVE MEMORY SNAPSHOTS</text>
+
+  <text x="120" y="755" class="snapshot-title primary">DATE 1</text>
+  <text x="120" y="815" class="mono primary">M1</text>
+  <text x="120" y="855" class="snapshot-body secondary">first stored note</text>
+
+  <text x="600" y="755" class="snapshot-title primary">DATE 2</text>
+  <text x="600" y="815" class="mono primary">M1 + M2</text>
+  <text x="600" y="855" class="snapshot-body secondary">all notes so far</text>
+
+  <text x="1080" y="755" class="snapshot-title primary">DATE 3</text>
+  <text x="1080" y="815" class="mono primary">M1 + M2 + M3</text>
+  <text x="1080" y="855" class="snapshot-body secondary">all notes so far</text>
+
+  <line x1="310" y1="875" x2="310" y2="910" class="flow" marker-end="url(#arrow)"/>
+  <line x1="790" y1="875" x2="790" y2="910" class="flow" marker-end="url(#arrow)"/>
+  <line x1="1270" y1="875" x2="1270" y2="910" class="flow" marker-end="url(#arrow)"/>
+
+  <!-- Fresh, isolated readings -->
+  <text x="120" y="960" class="evaluator-title accent">NEW EVALUATOR A</text>
+  <text x="120" y="1002" class="evaluator-body secondary">sees only snapshot 1</text>
+  <text x="120" y="1042" class="evaluator-body primary">asks: “How do you feel?”</text>
+
+  <text x="600" y="960" class="evaluator-title accent">NEW EVALUATOR B</text>
+  <text x="600" y="1002" class="evaluator-body secondary">sees only snapshot 2</text>
+  <text x="600" y="1042" class="evaluator-body primary">asks: “How do you feel?”</text>
+
+  <text x="1080" y="960" class="evaluator-title accent">NEW EVALUATOR C</text>
+  <text x="1080" y="1002" class="evaluator-body secondary">sees only snapshot 3</text>
+  <text x="1080" y="1042" class="evaluator-body primary">asks: “How do you feel?”</text>
+
+  <path d="M310 1070 L310 1100 L800 1140 M790 1070 L790 1130 M1270 1070 L1270 1100 L800 1140" class="flow" marker-end="url(#arrow)"/>
+
+  <text x="800" y="1195" text-anchor="middle" class="section-label accent">ONE INDEPENDENT READING PER DATE</text>
+  <text x="800" y="1248" text-anchor="middle" class="body secondary">pleasant ↔ unpleasant · calm ↔ energized · 8 feelings · short reaction</text>
+
+  <!-- Output artifact. Column bounds: 120..500, 600..980, 1080..1480. -->
+  <line x1="120" y1="1300" x2="1480" y2="1300" class="rule"/>
+  <text x="120" y="1360" class="section-label accent">RESULTING HTML PAGE</text>
+
+  <text x="120" y="1425" class="output-title primary">EMOTIONAL ARC</text>
+  <text x="120" y="1467" class="output-body secondary">changes across</text>
+  <text x="120" y="1507" class="output-body secondary">memory time</text>
+
+  <text x="600" y="1425" class="output-title primary">FEELING SCORES</text>
+  <text x="600" y="1467" class="output-body secondary">valence + arousal</text>
+  <text x="600" y="1507" class="output-body secondary">+ 8 named feelings</text>
+
+  <text x="1080" y="1425" class="output-title primary">REACTION FEED</text>
+  <text x="1080" y="1467" class="output-body secondary">timestamp</text>
+  <text x="1080" y="1507" class="output-body secondary">+ short reaction</text>
+
+  <!-- Decision and interpretation -->
+  <line x1="120" y1="1560" x2="1480" y2="1560" class="rule"/>
+  <text x="120" y="1640" class="statement primary">New snapshot. New evaluator. No previous answers.</text>
+  <text x="120" y="1705" class="interpretation accent">The chart isolates memory changes from evaluator carryover.</text>
+
+  <!-- Quiet, defined repository handle in the outer bottom band -->
+  <line x1="120" y1="1880" x2="1480" y2="1880" class="rule"/>
+  <text x="120" y="1935" class="identity secondary">memory-mood</text>
+  <text x="1480" y="1935" text-anchor="end" class="identity secondary">Mood arc from cumulative assistant-memory snapshots</text>
+</svg>

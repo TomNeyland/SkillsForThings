@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">A field name can look clear and still be wrong</title>
+  <desc id="desc">The invented boolean is_critical makes an expert ask what critical means. RFC 5424 instead uses the recognized field severity with an eight-level scale. The infographic recommends identifying the authority, classifying the mismatch, and using the authoritative term.</desc>
+
+  <defs>
+    <style>
+      .bg { fill: #f7f6f2; }
+      .primary { fill: #181816; }
+      .secondary { fill: #51514d; }
+      .accent { fill: #42647a; }
+      .failure { fill: #a14332; }
+      .rule { stroke: #d1d0ca; stroke-width: 3; }
+      .rule-dark { stroke: #51514d; stroke-width: 3; }
+      .rule-failure { stroke: #a14332; stroke-width: 3; }
+      .headline { font: 700 94px Helvetica, Arial, sans-serif; letter-spacing: -2px; }
+      .section-label { font: 700 24px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
+      .body { font: 400 34px Helvetica, Arial, sans-serif; }
+      .body-bold { font: 700 34px Helvetica, Arial, sans-serif; }
+      .proof-question { font: 700 38px Helvetica, Arial, sans-serif; }
+      .statement { font: 700 55px Helvetica, Arial, sans-serif; letter-spacing: -1px; }
+      .step-num { font: 700 26px Helvetica, Arial, sans-serif; }
+      .step-title { font: 700 30px Helvetica, Arial, sans-serif; }
+      .step-body { font: 400 28px Helvetica, Arial, sans-serif; }
+      .mono-lg { font: 700 42px Menlo, Consolas, monospace; }
+      .mono { font: 400 28px Menlo, Consolas, monospace; }
+      .mono-bold { font: 700 30px Menlo, Consolas, monospace; }
+      .meta { font: 700 22px Helvetica, Arial, sans-serif; letter-spacing: 2px; }
+      .identity { font: 400 22px Helvetica, Arial, sans-serif; }
+    </style>
+    <marker id="arrow" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="11" markerHeight="11" orient="auto">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#51514d"/>
+    </marker>
+    <marker id="arrow-failure" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="11" markerHeight="11" orient="auto">
+      <path d="M1,1 L11,6 L1,11 Z" fill="#a14332"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="2000"/>
+
+  <!-- Outer top band: subject metadata -->
+  <text x="120" y="118" class="meta accent">SCHEMA REVIEW NOTE</text>
+  <text x="1480" y="118" text-anchor="end" class="meta secondary">FIELDS · MODELS · ENUMS</text>
+  <line x1="120" y1="158" x2="1480" y2="158" class="rule"/>
+
+  <!-- Wrong assumption -->
+  <text x="120" y="290" class="headline primary">A field name can look clear</text>
+  <text x="120" y="394" class="headline primary">and still be wrong.</text>
+
+  <text x="120" y="502" class="section-label accent">COMMON BELIEF</text>
+  <text x="120" y="555" class="body secondary">“If the name is readable, the schema is clear.”</text>
+  <line x1="120" y1="610" x2="1480" y2="610" class="rule"/>
+
+  <!-- Counterexample. Column bounds: left x=120..720, right x=820..1480. -->
+  <text x="120" y="675" class="section-label failure">INVENTED NAME</text>
+  <text x="120" y="746" class="mono-lg failure">is_critical: bool</text>
+  <line x1="555" y1="731" x2="750" y2="731" class="rule-failure" marker-end="url(#arrow-failure)"/>
+
+  <text x="820" y="675" class="section-label secondary">THE EXPERT TEST</text>
+  <text x="820" y="730" class="proof-question primary">“Critical compared to what—</text>
+  <text x="820" y="780" class="proof-question primary">error? emergency?”</text>
+
+  <line x1="120" y1="840" x2="1480" y2="840" class="rule"/>
+
+  <!-- Authoritative model -->
+  <text x="120" y="910" class="section-label accent">AUTHORITY</text>
+  <text x="120" y="970" class="mono-bold accent">RFC 5424</text>
+  <text x="320" y="970" class="body primary">uses an eight-level <tspan class="mono-bold">severity</tspan> scale—not a flag.</text>
+
+  <text x="120" y="1058" class="mono secondary">emergency · alert · critical · error</text>
+  <text x="120" y="1106" class="mono secondary">warning · notice · informational · debug</text>
+
+  <line x1="120" y1="1160" x2="120" y2="1210" class="rule-dark" marker-end="url(#arrow)"/>
+  <text x="120" y="1265" class="section-label accent">ALIGNED MODEL</text>
+  <text x="120" y="1335" class="mono-lg accent">severity: Literal["emergency", …, "debug"]</text>
+
+  <!-- Better model -->
+  <line x1="120" y1="1400" x2="1480" y2="1400" class="rule"/>
+  <text x="120" y="1488" class="statement primary">A recognized term carries its definition.</text>
+
+  <!-- Action -->
+  <text x="120" y="1585" class="section-label accent">RUN THE EXPERT TEST</text>
+  <text x="120" y="1640" class="body-bold primary">Would an expert recognize this without explanation?</text>
+
+  <!-- Action columns: 120..500, 600..980, 1080..1480. -->
+  <circle cx="147" cy="1722" r="27" fill="#42647a"/>
+  <text x="147" y="1731" text-anchor="middle" class="step-num" fill="#f7f6f2">1</text>
+  <text x="190" y="1718" class="step-title primary">Find the authority</text>
+  <text x="190" y="1760" class="step-body secondary">Standard or vocabulary</text>
+
+  <circle cx="627" cy="1722" r="27" fill="#42647a"/>
+  <text x="627" y="1731" text-anchor="middle" class="step-num" fill="#f7f6f2">2</text>
+  <text x="670" y="1718" class="step-title primary">Classify the field</text>
+  <text x="670" y="1760" class="step-body secondary">Aligned, misnamed, or invented</text>
+
+  <circle cx="1107" cy="1722" r="27" fill="#42647a"/>
+  <text x="1107" y="1731" text-anchor="middle" class="step-num" fill="#f7f6f2">3</text>
+  <text x="1150" y="1718" class="step-title primary">Use the standard term</text>
+  <text x="1150" y="1760" class="step-body secondary">Or document why it is new</text>
+
+  <!-- Quiet skill handle in the outer bottom band -->
+  <line x1="120" y1="1880" x2="1480" y2="1880" class="rule"/>
+  <text x="120" y="1935" class="identity secondary">align-terminology</text>
+  <text x="1480" y="1935" text-anchor="end" class="identity secondary">Use during schema design or review</text>
+</svg>

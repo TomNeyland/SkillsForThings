@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="title desc">
+  <title id="title">Choose a cc-plugins package by the job you need done</title>
+  <desc id="desc">A visual index of five packages and eighteen skills: conductor for multi-agent builds, prompt-tuning for repeated prompt efficiency, misc for cross-cutting project judgment, plugin-ops for public skill maintenance, and memory-mood for emotional-arc visualization.</desc>
+  <style>
+    .sans { font-family: Helvetica, Arial, sans-serif; }
+    .mono { font-family: Menlo, Consolas, monospace; }
+  </style>
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <text class="mono" x="120" y="112" font-size="22" fill="#42647a">CC-PLUGINS</text>
+  <text class="sans" x="1480" y="112" font-size="22" fill="#51514d" text-anchor="end">5 PACKAGES · 18 SKILLS</text>
+  <line x1="120" y1="146" x2="1480" y2="146" stroke="#d1d0ca" stroke-width="2"/>
+
+  <g transform="translate(120 258)">
+    <text class="sans" x="0" y="0" font-size="88" font-weight="700" fill="#181816">
+      <tspan x="0" y="0">Choose the package by</tspan>
+      <tspan x="0" y="106">the job you need done.</tspan>
+    </text>
+    <text class="sans" x="0" y="188" font-size="36" fill="#51514d">Reusable instructions for recurring decisions in AI-assisted work.</text>
+  </g>
+
+  <g transform="translate(120 580)">
+    <text class="sans" x="0" y="0" font-size="23" font-weight="700" letter-spacing="1.4" fill="#51514d">PACKAGE</text>
+    <text class="sans" x="320" y="0" font-size="23" font-weight="700" letter-spacing="1.4" fill="#51514d">CHOOSE WHEN</text>
+    <text class="sans" x="1030" y="0" font-size="23" font-weight="700" letter-spacing="1.4" fill="#51514d">WHAT LIVES THERE</text>
+    <line x1="0" y1="34" x2="1360" y2="34" stroke="#181816" stroke-width="3"/>
+
+    <g transform="translate(0 78)">
+      <text class="mono" x="0" y="34" font-size="28" font-weight="700" fill="#181816">CONDUCTOR</text>
+      <text class="sans" x="0" y="72" font-size="24" fill="#42647a">7 skills</text>
+      <text class="sans" x="320" y="26" font-size="28" font-weight="700" fill="#181816">Several coding agents or a long</text>
+      <text class="sans" x="320" y="66" font-size="28" font-weight="700" fill="#181816">autonomous build need one direction.</text>
+      <text class="sans" x="1030" y="26" font-size="26" fill="#181816">coordination · review</text>
+      <text class="sans" x="1030" y="64" font-size="26" fill="#181816">pacing · prioritization</text>
+      <line x1="0" y1="112" x2="1360" y2="112" stroke="#d1d0ca" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(0 248)">
+      <text class="mono" x="0" y="34" font-size="28" font-weight="700" fill="#181816">PROMPT-TUNING</text>
+      <text class="sans" x="0" y="72" font-size="24" fill="#42647a">1 skill</text>
+      <text class="sans" x="320" y="26" font-size="28" font-weight="700" fill="#181816">Repeated API prompts cost too much</text>
+      <text class="sans" x="320" y="66" font-size="28" font-weight="700" fill="#181816">or miss cache despite shared input.</text>
+      <text class="sans" x="1030" y="26" font-size="26" fill="#181816">prefix-cache diagnosis</text>
+      <text class="sans" x="1030" y="64" font-size="26" fill="#181816">and optimization</text>
+      <line x1="0" y1="112" x2="1360" y2="112" stroke="#d1d0ca" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(0 418)">
+      <text class="mono" x="0" y="34" font-size="28" font-weight="700" fill="#181816">MISC</text>
+      <text class="sans" x="0" y="72" font-size="24" fill="#42647a">5 skills</text>
+      <text class="sans" x="320" y="26" font-size="28" font-weight="700" fill="#181816">The hard decision is research, naming,</text>
+      <text class="sans" x="320" y="66" font-size="28" font-weight="700" fill="#181816">direction, copy, or visual explanation.</text>
+      <text class="sans" x="1030" y="26" font-size="26" fill="#181816">cross-cutting project</text>
+      <text class="sans" x="1030" y="64" font-size="26" fill="#181816">judgment</text>
+      <line x1="0" y1="112" x2="1360" y2="112" stroke="#d1d0ca" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(0 588)">
+      <text class="mono" x="0" y="34" font-size="28" font-weight="700" fill="#181816">PLUGIN-OPS</text>
+      <text class="sans" x="0" y="72" font-size="24" fill="#42647a">3 skills</text>
+      <text class="sans" x="320" y="26" font-size="28" font-weight="700" fill="#181816">Agent instructions are being published,</text>
+      <text class="sans" x="320" y="66" font-size="28" font-weight="700" fill="#181816">refreshed, or explained to strangers.</text>
+      <text class="sans" x="1030" y="26" font-size="26" fill="#181816">release check · evidence</text>
+      <text class="sans" x="1030" y="64" font-size="26" fill="#181816">public framing</text>
+      <line x1="0" y1="112" x2="1360" y2="112" stroke="#d1d0ca" stroke-width="2"/>
+    </g>
+
+    <g transform="translate(0 758)">
+      <text class="mono" x="0" y="34" font-size="28" font-weight="700" fill="#181816">MEMORY-MOOD</text>
+      <text class="sans" x="0" y="72" font-size="24" fill="#42647a">2 skills</text>
+      <text class="sans" x="320" y="26" font-size="28" font-weight="700" fill="#181816">Visualize how accumulated memory shifts</text>
+      <text class="sans" x="320" y="66" font-size="28" font-weight="700" fill="#181816">model-rated emotion over time.</text>
+      <text class="sans" x="1030" y="26" font-size="26" fill="#181816">single-read or averaged</text>
+      <text class="sans" x="1030" y="64" font-size="26" fill="#181816">emotional arcs</text>
+      <line x1="0" y1="112" x2="1360" y2="112" stroke="#181816" stroke-width="3"/>
+    </g>
+  </g>
+
+  <g transform="translate(120 1570)">
+    <text class="sans" x="0" y="0" font-size="24" font-weight="700" letter-spacing="1.5" fill="#42647a">HOW TO NAVIGATE</text>
+    <text class="sans" x="0" y="74" font-size="48" font-weight="700" fill="#181816">Start with the situation—not the skill name.</text>
+    <text class="sans" x="0" y="132" font-size="31" fill="#51514d">Open the matching package, then choose the skill row whose trigger matches your work.</text>
+  </g>
+
+  <g transform="translate(120 1840)">
+    <line x1="0" y1="0" x2="1360" y2="0" stroke="#d1d0ca" stroke-width="2"/>
+    <text class="sans" x="0" y="76" font-size="34" font-weight="700" fill="#181816">cc-plugins</text>
+    <text class="mono" x="1360" y="76" font-size="22" fill="#51514d" text-anchor="end">github.com/TomNeyland/cc-plugins</text>
+  </g>
+</svg>

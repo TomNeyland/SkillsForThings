@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2000" viewBox="0 0 1600 2000" role="img" aria-labelledby="svg-title svg-desc">
+  <title id="svg-title">Easy to build is not the same as worth building</title>
+  <desc id="svg-desc">When choosing the next feature from a backlog, do not rank by implementation effort alone. Name the audience, test each idea for durable product value or demo appeal, challenge it against real inputs and competitor parity, then drop weak candidates and propose stronger replacements before filing the roadmap.</desc>
+
+  <defs>
+    <style>
+      .sans { font-family: Helvetica, Arial, sans-serif; }
+      .mono { font-family: Menlo, Consolas, monospace; }
+      .primary { fill: #181816; }
+      .secondary { fill: #51514d; }
+      .accent { fill: #42647a; }
+      .failure { fill: #a14332; }
+      .rule { stroke: #d1d0ca; stroke-width: 3; }
+      .flow { fill: none; stroke: #42647a; stroke-width: 4; }
+    </style>
+    <marker id="arrow-blue" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto" markerUnits="strokeWidth">
+      <path d="M1,1 L13,7 L1,13 Z" fill="#42647a"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="2000" fill="#f7f6f2"/>
+
+  <!-- Contrarian reframe -->
+  <g id="headline" class="sans">
+    <text x="120" y="300" class="primary" font-size="96" font-weight="700">
+      <tspan x="120" dy="0">Easy to build is not</tspan>
+      <tspan x="120" dy="108">the same as worth building.</tspan>
+    </text>
+    <text x="120" y="500" class="secondary" font-size="33">
+      <tspan x="120" dy="0">When feature ideas compete for limited time, rank them by value to a named</tspan>
+      <tspan x="120" dy="42">audience—not by the shortest implementation estimate.</tspan>
+    </text>
+    <line x1="120" y1="594" x2="1480" y2="594" class="rule"/>
+  </g>
+
+  <!-- Wrong default -->
+  <g id="wrong-default" class="sans">
+    <text x="120" y="655" class="failure" font-size="24" font-weight="700" letter-spacing="1.4">THE WRONG DEFAULT</text>
+    <text x="120" y="725" class="primary" font-size="42" font-weight="700">“Pick the smallest estimate first.”</text>
+    <line x1="790" y1="710" x2="950" y2="710" class="flow" marker-end="url(#arrow-blue)"/>
+    <text x="1015" y="700" class="failure" font-size="29" font-weight="700">LOW-VALUE</text>
+    <text x="1015" y="739" class="failure" font-size="29" font-weight="700">BACKLOG PICK</text>
+    <text x="120" y="820" class="secondary" font-size="34">
+      <tspan x="120" dy="0">Implementation effort measures cost. It does not measure audience value.</tspan>
+    </text>
+  </g>
+
+  <!-- Ranking method -->
+  <g id="method" class="sans">
+    <line x1="120" y1="885" x2="1480" y2="885" class="rule"/>
+    <text x="120" y="948" class="accent" font-size="24" font-weight="700" letter-spacing="1.4">RANK EACH BACKLOG IDEA BY AUDIENCE VALUE</text>
+
+    <!-- Columns: [120,500], [610,990], [1100,1480] -->
+    <circle cx="156" cy="1025" r="32" fill="#42647a"/>
+    <text x="156" y="1035" text-anchor="middle" fill="#f7f6f2" font-size="26" font-weight="700">1</text>
+    <text x="205" y="1017" class="primary" font-size="30" font-weight="700">NAME THE AUDIENCE</text>
+    <text x="205" y="1060" class="secondary" font-size="28">
+      <tspan x="205" dy="0">Buyer, user, partner,</tspan>
+      <tspan x="205" dy="36">or reviewer.</tspan>
+    </text>
+
+    <circle cx="646" cy="1025" r="32" fill="#42647a"/>
+    <text x="646" y="1035" text-anchor="middle" fill="#f7f6f2" font-size="26" font-weight="700">2</text>
+    <text x="695" y="1017" class="primary" font-size="30" font-weight="700">TEST THE VALUE</text>
+    <text x="695" y="1060" class="secondary" font-size="28">
+      <tspan x="695" dy="0">Durable capability or</tspan>
+      <tspan x="695" dy="36">compelling demo?</tspan>
+    </text>
+
+    <circle cx="1136" cy="1025" r="32" fill="#42647a"/>
+    <text x="1136" y="1035" text-anchor="middle" fill="#f7f6f2" font-size="26" font-weight="700">3</text>
+    <text x="1185" y="1017" class="primary" font-size="30" font-weight="700">CHALLENGE IT</text>
+    <text x="1185" y="1060" class="secondary" font-size="28">
+      <tspan x="1185" dy="0">Real inputs today?</tspan>
+      <tspan x="1185" dy="36">Beyond competitor parity?</tspan>
+      <tspan x="1185" dy="36">Would a skeptic care?</tspan>
+    </text>
+
+    <text x="120" y="1208" class="accent" font-size="24" font-weight="700" letter-spacing="1.4">TWO FORMS OF VALUE</text>
+    <text x="120" y="1260" class="primary" font-size="30" font-weight="700">DURABLE PRODUCT VALUE</text>
+    <text x="120" y="1300" class="secondary" font-size="28">Someone adopts or pays because the capability changes their work.</text>
+    <text x="120" y="1360" class="primary" font-size="30" font-weight="700">DEMO APPEAL</text>
+    <text x="120" y="1400" class="secondary" font-size="28">Someone shares or tries it because the value is immediate and visible.</text>
+  </g>
+
+  <!-- Replacement proof -->
+  <g id="replacement" class="sans">
+    <line x1="120" y1="1460" x2="1480" y2="1460" class="rule"/>
+    <text x="120" y="1520" class="secondary" font-size="24" font-weight="700" letter-spacing="1.4">TWO BACKLOG CANDIDATES</text>
+
+    <text x="120" y="1578" class="primary" font-size="30" font-weight="700">Manual retry button</text>
+    <text x="120" y="1616" class="secondary" font-size="25">duplicates a competitor control</text>
+    <text x="120" y="1654" class="failure" font-size="24" font-weight="700">LOW DIFFERENTIATION · DROP</text>
+
+    <line x1="520" y1="1602" x2="705" y2="1602" class="flow" marker-end="url(#arrow-blue)"/>
+
+    <text x="770" y="1570" class="primary" font-size="30" font-weight="700">Decision history</text>
+    <text x="770" y="1608" class="secondary" font-size="25">explains why automation acted</text>
+    <text x="770" y="1644" class="secondary" font-size="25">inputs → rule → outcome</text>
+    <text x="770" y="1680" class="accent" font-size="24" font-weight="700">DURABLE VALUE · KEEP</text>
+  </g>
+
+  <!-- Decision rule -->
+  <g id="decision" class="sans">
+    <line x1="120" y1="1702" x2="1480" y2="1702" class="rule"/>
+    <text x="120" y="1760" class="primary" font-size="38" font-weight="700">Name the audience. Challenge every idea. Replace weak ones before filing.</text>
+    <text x="120" y="1800" class="secondary" font-size="30">The roadmap gets fewer issues and stronger reasons to choose the product.</text>
+  </g>
+
+  <!-- Identity -->
+  <g id="identity" class="sans">
+    <text x="120" y="1918" class="secondary" font-size="23" letter-spacing="1.1">autonomous-build-jealousy-ranking</text>
+  </g>
+</svg>
