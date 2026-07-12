@@ -29,6 +29,12 @@ If the root problem IS different from the surface question, search for prior art
 
 Example: User asks "is there a library for fuzzy-matching product names?" — the root problem might be "I need canonical product identifiers." Prior art for the root problem is a barcode standard (GTIN/UPC): once every product has a canonical ID, most of the matching problem disappears. Prior art for the surface question is a fuzzy-matching library (e.g. a Levenshtein/Jaro-Winkler implementation). The root-level answer can save months of work. But sometimes the user really does just need fuzzy matching — don't be patronizing about it.
 
+### A specific, very common variant: premature specificity
+
+The tell here is mechanical and easy to spot: **the user names a specific technique or algorithm, not a problem.** "Are there k-means libraries?" names an algorithm. The actual need is one level up — clustering — and the user may not know the full menu of options in that category well enough to know they picked the right one. K-means might be a bad fit for their data's shape; they can't ask about HDBSCAN, DBSCAN, spectral clustering, or Gaussian mixture models if they don't know those exist.
+
+This differs from the fuzzy-matching example above: there, the root problem was a *different* problem that dissolved the surface ask. Here, the category (clustering) is already correct — the user just locked onto one member of it before surveying the others. The fix is also different: don't search for a different root problem, widen one level to a category-level survey/comparison first (this is exactly what the Prior-work agent in Step 2 is for), THEN narrow to libraries for whichever technique actually fits. Report the category-level finding even if the user only asked about the named technique by name — that's the whole point, they can't ask about an option they don't know exists.
+
 ## When to Use
 
 - About to create a custom ID scheme, taxonomy, or controlled vocabulary
