@@ -20,8 +20,9 @@ python3 scripts/lint.py <marketplace-root> --skill <name>    # one skill
 ```
 
 Catches: missing/malformed frontmatter, a `name` that doesn't match its directory, a real local
-filesystem path (`/Users/…`, `/home/…`), a body far over the word budget (SKILL.md stays under ~700
-words; heavy material goes in `references/`), and a `` `<some-skill>` `` cross-reference that
+filesystem path (`/Users/…`, `/home/…`), a body far past a sanity-check word count (informational
+only — agents skim/skip `references/`, so load-bearing content stays inline even if that's long; this
+just flags a file worth a skim for actual bloat), and a `` `<some-skill>` `` cross-reference that
 doesn't resolve to any skill in the marketplace. `FAIL` blocks; `WARN` needs a human/agent glance —
 issue-ref-shaped and internal-artifact-shaped tokens are common false positives (a skill *about*
 GitHub workflows will legitimately say `#123`), so don't auto-reject on `WARN`.

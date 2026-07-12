@@ -48,8 +48,12 @@ Flag anything that ties the skill to one real, private origin instead of standin
 
 For each `SKILL.md`: does the frontmatter `description` state triggers only (no workflow summary —
 a description that explains *what the skill does* teaches the agent to skip reading the body)? Is it
-reasonably tight (a short atomic skill under ~400 words, a fuller one under ~700, with heavy
-reference material moved to `references/`)? Does it teach the technique completely, or does a cut
+reasonably tight for what it teaches (a short atomic skill under ~400 words is fine; a fuller skill
+covering several real, distinct scenarios can run well past ~1800 words — length alone is not a
+defect if every part is load-bearing). Don't reward pushing real technique content into
+`references/` just to hit a shorter number — agents skim/skip reference files, so that just makes
+the content less likely to be read; `references/` is for genuinely optional depth (an API table, a
+heavy spec), not core teaching. Does it teach the technique completely, or does a cut
 line leave a gap? Do cross-references to other skills/agents by name actually resolve — check the
 named target exists. Is there redundancy with a sibling skill (each should earn a distinct reason to
 exist)? Is a load-bearing step or caveat missing?

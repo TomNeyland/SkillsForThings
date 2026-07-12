@@ -1,4 +1,4 @@
-# SkillsForThings
+# cc-plugins
 
 A Claude Code plugin marketplace.
 
@@ -34,7 +34,7 @@ plugins/<plugin-name>/
    ---
    ```
 3. **Description = triggers/symptoms only.** Do NOT summarize what the skill does or its workflow. See `superpowers:writing-skills` for the full guidance.
-4. Heavy reference material (>100 lines) goes in `references/*.md`. SKILL.md stays under ~600 words.
+4. `references/*.md` is for genuinely optional depth a reader would deliberately seek out (an API reference table, a heavy spec) — not a length-management escape valve. Agents skim/skip reference files, so load-bearing technique content stays inline in SKILL.md even if that makes it long. A skill teaching several real, distinct scenarios can run well past ~1800 words — that's fine; length alone isn't a quality problem if every part earns its place.
 5. Bump `version` in marketplace.json (and plugin.json if present).
 6. Test locally: see "Test locally" below.
 7. Commit and push.
@@ -50,10 +50,10 @@ plugins/<plugin-name>/
 
 ```bash
 # Add this repo as a marketplace from the local path
-claude plugin marketplace add /path/to/SkillsForThings
+claude plugin marketplace add /path/to/cc-plugins
 
 # Install the plugin
-claude plugin install <plugin-name>@SkillsForThings
+claude plugin install <plugin-name>@cc-plugins
 
 # Restart Claude Code or run /reload-plugins
 ```

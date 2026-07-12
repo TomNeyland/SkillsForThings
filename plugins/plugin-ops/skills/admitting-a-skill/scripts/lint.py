@@ -15,8 +15,8 @@ import pathlib
 import re
 import sys
 
-WORD_BUDGET_SOFT = 700
-WORD_BUDGET_HARD = 1100
+WORD_BUDGET_SOFT = 1800
+WORD_BUDGET_HARD = 3000
 
 # Real local paths, not the documented generic placeholder.
 PATH_RE = re.compile(r"/(Users|home)/[A-Za-z0-9_.-]+")
@@ -78,9 +78,9 @@ def lint_one(path: pathlib.Path, known_skills: set[str]) -> list[tuple[str, str]
 
     word_count = len(body.split())
     if word_count > WORD_BUDGET_HARD:
-        findings.append(("WARN", f"body is {word_count} words (hard budget {WORD_BUDGET_HARD}) — move detail to references/"))
+        findings.append(("WARN", f"body is {word_count} words (hard budget {WORD_BUDGET_HARD}) — length alone isn't a problem if it's load-bearing, but this is long enough to double-check for actual bloat/redundancy"))
     elif word_count > WORD_BUDGET_SOFT:
-        findings.append(("WARN", f"body is {word_count} words (soft budget {WORD_BUDGET_SOFT})"))
+        findings.append(("WARN", f"body is {word_count} words (soft budget {WORD_BUDGET_SOFT}) — informational only, not a defect"))
 
     for m in SKILL_REF_RE.finditer(body):
         ref = m.group(1)
